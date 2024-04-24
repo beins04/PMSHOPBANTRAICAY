@@ -1,0 +1,196 @@
+﻿namespace QuanLyCuaHangBanTraiCay
+{
+    partial class LoaiSP
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.btn_QuayLaiLSP = new System.Windows.Forms.Button();
+            this.btn_LuuLSP = new System.Windows.Forms.Button();
+            this.btn_SuaLSP = new System.Windows.Forms.Button();
+            this.btn_XoaLSP = new System.Windows.Forms.Button();
+            this.btn_ThemLSP = new System.Windows.Forms.Button();
+            this.txt_XuatXuLSP = new System.Windows.Forms.TextBox();
+            this.txt_TenLSP = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgv_LoaiSanPham = new System.Windows.Forms.DataGridView();
+            this.cbB_MaSP = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiSanPham)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btn_QuayLaiLSP
+            // 
+            this.btn_QuayLaiLSP.Location = new System.Drawing.Point(414, 75);
+            this.btn_QuayLaiLSP.Name = "btn_QuayLaiLSP";
+            this.btn_QuayLaiLSP.Size = new System.Drawing.Size(88, 31);
+            this.btn_QuayLaiLSP.TabIndex = 30;
+            this.btn_QuayLaiLSP.Text = "Quay Lại";
+            this.btn_QuayLaiLSP.UseVisualStyleBackColor = true;
+            // 
+            // btn_LuuLSP
+            // 
+            this.btn_LuuLSP.Location = new System.Drawing.Point(545, 75);
+            this.btn_LuuLSP.Name = "btn_LuuLSP";
+            this.btn_LuuLSP.Size = new System.Drawing.Size(88, 31);
+            this.btn_LuuLSP.TabIndex = 29;
+            this.btn_LuuLSP.Text = "Lưu";
+            this.btn_LuuLSP.UseVisualStyleBackColor = true;
+            // 
+            // btn_SuaLSP
+            // 
+            this.btn_SuaLSP.Location = new System.Drawing.Point(286, 75);
+            this.btn_SuaLSP.Name = "btn_SuaLSP";
+            this.btn_SuaLSP.Size = new System.Drawing.Size(88, 31);
+            this.btn_SuaLSP.TabIndex = 28;
+            this.btn_SuaLSP.Text = "Sửa";
+            this.btn_SuaLSP.UseVisualStyleBackColor = true;
+            // 
+            // btn_XoaLSP
+            // 
+            this.btn_XoaLSP.Location = new System.Drawing.Point(171, 75);
+            this.btn_XoaLSP.Name = "btn_XoaLSP";
+            this.btn_XoaLSP.Size = new System.Drawing.Size(88, 31);
+            this.btn_XoaLSP.TabIndex = 27;
+            this.btn_XoaLSP.Text = "Xóa";
+            this.btn_XoaLSP.UseVisualStyleBackColor = true;
+            this.btn_XoaLSP.Click += new System.EventHandler(this.btn_XoaLSP_Click);
+            // 
+            // btn_ThemLSP
+            // 
+            this.btn_ThemLSP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_ThemLSP.Location = new System.Drawing.Point(63, 75);
+            this.btn_ThemLSP.Name = "btn_ThemLSP";
+            this.btn_ThemLSP.Size = new System.Drawing.Size(83, 31);
+            this.btn_ThemLSP.TabIndex = 26;
+            this.btn_ThemLSP.Text = "Thêm";
+            this.btn_ThemLSP.UseVisualStyleBackColor = true;
+            this.btn_ThemLSP.Click += new System.EventHandler(this.btn_ThemLSP_Click);
+            // 
+            // txt_XuatXuLSP
+            // 
+            this.txt_XuatXuLSP.Location = new System.Drawing.Point(843, 25);
+            this.txt_XuatXuLSP.Name = "txt_XuatXuLSP";
+            this.txt_XuatXuLSP.Size = new System.Drawing.Size(196, 22);
+            this.txt_XuatXuLSP.TabIndex = 17;
+            // 
+            // txt_TenLSP
+            // 
+            this.txt_TenLSP.Location = new System.Drawing.Point(484, 22);
+            this.txt_TenLSP.Name = "txt_TenLSP";
+            this.txt_TenLSP.Size = new System.Drawing.Size(196, 22);
+            this.txt_TenLSP.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(734, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 15);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Xuất Xứ:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(375, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tên Sản Phẩm:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã Loại Sản Phẩm:";
+            // 
+            // dgv_LoaiSanPham
+            // 
+            this.dgv_LoaiSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_LoaiSanPham.Location = new System.Drawing.Point(25, 112);
+            this.dgv_LoaiSanPham.Name = "dgv_LoaiSanPham";
+            this.dgv_LoaiSanPham.RowHeadersWidth = 51;
+            this.dgv_LoaiSanPham.RowTemplate.Height = 24;
+            this.dgv_LoaiSanPham.Size = new System.Drawing.Size(1014, 236);
+            this.dgv_LoaiSanPham.TabIndex = 2;
+            // 
+            // cbB_MaSP
+            // 
+            this.cbB_MaSP.FormattingEnabled = true;
+            this.cbB_MaSP.Location = new System.Drawing.Point(141, 25);
+            this.cbB_MaSP.Name = "cbB_MaSP";
+            this.cbB_MaSP.Size = new System.Drawing.Size(194, 23);
+            this.cbB_MaSP.TabIndex = 31;
+            // 
+            // LoaiSP
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1093, 377);
+            this.Controls.Add(this.cbB_MaSP);
+            this.Controls.Add(this.btn_QuayLaiLSP);
+            this.Controls.Add(this.dgv_LoaiSanPham);
+            this.Controls.Add(this.btn_LuuLSP);
+            this.Controls.Add(this.btn_SuaLSP);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_XoaLSP);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_ThemLSP);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txt_XuatXuLSP);
+            this.Controls.Add(this.txt_TenLSP);
+            this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "LoaiSP";
+            this.Text = "LoaiSP";
+            this.Load += new System.EventHandler(this.LoaiSP_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiSanPham)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.Button btn_QuayLaiLSP;
+        private System.Windows.Forms.Button btn_LuuLSP;
+        private System.Windows.Forms.Button btn_SuaLSP;
+        private System.Windows.Forms.Button btn_XoaLSP;
+        private System.Windows.Forms.Button btn_ThemLSP;
+        private System.Windows.Forms.TextBox txt_XuatXuLSP;
+        private System.Windows.Forms.TextBox txt_TenLSP;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgv_LoaiSanPham;
+        private System.Windows.Forms.ComboBox cbB_MaSP;
+    }
+}
