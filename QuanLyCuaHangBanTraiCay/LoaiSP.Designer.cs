@@ -53,6 +53,7 @@
             this.btn_QuayLaiLSP.Text = "Quay Lại";
             this.btn_QuayLaiLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_QuayLaiLSP.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiLSP.Click += new System.EventHandler(this.btn_QuayLaiLSP_Click);
             // 
             // btn_SuaLSP
             // 
@@ -148,6 +149,7 @@
             this.dgv_LoaiSanPham.RowTemplate.Height = 24;
             this.dgv_LoaiSanPham.Size = new System.Drawing.Size(1014, 236);
             this.dgv_LoaiSanPham.TabIndex = 2;
+            this.dgv_LoaiSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LoaiSanPham_CellContentClick);
             // 
             // cbB_MaSP
             // 

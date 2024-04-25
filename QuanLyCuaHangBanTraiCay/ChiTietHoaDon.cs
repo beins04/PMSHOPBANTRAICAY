@@ -16,5 +16,12 @@ namespace QuanLyCuaHangBanTraiCay
         {
             InitializeComponent();
         }
+
+        private void btn_TaoMoiHoaDon_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TrangHoaDon ql = new TrangHoaDon();
+            ql.Show();
+        }
     }
 }

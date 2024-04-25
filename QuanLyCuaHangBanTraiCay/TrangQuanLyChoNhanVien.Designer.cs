@@ -35,18 +35,15 @@
             this.btn_DoiMatKhau = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btn_DangXuat = new System.Windows.Forms.Button();
-            this.btn_DoanhThu = new System.Windows.Forms.Button();
             this.btn_KhoHang = new System.Windows.Forms.Button();
             this.btn_KhachHang = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +90,7 @@
             // 
             // btn_DoiMatKhau
             // 
-            this.btn_DoiMatKhau.Location = new System.Drawing.Point(504, 338);
+            this.btn_DoiMatKhau.Location = new System.Drawing.Point(332, 138);
             this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
             this.btn_DoiMatKhau.Size = new System.Drawing.Size(84, 40);
             this.btn_DoiMatKhau.TabIndex = 31;
@@ -104,7 +101,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.DoiMatKhau;
-            this.pictureBox7.Location = new System.Drawing.Point(483, 229);
+            this.pictureBox7.Location = new System.Drawing.Point(309, 29);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(126, 103);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,16 +117,6 @@
             this.btn_DangXuat.Text = "Đăng Xuất";
             this.btn_DangXuat.UseVisualStyleBackColor = true;
             this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
-            // 
-            // btn_DoanhThu
-            // 
-            this.btn_DoanhThu.Location = new System.Drawing.Point(332, 138);
-            this.btn_DoanhThu.Name = "btn_DoanhThu";
-            this.btn_DoanhThu.Size = new System.Drawing.Size(84, 40);
-            this.btn_DoanhThu.TabIndex = 28;
-            this.btn_DoanhThu.Text = "Doanh Thu";
-            this.btn_DoanhThu.UseVisualStyleBackColor = true;
-            this.btn_DoanhThu.Click += new System.EventHandler(this.btn_DoanhThu_Click);
             // 
             // btn_KhoHang
             // 
@@ -161,16 +148,6 @@
             this.pictureBox6.TabIndex = 23;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.ThongKeDoanhThu;
-            this.pictureBox5.Location = new System.Drawing.Point(309, 29);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(120, 103);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 22;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.KhoHang;
@@ -196,7 +173,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.Uwu;
-            this.ClientSize = new System.Drawing.Size(634, 630);
+            this.ClientSize = new System.Drawing.Size(529, 630);
             this.Controls.Add(this.btn_HoaDon);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.btn_SanPham);
@@ -204,11 +181,9 @@
             this.Controls.Add(this.btn_DoiMatKhau);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.btn_DangXuat);
-            this.Controls.Add(this.btn_DoanhThu);
             this.Controls.Add(this.btn_KhoHang);
             this.Controls.Add(this.btn_KhachHang);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,7 +193,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -234,11 +208,9 @@
         private System.Windows.Forms.Button btn_DoiMatKhau;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Button btn_DangXuat;
-        private System.Windows.Forms.Button btn_DoanhThu;
         private System.Windows.Forms.Button btn_KhoHang;
         private System.Windows.Forms.Button btn_KhachHang;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
     }

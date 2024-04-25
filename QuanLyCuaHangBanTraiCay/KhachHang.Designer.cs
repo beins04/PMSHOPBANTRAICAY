@@ -89,6 +89,7 @@
             this.btn_QuayLaiTrangKH.Text = "Quay Lại";
             this.btn_QuayLaiTrangKH.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_QuayLaiTrangKH.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiTrangKH.Click += new System.EventHandler(this.btn_QuayLaiTrangKH_Click);
             // 
             // btn_SuaKH
             // 
@@ -272,6 +273,7 @@
             this.dgv_KhachHang.RowTemplate.Height = 24;
             this.dgv_KhachHang.Size = new System.Drawing.Size(992, 230);
             this.dgv_KhachHang.TabIndex = 31;
+            this.dgv_KhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_KhachHang_CellContentClick);
             // 
             // cbB_MaKhachHang
             // 

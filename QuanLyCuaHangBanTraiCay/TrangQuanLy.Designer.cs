@@ -216,6 +216,7 @@
             this.btn_SanPham.TabIndex = 15;
             this.btn_SanPham.Text = "Sản Phẩm";
             this.btn_SanPham.UseVisualStyleBackColor = true;
+            this.btn_SanPham.Click += new System.EventHandler(this.btn_SanPham_Click);
             // 
             // pictureBox9
             // 

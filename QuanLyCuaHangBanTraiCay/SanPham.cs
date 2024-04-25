@@ -69,6 +69,7 @@ namespace QuanLyCuaHangBanTraiCay
         }
         private void SanPham_Load(object sender, EventArgs e)
         {
+            chk_TrangThai.Checked = true;
             hienThi();
             XemDanhSachSanPham();
         }
@@ -93,16 +94,16 @@ namespace QuanLyCuaHangBanTraiCay
                 MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message);
             }
         }
-       
+
         //THÊM SẢN PHẨM
-        public bool ThemSanPham(string sTenSanPham, int iMaNCC, int iMaLSP, float fKhoiLuongNhap, decimal dGiaNhap, decimal dGiaBan, string sNgayNhap, string sXuatXu, string sTrangThai, int iKhuyenMai)
+        public bool ThemSanPham(string sTenSanPham, int iMaNCC, int iMaLSP, float fKhoiLuongNhap, decimal dGiaNhap, decimal dGiaBan, string sNgayNhap, string sXuatXu, int iTrangThai, int iKhuyenMai)
         {
 
             bool kq;
             kq = true;
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSql = string.Format("INSERT INTO SanPham VALUES (N'{0}', N'{1}', N'{2}', '{3}', '{4}', '{5}', N'{6}', N'{7}', N'{8}','{9}')", sTenSanPham, iMaNCC, iMaLSP, fKhoiLuongNhap, dGiaNhap, dGiaBan, sNgayNhap, sXuatXu, sTrangThai, iKhuyenMai);
+            string sSql = string.Format("INSERT INTO SanPham VALUES (N'{0}', N'{1}', N'{2}', '{3}', '{4}', '{5}', N'{6}', N'{7}', N'{8}','{9}')", sTenSanPham, iMaNCC, iMaLSP, fKhoiLuongNhap, dGiaNhap, dGiaBan, sNgayNhap, sXuatXu, iTrangThai, iKhuyenMai);
             MessageBox.Show(sSql);
 
             try
@@ -125,26 +126,33 @@ namespace QuanLyCuaHangBanTraiCay
 
         private void btn_ThemSP_Click(object sender, EventArgs e)
         {
-            string sNgay, sTenSP, sXuatXu, sTrangThai;
-            int  iKhuyenmai, iMaNCC, iMaLSP;
-            float fKhoiLuongNhap;
-            decimal dGiaNhap, dGiaBan;
+            string Ngay, TenSP, XuatXu;
+            int Khuyenmai, MaNCC, MaLSP, TrangThai;
+            float KhoiLuongNhap;
+            decimal GiaNhap, GiaBan;
 
-            sTenSP = txt_TenSP.Text;
-            sXuatXu = txt_XuatXu.Text;
-            sTrangThai = rad_ConHang.Checked ? "Còn hàng" : "Hết hàng";
+            TenSP = txt_TenSP.Text;
+            XuatXu = txt_XuatXu.Text;
+            if (chk_TrangThai.Checked == true)
+            {
+                TrangThai = 1;
+            }
+            else
+            {
+                TrangThai = 0;
+            }
 
 
 
-            iMaNCC = (int)cbB_NCC.SelectedValue;
-            iMaLSP = (int)cbo_LoaiSP.SelectedValue;
-            iKhuyenmai = int.Parse(txt_KhuyenMai.Text);
-            fKhoiLuongNhap = float.Parse(txt_KhoiLuongNhap.Text);
-            dGiaNhap = decimal.Parse(txt_GiaNhap.Text);
-            dGiaBan = decimal.Parse(txt_GiaBan.Text);
+            MaNCC = (int)cbB_NCC.SelectedValue;
+            MaLSP = (int)cbo_LoaiSP.SelectedValue;
+            Khuyenmai = int.Parse(txt_KhuyenMai.Text);
+            KhoiLuongNhap = float.Parse(txt_KhoiLuongNhap.Text);
+            GiaNhap = decimal.Parse(txt_GiaNhap.Text);
+            GiaBan = decimal.Parse(txt_GiaBan.Text);
             //yyyy-MM-dd
-            sNgay = dt_Ngay.Value.ToString("yyyy-MM-dd");
-            bool kq = ThemSanPham(sTenSP, iMaNCC, iMaLSP, fKhoiLuongNhap, dGiaNhap, dGiaBan, sNgay, sXuatXu, sTrangThai, iKhuyenmai);
+            Ngay = dt_Ngay.Value.ToString("yyyy-MM-dd");
+            bool kq = ThemSanPham(TenSP, MaNCC, MaLSP, KhoiLuongNhap, GiaNhap, GiaBan, Ngay, XuatXu, TrangThai, Khuyenmai);
             if (kq)
             {
                 MessageBox.Show("Đã thêm Sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -161,7 +169,7 @@ namespace QuanLyCuaHangBanTraiCay
         public void XoaSanPham()
         {
             int MaSP = (int)cbB_Masp.SelectedValue;
-            
+
             SqlConnection myConnection = new SqlConnection(scon);
             string sSQL = "DELETE FROM SANPHAM WHERE MaSP = @masanpham";
             try
@@ -196,83 +204,97 @@ namespace QuanLyCuaHangBanTraiCay
             XemDanhSachSanPham();
         }
 
-        private void cbB_Masp_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //SỬA SẢN PHẨM
-        //    public void SuaSanPham()
-        //    {
-        //        int TrangThai;
-        //        int MaSP = (int)cbB_Masp.SelectedValue;
-        //        if (rad_ConHang.Checked == false)
-        //        {
-        //            TrangThai = 0;
-        //        }
-        //        else
-        //        {
-        //            TrangThai = 1;
-        //        }
+        public void SuaSanPham()
+        {
+            int TrangThai;
+            int MaSP = (int)cbB_Masp.SelectedValue;
+            if (chk_TrangThai.Checked == false)
+            {
+                TrangThai = 0;
+            }
+            else
+            {
+                TrangThai = 1;
+            }
 
-        //        // Khởi tạo kết nối
-        //        using (SqlConnection myConnection = new SqlConnection(scon))
-        //        {
-        //            // Chuỗi truy vấn cập nhật
-        //            string sSQL = "UPDATE SANPHAM SET TenSP = @TenSP, MaNCC = @MaNCC, MaLSP = @MaLSP, KhoiLuongNhap = @KhoiLuong, GiaNhap = @GiaNhap, GiaBan = @GiaBan,NgayNhap = @Ngay, XuatXu = @XuatXu, TrangThai = @TrangThai, KhuyenMai = @KhuyenMai WHERE MaSP = @MaSP";
+            // Khởi tạo kết nối
+            using (SqlConnection myConnection = new SqlConnection(scon))
+            {
+                // Chuỗi truy vấn cập nhật
+                string sSQL = "UPDATE SANPHAM SET TenSP = @TenSP, MaNCC = @MaNCC, MaLSP = @MaLSP, KhoiLuongNhap = @KhoiLuong, GiaNhap = @GiaNhap, GiaBan = @GiaBan,NgayNhap = @Ngay, XuatXu = @XuatXu, TrangThai = @TrangThai, KhuyenMai = @KhuyenMai WHERE MaSP = @MaSP";
 
-        //            try
-        //            {
-        //                myConnection.Open();
-        //                // Khởi tạo đối tượng SqlCommand
-        //                using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
-        //                {
-        //                    // Thêm các tham số vào truy vấn
-        //                    cmd.Parameters.AddWithValue("@TenSP", txt_TenSP.Text);
-        //                    cmd.Parameters.AddWithValue("@MaNCC", cbB_NCC.Text);
-        //                    cmd.Parameters.AddWithValue("@MaLSP", cbo_LoaiSP.Text);
-        //                    cmd.Parameters.AddWithValue("@KhoiLuong", txt_KhoiLuongNhap.Text);
-        //                    cmd.Parameters.AddWithValue("@GiaNhap", txt_GiaNhap.Text);
-        //                    cmd.Parameters.AddWithValue("@GiaBan", txt_GiaBan.Text);
-        //                    cmd.Parameters.AddWithValue("@NgayNhap", dt_Ngay.Text);
-        //                    cmd.Parameters.AddWithValue("@XuatXu", txt_XuatXu.Text);
-        //                    cmd.Parameters.AddWithValue("@TrangThai", TrangThai);
-        //                    cmd.Parameters.AddWithValue("@KhuyenMai", txt_KhuyenMai.Text);
-        //                    cmd.Parameters.AddWithValue("@MaSP", MaSP);
+                try
+                {
+                    myConnection.Open();
+                    // Khởi tạo đối tượng SqlCommand
+                    using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
+                    {
+                        // Thêm các tham số vào truy vấn
+                        cmd.Parameters.AddWithValue("@TenSP", txt_TenSP.Text);
+                        cmd.Parameters.AddWithValue("@MaNCC", cbB_NCC.Text);
+                        cmd.Parameters.AddWithValue("@MaLSP", cbo_LoaiSP.Text);
+                        cmd.Parameters.AddWithValue("@KhoiLuong", txt_KhoiLuongNhap.Text);
+                        cmd.Parameters.AddWithValue("@GiaNhap", txt_GiaNhap.Text);
+                        cmd.Parameters.AddWithValue("@GiaBan", txt_GiaBan.Text);
+                        cmd.Parameters.AddWithValue("@Ngay", dt_Ngay.Value.ToShortDateString());
+                        cmd.Parameters.AddWithValue("@XuatXu", txt_XuatXu.Text);
+                        cmd.Parameters.AddWithValue("@TrangThai", TrangThai);
+                        cmd.Parameters.AddWithValue("@KhuyenMai", txt_KhuyenMai.Text);
+                        cmd.Parameters.AddWithValue("@MaSP", MaSP);
 
-        //                    // Thực thi truy vấn cập nhật
-        //                    int rowsAffected = cmd.ExecuteNonQuery();
-        //                    if (rowsAffected > 0)
-        //                    {
-        //                        MessageBox.Show("Bạn đã thay đổi thành công sản phẩm có mã sản phẩm là : " + MaSP, "Thông báo");
-        //                    }
-        //                    else
-        //                    {
-        //                        MessageBox.Show("Không có sản phẩm nào được cập nhật.", "Thông báo");
-        //                    }
-        //                }
-        //            }
-        //            catch (Exception ex)
-        //            {
-        //                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
-        //            }
-        //        }
+                        // Thực thi truy vấn cập nhật
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Bạn đã thay đổi thành công sản phẩm có mã sản phẩm là : " + MaSP, "Thông báo");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không có sản phẩm nào được cập nhật.", "Thông báo");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                }
+            }
 
-        //    }
-        //    private void btn_SuaSP_Click(object sender, EventArgs e)
-        //    {
-        //        SuaSanPham();
-        //        XemDanhSachSanPham();
-        //    }
+        }
+        private void btn_SuaSP_Click_1(object sender, EventArgs e)
+        {
+            SuaSanPham();
+            XemDanhSachSanPham();
+        }
+        private void dgv_SanPham_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dgv_SanPham.CurrentRow.Index;
+            cbB_Masp.Text = dgv_SanPham.Rows[i].Cells[0].Value.ToString();
+            txt_TenSP.Text = dgv_SanPham.Rows[i].Cells[1].Value.ToString();
+            cbB_NCC.Text = dgv_SanPham.Rows[i].Cells[2].Value.ToString();
+            cbo_LoaiSP.Text = dgv_SanPham.Rows[i].Cells[3].Value.ToString();
+            txt_KhoiLuongNhap.Text = dgv_SanPham.Rows[i].Cells[4].Value.ToString();
+            txt_GiaNhap.Text = dgv_SanPham.Rows[i].Cells[5].Value.ToString();
+            txt_GiaBan.Text = dgv_SanPham.Rows[i].Cells[6].Value.ToString();
+            dt_Ngay.Value = DateTime.Parse(dgv_SanPham.Rows[i].Cells[7].Value.ToString());
+            txt_XuatXu.Text = dgv_SanPham.Rows[i].Cells[8].Value.ToString();
+            txt_KhuyenMai.Text = dgv_SanPham.Rows[i].Cells[10].Value.ToString();
+            if ((bool)dgv_SanPham.Rows[i].Cells[9].Value == false)
+            {
+                chk_TrangThai.Checked = false;
+            }
+            else
+            {
+                chk_TrangThai.Checked = true;
+            }
+        }
+
+        private void btn_QuayLaiSP_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TrangQuanLy ql = new TrangQuanLy();
+            ql.Show();
+        }
     }
 }

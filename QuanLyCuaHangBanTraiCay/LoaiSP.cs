@@ -155,5 +155,17 @@ namespace QuanLyCuaHangBanTraiCay
             XoaLoaiSanPham();
             XemDanhSach();
         }
+
+        private void dgv_LoaiSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_QuayLaiLSP_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TrangQuanLy ql = new TrangQuanLy();
+            ql.Show();
+        }
     }
 }

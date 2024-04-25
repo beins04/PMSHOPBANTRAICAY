@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1cc = new System.Windows.Forms.Button();
+            this.btn_QuayLai = new System.Windows.Forms.Button();
             this.ck_TrangThai = new System.Windows.Forms.CheckBox();
             this.btn_SuaNCCcc = new System.Windows.Forms.Button();
             this.btn_XoaNCCcc = new System.Windows.Forms.Button();
@@ -46,17 +46,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCungCap)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1cc
+            // btn_QuayLai
             // 
-            this.button1cc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1cc.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.quaylai;
-            this.button1cc.Location = new System.Drawing.Point(499, 168);
-            this.button1cc.Name = "button1cc";
-            this.button1cc.Size = new System.Drawing.Size(138, 53);
-            this.button1cc.TabIndex = 26;
-            this.button1cc.Text = "Quay Lại";
-            this.button1cc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1cc.UseVisualStyleBackColor = true;
+            this.btn_QuayLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuayLai.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.quaylai;
+            this.btn_QuayLai.Location = new System.Drawing.Point(499, 168);
+            this.btn_QuayLai.Name = "btn_QuayLai";
+            this.btn_QuayLai.Size = new System.Drawing.Size(138, 53);
+            this.btn_QuayLai.TabIndex = 26;
+            this.btn_QuayLai.Text = "Quay Lại";
+            this.btn_QuayLai.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_QuayLai.UseVisualStyleBackColor = true;
+            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
             // ck_TrangThai
             // 
@@ -190,6 +191,7 @@
             this.dgv_NhaCungCap.RowTemplate.Height = 24;
             this.dgv_NhaCungCap.Size = new System.Drawing.Size(711, 233);
             this.dgv_NhaCungCap.TabIndex = 4;
+            this.dgv_NhaCungCap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhaCungCap_CellContentClick);
             // 
             // cbB_MaNCC
             // 
@@ -208,7 +210,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(870, 484);
             this.Controls.Add(this.cbB_MaNCC);
-            this.Controls.Add(this.button1cc);
+            this.Controls.Add(this.btn_QuayLai);
             this.Controls.Add(this.dgv_NhaCungCap);
             this.Controls.Add(this.ck_TrangThai);
             this.Controls.Add(this.txt_TenNhaCungCap);
@@ -246,7 +248,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgv_NhaCungCap;
-        private System.Windows.Forms.Button button1cc;
+        private System.Windows.Forms.Button btn_QuayLai;
         private System.Windows.Forms.ComboBox cbB_MaNCC;
     }
 }

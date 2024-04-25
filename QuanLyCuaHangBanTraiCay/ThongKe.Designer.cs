@@ -339,6 +339,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ThongKe";
             this.Text = "Thống kê doanh thu";
+            this.Load += new System.EventHandler(this.ThongKe_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

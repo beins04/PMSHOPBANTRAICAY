@@ -32,8 +32,6 @@
             this.cbB_Masp = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.rad_HetHang = new System.Windows.Forms.RadioButton();
-            this.rad_ConHang = new System.Windows.Forms.RadioButton();
             this.cbB_NCC = new System.Windows.Forms.ComboBox();
             this.cbo_LoaiSP = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -67,6 +65,7 @@
             this.btn_SuaSP = new System.Windows.Forms.Button();
             this.btn_XoaSP = new System.Windows.Forms.Button();
             this.btn_ThemSP = new System.Windows.Forms.Button();
+            this.chk_TrangThai = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SanPham)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +78,6 @@
             this.cbB_Masp.Name = "cbB_Masp";
             this.cbB_Masp.Size = new System.Drawing.Size(134, 31);
             this.cbB_Masp.TabIndex = 41;
-            this.cbB_Masp.SelectedIndexChanged += new System.EventHandler(this.cbB_Masp_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -90,7 +88,6 @@
             this.label16.Size = new System.Drawing.Size(42, 23);
             this.label16.TabIndex = 40;
             this.label16.Text = "(%)";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label1
             // 
@@ -101,30 +98,6 @@
             this.label1.Size = new System.Drawing.Size(133, 23);
             this.label1.TabIndex = 38;
             this.label1.Text = "Mã Sản Phẩm:";
-            // 
-            // rad_HetHang
-            // 
-            this.rad_HetHang.AutoSize = true;
-            this.rad_HetHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_HetHang.Location = new System.Drawing.Point(274, 170);
-            this.rad_HetHang.Name = "rad_HetHang";
-            this.rad_HetHang.Size = new System.Drawing.Size(113, 27);
-            this.rad_HetHang.TabIndex = 37;
-            this.rad_HetHang.TabStop = true;
-            this.rad_HetHang.Text = "Hết Hàng";
-            this.rad_HetHang.UseVisualStyleBackColor = true;
-            // 
-            // rad_ConHang
-            // 
-            this.rad_ConHang.AutoSize = true;
-            this.rad_ConHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_ConHang.Location = new System.Drawing.Point(154, 170);
-            this.rad_ConHang.Name = "rad_ConHang";
-            this.rad_ConHang.Size = new System.Drawing.Size(115, 27);
-            this.rad_ConHang.TabIndex = 36;
-            this.rad_ConHang.TabStop = true;
-            this.rad_ConHang.Text = "Còn Hàng";
-            this.rad_ConHang.UseVisualStyleBackColor = true;
             // 
             // cbB_NCC
             // 
@@ -163,7 +136,6 @@
             this.label13.Size = new System.Drawing.Size(54, 23);
             this.label13.TabIndex = 23;
             this.label13.Text = "(KG)";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label12
             // 
@@ -330,8 +302,9 @@
             this.dgv_SanPham.Name = "dgv_SanPham";
             this.dgv_SanPham.RowHeadersWidth = 51;
             this.dgv_SanPham.RowTemplate.Height = 24;
-            this.dgv_SanPham.Size = new System.Drawing.Size(1046, 393);
+            this.dgv_SanPham.Size = new System.Drawing.Size(1148, 393);
             this.dgv_SanPham.TabIndex = 0;
+            this.dgv_SanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_SanPham_CellClick_1);
             // 
             // groupBox3
             // 
@@ -397,7 +370,7 @@
             // dt_Ngay
             // 
             this.dt_Ngay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dt_Ngay.Location = new System.Drawing.Point(871, 14);
+            this.dt_Ngay.Location = new System.Drawing.Point(871, 23);
             this.dt_Ngay.Name = "dt_Ngay";
             this.dt_Ngay.Size = new System.Drawing.Size(300, 30);
             this.dt_Ngay.TabIndex = 20;
@@ -406,25 +379,27 @@
             // 
             this.btn_QuayLaiSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_QuayLaiSP.Image = ((System.Drawing.Image)(resources.GetObject("btn_QuayLaiSP.Image")));
-            this.btn_QuayLaiSP.Location = new System.Drawing.Point(775, 300);
+            this.btn_QuayLaiSP.Location = new System.Drawing.Point(921, 301);
             this.btn_QuayLaiSP.Name = "btn_QuayLaiSP";
             this.btn_QuayLaiSP.Size = new System.Drawing.Size(148, 47);
             this.btn_QuayLaiSP.TabIndex = 30;
             this.btn_QuayLaiSP.Text = "Quay Lại";
             this.btn_QuayLaiSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_QuayLaiSP.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiSP.Click += new System.EventHandler(this.btn_QuayLaiSP_Click);
             // 
             // btn_SuaSP
             // 
             this.btn_SuaSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SuaSP.Image = ((System.Drawing.Image)(resources.GetObject("btn_SuaSP.Image")));
-            this.btn_SuaSP.Location = new System.Drawing.Point(942, 300);
+            this.btn_SuaSP.Location = new System.Drawing.Point(782, 301);
             this.btn_SuaSP.Name = "btn_SuaSP";
             this.btn_SuaSP.Size = new System.Drawing.Size(108, 47);
             this.btn_SuaSP.TabIndex = 28;
             this.btn_SuaSP.Text = "Sửa";
             this.btn_SuaSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_SuaSP.UseVisualStyleBackColor = true;
+            this.btn_SuaSP.Click += new System.EventHandler(this.btn_SuaSP_Click_1);
             // 
             // btn_XoaSP
             // 
@@ -454,6 +429,15 @@
             this.btn_ThemSP.UseVisualStyleBackColor = true;
             this.btn_ThemSP.Click += new System.EventHandler(this.btn_ThemSP_Click);
             // 
+            // chk_TrangThai
+            // 
+            this.chk_TrangThai.AutoSize = true;
+            this.chk_TrangThai.Location = new System.Drawing.Point(163, 178);
+            this.chk_TrangThai.Name = "chk_TrangThai";
+            this.chk_TrangThai.Size = new System.Drawing.Size(18, 17);
+            this.chk_TrangThai.TabIndex = 42;
+            this.chk_TrangThai.UseVisualStyleBackColor = true;
+            // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -462,16 +446,15 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1218, 759);
+            this.Controls.Add(this.chk_TrangThai);
             this.Controls.Add(this.dgv_SanPham);
             this.Controls.Add(this.btn_QuayLaiSP);
             this.Controls.Add(this.cbo_LoaiSP);
-            this.Controls.Add(this.rad_HetHang);
             this.Controls.Add(this.btn_SuaSP);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btn_XoaSP);
             this.Controls.Add(this.btn_ThemSP);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.rad_ConHang);
             this.Controls.Add(this.cbB_Masp);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.cbB_NCC);
@@ -539,12 +522,11 @@
         private System.Windows.Forms.DataGridView dgv_SanPham;
         private System.Windows.Forms.ComboBox cbo_LoaiSP;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.RadioButton rad_HetHang;
-        private System.Windows.Forms.RadioButton rad_ConHang;
         private System.Windows.Forms.ComboBox cbB_NCC;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbB_Masp;
         private System.Windows.Forms.DateTimePicker dt_Ngay;
+        private System.Windows.Forms.CheckBox chk_TrangThai;
     }
 }

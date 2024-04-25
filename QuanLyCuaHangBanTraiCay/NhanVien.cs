@@ -177,5 +177,12 @@ namespace QuanLyCuaHangBanTraiCay
         {
 
         }
+
+        private void btn_QuayLaiTrangNV_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TrangQuanLy ql = new TrangQuanLy();
+            ql.Show();
+        }
     }
 }

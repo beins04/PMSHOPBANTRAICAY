@@ -136,6 +136,7 @@
             this.btn_TaoMoiHoaDon.Text = "Tạo Mới";
             this.btn_TaoMoiHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_TaoMoiHoaDon.UseVisualStyleBackColor = true;
+            this.btn_TaoMoiHoaDon.Click += new System.EventHandler(this.btn_TaoMoiHoaDon_Click);
             // 
             // btn_XuatHoaDon
             // 

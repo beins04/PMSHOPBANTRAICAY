@@ -107,18 +107,6 @@ namespace QuanLyCuaHangBanTraiCay
             this.Close();
         }
 
-        private void btn_SanPham_Click(object sender, EventArgs e)
-        {
-            // Tạo một thể hiện mới của form sản phẩm
-            SanPham Product = new SanPham();
-
-            // Hiển thị form sản phẩm
-            Product.Show();
-
-            // Đóng form trang chủ
-            this.Close();
-        }
-
         private void btn_HoaDon_Click_1(object sender, EventArgs e)
         {
             // Tạo một thể hiện mới của form hóa đơn
@@ -131,6 +119,16 @@ namespace QuanLyCuaHangBanTraiCay
             this.Close();
         }
 
-        
+        private void btn_SanPham_Click(object sender, EventArgs e)
+        {
+            // Tạo một thể hiện mới của form sản phẩm
+            SanPham Product = new SanPham();
+
+            // Hiển thị form sản phẩm
+            Product.Show();
+
+            // Đóng form trang chủ
+            this.Close();
+        }
     }
 }

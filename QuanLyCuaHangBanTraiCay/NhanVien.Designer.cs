@@ -267,6 +267,7 @@
             this.btn_QuayLaiTrangNV.Text = "Quay Lại";
             this.btn_QuayLaiTrangNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_QuayLaiTrangNV.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiTrangNV.Click += new System.EventHandler(this.btn_QuayLaiTrangNV_Click);
             // 
             // btn_SuaNV
             // 

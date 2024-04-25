@@ -19,31 +19,6 @@ namespace QuanLyCuaHangBanTraiCay
         }
         string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
 
-        private void hienThi()
-        {
-            SqlConnection myConnection = new SqlConnection(scon);
-
-            string sSQL = "SELECT MaCTPN FROM CHITIETPHIEUNHAP";
-
-            try
-            {
-                myConnection.Open();
-
-                SqlDataAdapter myDataAdapter = new SqlDataAdapter(sSQL, myConnection);
-                DataSet ds = new DataSet();
-                myDataAdapter.Fill(ds);
-
-                myConnection.Close();
-
-                cbB_MaSPN.DataSource = ds.Tables[0];
-                cbB_MaSPN.DisplayMember = "MaCTPN";
-                cbB_MaSPN.ValueMember = "MaCTPN";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi. Chi tiet: " + ex.Message);
-            }
-        }
         public void XemDanhSach()
         {
 
@@ -53,26 +28,29 @@ namespace QuanLyCuaHangBanTraiCay
             {
                 myConnection.Open();
 
-                SqlDataAdapter daKhachHang = new SqlDataAdapter(sSQL, myConnection);
-                DataSet dsKhachHang = new DataSet();
-                daKhachHang.Fill(dsKhachHang);
+                SqlDataAdapter daChiTietPN = new SqlDataAdapter(sSQL, myConnection);
+                DataSet dsChiTietPN = new DataSet();
+                daChiTietPN.Fill(dsChiTietPN);
 
                 myConnection.Close();
-                dgv_ChiTiet.DataSource = dsKhachHang.Tables[0];
+                dgv_ChiTiet.DataSource = dsChiTietPN.Tables[0];
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message);
             }
         }
-        private void ChiTietPhieuNhap_Load(object sender, EventArgs e)
+        
+        private void btn_QuayLai_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            PhieuNhap ql = new PhieuNhap();
+            ql.Show();
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void dgv_ChiTiet_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            XemDanhSach();
         }
     }
 }
