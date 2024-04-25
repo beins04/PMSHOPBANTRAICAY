@@ -58,7 +58,7 @@ namespace QuanLyCuaHangBanTraiCay
                 daKhachHang.Fill(dsKhachHang);
 
                 myConnection.Close();
-                dgv_KhachHang.DataSource = dsKhachHang.Tables[0];
+                dgv_ChiTiet.DataSource = dsKhachHang.Tables[0];
             }
             catch (Exception ex)
             {
@@ -66,6 +66,11 @@ namespace QuanLyCuaHangBanTraiCay
             }
         }
         private void ChiTietPhieuNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }

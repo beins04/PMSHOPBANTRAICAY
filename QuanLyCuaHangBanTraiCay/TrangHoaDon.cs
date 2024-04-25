@@ -26,5 +26,10 @@ namespace QuanLyCuaHangBanTraiCay
         {
 
         }
+
+        private void txt_TongTien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

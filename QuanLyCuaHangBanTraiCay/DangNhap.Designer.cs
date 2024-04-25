@@ -77,76 +77,81 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Olive;
             this.label2.Location = new System.Drawing.Point(305, 150);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 42);
+            this.label2.Size = new System.Drawing.Size(178, 38);
             this.label2.TabIndex = 1;
             this.label2.Text = "Đăng nhập";
             // 
             // txt_TaiKhoan
             // 
+            this.txt_TaiKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TaiKhoan.Location = new System.Drawing.Point(272, 221);
             this.txt_TaiKhoan.Name = "txt_TaiKhoan";
-            this.txt_TaiKhoan.Size = new System.Drawing.Size(277, 22);
+            this.txt_TaiKhoan.Size = new System.Drawing.Size(277, 30);
             this.txt_TaiKhoan.TabIndex = 2;
             // 
             // txt_MatKhau
             // 
+            this.txt_MatKhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MatKhau.Location = new System.Drawing.Point(272, 274);
             this.txt_MatKhau.Name = "txt_MatKhau";
-            this.txt_MatKhau.Size = new System.Drawing.Size(277, 22);
+            this.txt_MatKhau.Size = new System.Drawing.Size(277, 30);
             this.txt_MatKhau.TabIndex = 3;
             // 
             // btn_DangNhap
             // 
-            this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DangNhap.ForeColor = System.Drawing.Color.Olive;
-            this.btn_DangNhap.Location = new System.Drawing.Point(367, 357);
+            this.btn_DangNhap.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.enter;
+            this.btn_DangNhap.Location = new System.Drawing.Point(312, 371);
             this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(106, 29);
+            this.btn_DangNhap.Size = new System.Drawing.Size(199, 46);
             this.btn_DangNhap.TabIndex = 4;
             this.btn_DangNhap.Text = "Đăng Nhập";
+            this.btn_DangNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_DangNhap.UseVisualStyleBackColor = true;
             this.btn_DangNhap.Click += new System.EventHandler(this.btn_DangNhap_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(127, 221);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 19);
+            this.label3.Size = new System.Drawing.Size(104, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tài Khoản:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(127, 277);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 19);
+            this.label4.Size = new System.Drawing.Size(101, 23);
             this.label4.TabIndex = 6;
             this.label4.Text = "Mật Khẩu:";
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Nhân Viên",
             "Quản Lý"});
-            this.comboBox1.Location = new System.Drawing.Point(272, 315);
+            this.comboBox1.Location = new System.Drawing.Point(272, 325);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 23);
+            this.comboBox1.Size = new System.Drawing.Size(159, 31);
             this.comboBox1.TabIndex = 7;
             // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.nền;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(807, 462);
             this.Controls.Add(this.comboBox1);

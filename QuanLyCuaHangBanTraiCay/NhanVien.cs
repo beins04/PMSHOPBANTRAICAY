@@ -167,5 +167,15 @@ namespace QuanLyCuaHangBanTraiCay
             XoaNhaCungCap();
             XemDanhSach();
         }
+
+        private void rad_Nam_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rad_Nu_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

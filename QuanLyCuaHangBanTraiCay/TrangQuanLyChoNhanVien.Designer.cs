@@ -53,7 +53,7 @@
             // 
             // btn_HoaDon
             // 
-            this.btn_HoaDon.Location = new System.Drawing.Point(525, 338);
+            this.btn_HoaDon.Location = new System.Drawing.Point(120, 528);
             this.btn_HoaDon.Name = "btn_HoaDon";
             this.btn_HoaDon.Size = new System.Drawing.Size(84, 40);
             this.btn_HoaDon.TabIndex = 35;
@@ -64,16 +64,16 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.e3158b8c0745ca96b65af64749b508f7;
-            this.pictureBox9.Location = new System.Drawing.Point(498, 229);
+            this.pictureBox9.Location = new System.Drawing.Point(102, 419);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(126, 103);
+            this.pictureBox9.Size = new System.Drawing.Size(130, 103);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 34;
             this.pictureBox9.TabStop = false;
             // 
             // btn_SanPham
             // 
-            this.btn_SanPham.Location = new System.Drawing.Point(699, 238);
+            this.btn_SanPham.Location = new System.Drawing.Point(332, 528);
             this.btn_SanPham.Name = "btn_SanPham";
             this.btn_SanPham.Size = new System.Drawing.Size(84, 40);
             this.btn_SanPham.TabIndex = 33;
@@ -84,16 +84,16 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.sanpham;
-            this.pictureBox8.Location = new System.Drawing.Point(678, 128);
+            this.pictureBox8.Location = new System.Drawing.Point(309, 417);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(126, 105);
+            this.pictureBox8.Size = new System.Drawing.Size(120, 105);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 32;
             this.pictureBox8.TabStop = false;
             // 
             // btn_DoiMatKhau
             // 
-            this.btn_DoiMatKhau.Location = new System.Drawing.Point(525, 138);
+            this.btn_DoiMatKhau.Location = new System.Drawing.Point(504, 338);
             this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
             this.btn_DoiMatKhau.Size = new System.Drawing.Size(84, 40);
             this.btn_DoiMatKhau.TabIndex = 31;
@@ -104,7 +104,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.DoiMatKhau;
-            this.pictureBox7.Location = new System.Drawing.Point(498, 29);
+            this.pictureBox7.Location = new System.Drawing.Point(483, 229);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(126, 103);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -196,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.Uwu;
-            this.ClientSize = new System.Drawing.Size(829, 401);
+            this.ClientSize = new System.Drawing.Size(634, 630);
             this.Controls.Add(this.btn_HoaDon);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.btn_SanPham);

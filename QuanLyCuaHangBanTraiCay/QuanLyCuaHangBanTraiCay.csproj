@@ -250,5 +250,71 @@
   <ItemGroup>
     <None Include="Resources\e3158b8c0745ca96b65af64749b508f7.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\them.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lammoiall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\them1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lammoiall1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quaylai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suaall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\them2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\themhoadon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\themkhachhang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tinhtien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xemdanhsachsanpham.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xoa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xoaall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xoakhachhang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xuathoadon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xuatthongtinall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\counting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
