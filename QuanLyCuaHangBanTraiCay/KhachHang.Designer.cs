@@ -82,9 +82,9 @@
             // 
             this.btn_QuayLaiTrangKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_QuayLaiTrangKH.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.quaylai;
-            this.btn_QuayLaiTrangKH.Location = new System.Drawing.Point(351, 180);
+            this.btn_QuayLaiTrangKH.Location = new System.Drawing.Point(390, 180);
             this.btn_QuayLaiTrangKH.Name = "btn_QuayLaiTrangKH";
-            this.btn_QuayLaiTrangKH.Size = new System.Drawing.Size(104, 44);
+            this.btn_QuayLaiTrangKH.Size = new System.Drawing.Size(133, 44);
             this.btn_QuayLaiTrangKH.TabIndex = 25;
             this.btn_QuayLaiTrangKH.Text = "Quay Lại";
             this.btn_QuayLaiTrangKH.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -94,9 +94,9 @@
             // 
             this.btn_SuaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SuaKH.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.suaall;
-            this.btn_SuaKH.Location = new System.Drawing.Point(251, 180);
+            this.btn_SuaKH.Location = new System.Drawing.Point(280, 180);
             this.btn_SuaKH.Name = "btn_SuaKH";
-            this.btn_SuaKH.Size = new System.Drawing.Size(78, 44);
+            this.btn_SuaKH.Size = new System.Drawing.Size(95, 44);
             this.btn_SuaKH.TabIndex = 23;
             this.btn_SuaKH.Text = "Sửa";
             this.btn_SuaKH.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -108,7 +108,7 @@
             this.btn_XoaKH.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.xoa;
             this.btn_XoaKH.Location = new System.Drawing.Point(158, 180);
             this.btn_XoaKH.Name = "btn_XoaKH";
-            this.btn_XoaKH.Size = new System.Drawing.Size(72, 44);
+            this.btn_XoaKH.Size = new System.Drawing.Size(108, 44);
             this.btn_XoaKH.TabIndex = 22;
             this.btn_XoaKH.Text = "Xóa";
             this.btn_XoaKH.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -119,9 +119,9 @@
             // 
             this.btn_KhachHang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_KhachHang.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them1;
-            this.btn_KhachHang.Location = new System.Drawing.Point(58, 180);
+            this.btn_KhachHang.Location = new System.Drawing.Point(35, 180);
             this.btn_KhachHang.Name = "btn_KhachHang";
-            this.btn_KhachHang.Size = new System.Drawing.Size(85, 44);
+            this.btn_KhachHang.Size = new System.Drawing.Size(117, 44);
             this.btn_KhachHang.TabIndex = 21;
             this.btn_KhachHang.Text = "Thêm";
             this.btn_KhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
