@@ -52,7 +52,7 @@
             this.btn_XoaNV = new System.Windows.Forms.Button();
             this.btn_ThemNV = new System.Windows.Forms.Button();
             this.txt_MaNV = new System.Windows.Forms.TextBox();
-            this.txt_MaTK = new System.Windows.Forms.TextBox();
+            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.SuspendLayout();
@@ -297,13 +297,14 @@
             this.txt_MaNV.Size = new System.Drawing.Size(230, 34);
             this.txt_MaNV.TabIndex = 29;
             // 
-            // txt_MaTK
+            // cbo_MaTK
             // 
-            this.txt_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaTK.Location = new System.Drawing.Point(211, 64);
-            this.txt_MaTK.Name = "txt_MaTK";
-            this.txt_MaTK.Size = new System.Drawing.Size(230, 34);
-            this.txt_MaTK.TabIndex = 30;
+            this.cbo_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_MaTK.FormattingEnabled = true;
+            this.cbo_MaTK.Location = new System.Drawing.Point(209, 65);
+            this.cbo_MaTK.Name = "cbo_MaTK";
+            this.cbo_MaTK.Size = new System.Drawing.Size(232, 33);
+            this.cbo_MaTK.TabIndex = 30;
             // 
             // NhanVien
             // 
@@ -312,7 +313,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(998, 621);
-            this.Controls.Add(this.txt_MaTK);
+            this.Controls.Add(this.cbo_MaTK);
             this.Controls.Add(this.txt_MaNV);
             this.Controls.Add(this.dgv_NhanVien);
             this.Controls.Add(this.btn_QuayLaiTrangNV);
@@ -368,6 +369,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView dgv_NhanVien;
         private System.Windows.Forms.TextBox txt_MaNV;
-        private System.Windows.Forms.TextBox txt_MaTK;
+        private System.Windows.Forms.ComboBox cbo_MaTK;
     }
 }
