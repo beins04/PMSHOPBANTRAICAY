@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_QuayLai = new System.Windows.Forms.Button();
-            this.ck_TrangThai = new System.Windows.Forms.CheckBox();
+            this.chk_TrangThai = new System.Windows.Forms.CheckBox();
             this.btn_SuaNCCcc = new System.Windows.Forms.Button();
             this.btn_XoaNCCcc = new System.Windows.Forms.Button();
             this.btn_ThemNCCcc = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dgv_NhaCungCap = new System.Windows.Forms.DataGridView();
-            this.cbB_MaNCC = new System.Windows.Forms.ComboBox();
+            this.txt_MaNCC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCungCap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,16 +59,15 @@
             this.btn_QuayLai.UseVisualStyleBackColor = true;
             this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
-            // ck_TrangThai
+            // chk_TrangThai
             // 
-            this.ck_TrangThai.AutoSize = true;
-            this.ck_TrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ck_TrangThai.Location = new System.Drawing.Point(571, 83);
-            this.ck_TrangThai.Name = "ck_TrangThai";
-            this.ck_TrangThai.Size = new System.Drawing.Size(123, 27);
-            this.ck_TrangThai.TabIndex = 24;
-            this.ck_TrangThai.Text = "Hoạt Động";
-            this.ck_TrangThai.UseVisualStyleBackColor = true;
+            this.chk_TrangThai.AutoSize = true;
+            this.chk_TrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_TrangThai.Location = new System.Drawing.Point(571, 83);
+            this.chk_TrangThai.Name = "chk_TrangThai";
+            this.chk_TrangThai.Size = new System.Drawing.Size(18, 17);
+            this.chk_TrangThai.TabIndex = 24;
+            this.chk_TrangThai.UseVisualStyleBackColor = true;
             // 
             // btn_SuaNCCcc
             // 
@@ -81,6 +80,7 @@
             this.btn_SuaNCCcc.Text = "Sửa";
             this.btn_SuaNCCcc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_SuaNCCcc.UseVisualStyleBackColor = true;
+            this.btn_SuaNCCcc.Click += new System.EventHandler(this.btn_SuaNCCcc_Click);
             // 
             // btn_XoaNCCcc
             // 
@@ -193,14 +193,13 @@
             this.dgv_NhaCungCap.TabIndex = 4;
             this.dgv_NhaCungCap.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhaCungCap_CellContentClick);
             // 
-            // cbB_MaNCC
+            // txt_MaNCC
             // 
-            this.cbB_MaNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbB_MaNCC.FormattingEnabled = true;
-            this.cbB_MaNCC.Location = new System.Drawing.Point(224, 37);
-            this.cbB_MaNCC.Name = "cbB_MaNCC";
-            this.cbB_MaNCC.Size = new System.Drawing.Size(196, 31);
-            this.cbB_MaNCC.TabIndex = 27;
+            this.txt_MaNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaNCC.Location = new System.Drawing.Point(224, 37);
+            this.txt_MaNCC.Name = "txt_MaNCC";
+            this.txt_MaNCC.Size = new System.Drawing.Size(196, 30);
+            this.txt_MaNCC.TabIndex = 27;
             // 
             // NhaCungCap
             // 
@@ -209,10 +208,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(870, 484);
-            this.Controls.Add(this.cbB_MaNCC);
+            this.Controls.Add(this.txt_MaNCC);
             this.Controls.Add(this.btn_QuayLai);
             this.Controls.Add(this.dgv_NhaCungCap);
-            this.Controls.Add(this.ck_TrangThai);
+            this.Controls.Add(this.chk_TrangThai);
             this.Controls.Add(this.txt_TenNhaCungCap);
             this.Controls.Add(this.btn_SuaNCCcc);
             this.Controls.Add(this.label13);
@@ -235,7 +234,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox ck_TrangThai;
+        private System.Windows.Forms.CheckBox chk_TrangThai;
         private System.Windows.Forms.Button btn_SuaNCCcc;
         private System.Windows.Forms.Button btn_XoaNCCcc;
         private System.Windows.Forms.Button btn_ThemNCCcc;
@@ -249,6 +248,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgv_NhaCungCap;
         private System.Windows.Forms.Button btn_QuayLai;
-        private System.Windows.Forms.ComboBox cbB_MaNCC;
+        private System.Windows.Forms.TextBox txt_MaNCC;
     }
 }

@@ -30,7 +30,6 @@ namespace QuanLyCuaHangBanTraiCay
 
             string sSQL = "SELECT MaNCC, TenNCC FROM NHACUNGCAP";
             string ssSQL = "SELECT MaLSP, TenLSP FROM LOAISANPHAM";
-            string idspSQL = "SELECT MaSP FROM SANPHAM";
 
             try
             {
@@ -43,10 +42,6 @@ namespace QuanLyCuaHangBanTraiCay
                 DataSet dss = new DataSet();
                 myDataAdaptersql.Fill(dss);
 
-                SqlDataAdapter myDataAdapterid = new SqlDataAdapter(idspSQL, myConnection);
-                DataSet dssp = new DataSet();
-                myDataAdapterid.Fill(dssp);
-
                 myConnection.Close();
 
                 cbB_NCC.DataSource = ds.Tables[0];
@@ -56,11 +51,6 @@ namespace QuanLyCuaHangBanTraiCay
                 cbo_LoaiSP.DataSource = dss.Tables[0];
                 cbo_LoaiSP.DisplayMember = "TenLSP";
                 cbo_LoaiSP.ValueMember = "MaLSP";
-
-                cbB_Masp.DataSource = dssp.Tables[0];
-                cbB_Masp.DisplayMember = "MaSP";
-                cbB_Masp.ValueMember = "MaSP";
-
             }
             catch (Exception ex)
             {
@@ -69,6 +59,7 @@ namespace QuanLyCuaHangBanTraiCay
         }
         private void SanPham_Load(object sender, EventArgs e)
         {
+            txt_MaSP.ReadOnly = true;
             chk_TrangThai.Checked = true;
             hienThi();
             XemDanhSachSanPham();
@@ -77,7 +68,7 @@ namespace QuanLyCuaHangBanTraiCay
         {
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT 'SP0' + CAST(MaSP AS NVARCHAR(10)) AS MaSP,TenSP,MaNCC,MaLSP,KhoiLuongNhap,GiaNhap,GiaBan,NgayNhap,XuatXu,TrangThai,Khuyenmai FROM SANPHAM; ";
+            string sSQL = "SELECT MaSP,TenSP,MaNCC,MaLSP,KhoiLuongNhap,GiaNhap,GiaBan,NgayNhap,XuatXu,TrangThai,Khuyenmai FROM SANPHAM; ";
             try
             {
                 myConnection.Open();
@@ -126,6 +117,7 @@ namespace QuanLyCuaHangBanTraiCay
 
         private void btn_ThemSP_Click(object sender, EventArgs e)
         {
+            
             string Ngay, TenSP, XuatXu;
             int Khuyenmai, MaNCC, MaLSP, TrangThai;
             float KhoiLuongNhap;
@@ -141,8 +133,6 @@ namespace QuanLyCuaHangBanTraiCay
             {
                 TrangThai = 0;
             }
-
-
 
             MaNCC = (int)cbB_NCC.SelectedValue;
             MaLSP = (int)cbo_LoaiSP.SelectedValue;
@@ -168,28 +158,17 @@ namespace QuanLyCuaHangBanTraiCay
         //XÓA SẢN PHẨM
         public void XoaSanPham()
         {
-            int MaSP = (int)cbB_Masp.SelectedValue;
+            string MaSP = txt_MaSP.Text;
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "DELETE FROM SANPHAM WHERE MaSP = @masanpham";
+            string sSQL = "DELETE FROM SANPHAM WHERE MaSP like '" + MaSP.ToString() + "'";
             try
             {
                 myConnection.Open();
 
-                SqlCommand myCommand = new SqlCommand(sSQL, myConnection);
-                myCommand.Parameters.AddWithValue("@masanpham", MaSP);
-                int row = myCommand.ExecuteNonQuery();
-
-                if (row > 0)
-                {
-                    MessageBox.Show("Đã xóa sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy sản phẩm có mã: " + MaSP, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-
+                SqlDataAdapter daSanPham = new SqlDataAdapter(sSQL, myConnection);
+                DataSet dsSanPham = new DataSet();
+                daSanPham.Fill(dsSanPham);
                 myConnection.Close();
             }
             catch (Exception ex)
@@ -208,7 +187,7 @@ namespace QuanLyCuaHangBanTraiCay
         public void SuaSanPham()
         {
             int TrangThai;
-            int MaSP = (int)cbB_Masp.SelectedValue;
+            string MaSP = txt_MaSP.Text;
             if (chk_TrangThai.Checked == false)
             {
                 TrangThai = 0;
@@ -270,7 +249,7 @@ namespace QuanLyCuaHangBanTraiCay
         private void dgv_SanPham_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgv_SanPham.CurrentRow.Index;
-            cbB_Masp.Text = dgv_SanPham.Rows[i].Cells[0].Value.ToString();
+            txt_MaSP.Text = dgv_SanPham.Rows[i].Cells[0].Value.ToString();
             txt_TenSP.Text = dgv_SanPham.Rows[i].Cells[1].Value.ToString();
             cbB_NCC.Text = dgv_SanPham.Rows[i].Cells[2].Value.ToString();
             cbo_LoaiSP.Text = dgv_SanPham.Rows[i].Cells[3].Value.ToString();

@@ -19,36 +19,11 @@ namespace QuanLyCuaHangBanTraiCay
         }
         string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
 
-        private void hienThi()
-        {
-            SqlConnection myConnection = new SqlConnection(scon);
-
-            string sSQL = "SELECT MaLSP FROM LOAISANPHAM";
-
-            try
-            {
-                myConnection.Open();
-
-                SqlDataAdapter myDataAdapter = new SqlDataAdapter(sSQL, myConnection);
-                DataSet ds = new DataSet();
-                myDataAdapter.Fill(ds);
-
-                myConnection.Close();
-
-                cbB_MaSP.DataSource = ds.Tables[0];
-                cbB_MaSP.DisplayMember = "MaLSP";
-                cbB_MaSP.ValueMember = "MaLSP";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi. Chi tiet: " + ex.Message);
-            }
-        }
         public void XemDanhSach()
         {
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT 'LSP0' + CAST(MaLSP AS NVARCHAR(10)) AS MaLSP, TenLSP, XuatXu FROM LOAISANPHAM; ";
+            string sSQL = "SELECT MaLSP, TenLSP, XuatXu FROM LOAISANPHAM; ";
             try
             {
                 myConnection.Open();
@@ -67,7 +42,7 @@ namespace QuanLyCuaHangBanTraiCay
         }
         private void LoaiSP_Load(object sender, EventArgs e)
         {
-            hienThi();
+            txt_MaLSP.ReadOnly = true;
             XemDanhSach();
         }
         //THÊM LOẠI SẢN PHẨM
@@ -120,7 +95,7 @@ namespace QuanLyCuaHangBanTraiCay
         //XÓA LOẠI SẢN PHẨM
         public void XoaLoaiSanPham()
         {
-            int MaLSP = (int)cbB_MaSP.SelectedValue;
+            string MaLSP = txt_MaLSP.Text;
 
 
             SqlConnection myConnection = new SqlConnection(scon);
@@ -149,16 +124,65 @@ namespace QuanLyCuaHangBanTraiCay
                 MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message);
             }
         }
-
         private void btn_XoaLSP_Click(object sender, EventArgs e)
         {
             XoaLoaiSanPham();
             XemDanhSach();
         }
 
+        //SỬA LOẠI SẢN PHẨM
+        public void SuaLoaiSanPham()
+        {
+            string MaLSP = txt_MaLSP.Text;
+
+            // Khởi tạo kết nối
+            using (SqlConnection myConnection = new SqlConnection(scon))
+            {
+                // Chuỗi truy vấn cập nhật
+                string sSQL = "UPDATE LOAISANPHAM SET TenLSP = @TenLSP, XuatXu = @xuatxu WHERE MaLSP = @MaLSP";
+
+                try
+                {
+                    myConnection.Open();
+                    // Khởi tạo đối tượng SqlCommand
+                    using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
+                    {
+                        // Thêm các tham số vào truy vấn
+                        cmd.Parameters.AddWithValue("@TenLSP", txt_TenLSP.Text);
+                        cmd.Parameters.AddWithValue("@xuatxu", txt_XuatXuLSP.Text);
+                        cmd.Parameters.AddWithValue("@MaLSP", txt_MaLSP.Text);
+
+                        // Thực thi truy vấn cập nhật
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Bạn đã thay đổi thành công sản phẩm có mã sản phẩm là : " + MaLSP, "Thông báo");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không có sản phẩm nào được cập nhật.", "Thông báo");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                }
+            }
+
+        }
+        private void btn_SuaLSP_Click(object sender, EventArgs e)
+        {
+            SuaLoaiSanPham();
+            XemDanhSach();
+        }
+
         private void dgv_LoaiSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int i = dgv_LoaiSanPham.CurrentRow.Index;
+            txt_MaLSP.Text = dgv_LoaiSanPham.Rows[i].Cells[0].Value.ToString();
+            txt_TenLSP.Text = dgv_LoaiSanPham.Rows[i].Cells[1].Value.ToString();
+            txt_XuatXuLSP.Text = dgv_LoaiSanPham.Rows[i].Cells[2].Value.ToString();
         }
 
         private void btn_QuayLaiLSP_Click(object sender, EventArgs e)

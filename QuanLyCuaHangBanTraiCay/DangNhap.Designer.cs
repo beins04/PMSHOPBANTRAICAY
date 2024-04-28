@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_eyeclose = new System.Windows.Forms.Button();
+            this.btn_eyeopen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -137,12 +138,23 @@
             // 
             // btn_eyeclose
             // 
-            this.btn_eyeclose.Image = ((System.Drawing.Image)(resources.GetObject("btn_eyeclose.Image")));
-            this.btn_eyeclose.Location = new System.Drawing.Point(583, 275);
+            this.btn_eyeclose.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.eye;
+            this.btn_eyeclose.Location = new System.Drawing.Point(572, 277);
             this.btn_eyeclose.Name = "btn_eyeclose";
-            this.btn_eyeclose.Size = new System.Drawing.Size(30, 30);
+            this.btn_eyeclose.Size = new System.Drawing.Size(30, 31);
             this.btn_eyeclose.TabIndex = 7;
             this.btn_eyeclose.UseVisualStyleBackColor = true;
+            this.btn_eyeclose.Click += new System.EventHandler(this.btn_eyeclose_Click);
+            // 
+            // btn_eyeopen
+            // 
+            this.btn_eyeopen.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.eyeopen;
+            this.btn_eyeopen.Location = new System.Drawing.Point(572, 277);
+            this.btn_eyeopen.Name = "btn_eyeopen";
+            this.btn_eyeopen.Size = new System.Drawing.Size(30, 30);
+            this.btn_eyeopen.TabIndex = 8;
+            this.btn_eyeopen.UseVisualStyleBackColor = true;
+            this.btn_eyeopen.Click += new System.EventHandler(this.btn_eyeclose_Click);
             // 
             // DangNhap
             // 
@@ -151,6 +163,7 @@
             this.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.nền;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(807, 462);
+            this.Controls.Add(this.btn_eyeopen);
             this.Controls.Add(this.btn_eyeclose);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -183,6 +196,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_eyeclose;
+        private System.Windows.Forms.Button btn_eyeopen;
     }
 }
 

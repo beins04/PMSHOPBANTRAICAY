@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SanPham));
-            this.cbB_Masp = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbB_NCC = new System.Windows.Forms.ComboBox();
@@ -66,18 +65,10 @@
             this.btn_XoaSP = new System.Windows.Forms.Button();
             this.btn_ThemSP = new System.Windows.Forms.Button();
             this.chk_TrangThai = new System.Windows.Forms.CheckBox();
+            this.txt_MaSP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SanPham)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cbB_Masp
-            // 
-            this.cbB_Masp.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbB_Masp.FormattingEnabled = true;
-            this.cbB_Masp.Location = new System.Drawing.Point(163, 17);
-            this.cbB_Masp.Name = "cbB_Masp";
-            this.cbB_Masp.Size = new System.Drawing.Size(134, 31);
-            this.cbB_Masp.TabIndex = 41;
             // 
             // label16
             // 
@@ -112,7 +103,7 @@
             // 
             this.cbo_LoaiSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_LoaiSP.FormattingEnabled = true;
-            this.cbo_LoaiSP.Location = new System.Drawing.Point(570, 169);
+            this.cbo_LoaiSP.Location = new System.Drawing.Point(472, 169);
             this.cbo_LoaiSP.Name = "cbo_LoaiSP";
             this.cbo_LoaiSP.Size = new System.Drawing.Size(258, 31);
             this.cbo_LoaiSP.TabIndex = 34;
@@ -121,7 +112,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(421, 172);
+            this.label15.Location = new System.Drawing.Point(323, 172);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(143, 23);
             this.label15.TabIndex = 33;
@@ -438,6 +429,14 @@
             this.chk_TrangThai.TabIndex = 42;
             this.chk_TrangThai.UseVisualStyleBackColor = true;
             // 
+            // txt_MaSP
+            // 
+            this.txt_MaSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaSP.Location = new System.Drawing.Point(163, 13);
+            this.txt_MaSP.Name = "txt_MaSP";
+            this.txt_MaSP.Size = new System.Drawing.Size(119, 30);
+            this.txt_MaSP.TabIndex = 43;
+            // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -446,6 +445,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1218, 759);
+            this.Controls.Add(this.txt_MaSP);
             this.Controls.Add(this.chk_TrangThai);
             this.Controls.Add(this.dgv_SanPham);
             this.Controls.Add(this.btn_QuayLaiSP);
@@ -455,7 +455,6 @@
             this.Controls.Add(this.btn_XoaSP);
             this.Controls.Add(this.btn_ThemSP);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.cbB_Masp);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.cbB_NCC);
             this.Controls.Add(this.label1);
@@ -525,8 +524,8 @@
         private System.Windows.Forms.ComboBox cbB_NCC;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbB_Masp;
         private System.Windows.Forms.DateTimePicker dt_Ngay;
         private System.Windows.Forms.CheckBox chk_TrangThai;
+        private System.Windows.Forms.TextBox txt_MaSP;
     }
 }

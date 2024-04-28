@@ -47,12 +47,12 @@
             this.txt_TiemKiemNV = new System.Windows.Forms.TextBox();
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.cbB_MaNV = new System.Windows.Forms.ComboBox();
-            this.cbB_MaTK = new System.Windows.Forms.ComboBox();
             this.btn_QuayLaiTrangNV = new System.Windows.Forms.Button();
             this.btn_SuaNV = new System.Windows.Forms.Button();
             this.btn_XoaNV = new System.Windows.Forms.Button();
             this.btn_ThemNV = new System.Windows.Forms.Button();
+            this.txt_MaNV = new System.Windows.Forms.TextBox();
+            this.txt_MaTK = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.SuspendLayout();
@@ -61,57 +61,55 @@
             // 
             this.rad_Nu.AutoSize = true;
             this.rad_Nu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_Nu.Location = new System.Drawing.Point(312, 145);
+            this.rad_Nu.Location = new System.Drawing.Point(331, 155);
             this.rad_Nu.Name = "rad_Nu";
             this.rad_Nu.Size = new System.Drawing.Size(64, 29);
             this.rad_Nu.TabIndex = 27;
             this.rad_Nu.TabStop = true;
             this.rad_Nu.Text = "Nữ";
             this.rad_Nu.UseVisualStyleBackColor = true;
-            this.rad_Nu.CheckedChanged += new System.EventHandler(this.rad_Nu_CheckedChanged);
             // 
             // rad_Nam
             // 
             this.rad_Nam.AutoSize = true;
             this.rad_Nam.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rad_Nam.Location = new System.Drawing.Point(211, 145);
+            this.rad_Nam.Location = new System.Drawing.Point(211, 155);
             this.rad_Nam.Name = "rad_Nam";
             this.rad_Nam.Size = new System.Drawing.Size(81, 29);
             this.rad_Nam.TabIndex = 26;
             this.rad_Nam.TabStop = true;
             this.rad_Nam.Text = "Nam";
             this.rad_Nam.UseVisualStyleBackColor = true;
-            this.rad_Nam.CheckedChanged += new System.EventHandler(this.rad_Nam_CheckedChanged);
             // 
             // txt_DiaChiNV
             // 
             this.txt_DiaChiNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DiaChiNV.Location = new System.Drawing.Point(209, 60);
+            this.txt_DiaChiNV.Location = new System.Drawing.Point(209, 234);
             this.txt_DiaChiNV.Name = "txt_DiaChiNV";
-            this.txt_DiaChiNV.Size = new System.Drawing.Size(167, 34);
+            this.txt_DiaChiNV.Size = new System.Drawing.Size(232, 34);
             this.txt_DiaChiNV.TabIndex = 18;
             // 
             // txt_SDTNV
             // 
             this.txt_SDTNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SDTNV.Location = new System.Drawing.Point(209, 228);
+            this.txt_SDTNV.Location = new System.Drawing.Point(211, 189);
             this.txt_SDTNV.Name = "txt_SDTNV";
-            this.txt_SDTNV.Size = new System.Drawing.Size(167, 34);
+            this.txt_SDTNV.Size = new System.Drawing.Size(230, 34);
             this.txt_SDTNV.TabIndex = 17;
             // 
             // txt_TenNV
             // 
             this.txt_TenNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TenNV.Location = new System.Drawing.Point(211, 18);
+            this.txt_TenNV.Location = new System.Drawing.Point(209, 111);
             this.txt_TenNV.Name = "txt_TenNV";
-            this.txt_TenNV.Size = new System.Drawing.Size(167, 34);
+            this.txt_TenNV.Size = new System.Drawing.Size(232, 34);
             this.txt_TenNV.TabIndex = 15;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 63);
+            this.label6.Location = new System.Drawing.Point(36, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(167, 25);
             this.label6.TabIndex = 12;
@@ -121,7 +119,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(107, 189);
+            this.label5.Location = new System.Drawing.Point(107, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 25);
             this.label5.TabIndex = 11;
@@ -131,7 +129,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(45, 231);
+            this.label4.Location = new System.Drawing.Point(43, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 25);
             this.label4.TabIndex = 10;
@@ -141,7 +139,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(87, 147);
+            this.label3.Location = new System.Drawing.Point(85, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 25);
             this.label3.TabIndex = 9;
@@ -151,7 +149,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(35, 21);
+            this.label2.Location = new System.Drawing.Point(35, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 25);
             this.label2.TabIndex = 8;
@@ -161,7 +159,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 105);
+            this.label1.Location = new System.Drawing.Point(38, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 25);
             this.label1.TabIndex = 7;
@@ -237,24 +235,7 @@
             this.dgv_NhanVien.RowTemplate.Height = 24;
             this.dgv_NhanVien.Size = new System.Drawing.Size(966, 238);
             this.dgv_NhanVien.TabIndex = 0;
-            // 
-            // cbB_MaNV
-            // 
-            this.cbB_MaNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbB_MaNV.FormattingEnabled = true;
-            this.cbB_MaNV.Location = new System.Drawing.Point(209, 186);
-            this.cbB_MaNV.Name = "cbB_MaNV";
-            this.cbB_MaNV.Size = new System.Drawing.Size(167, 33);
-            this.cbB_MaNV.TabIndex = 28;
-            // 
-            // cbB_MaTK
-            // 
-            this.cbB_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbB_MaTK.FormattingEnabled = true;
-            this.cbB_MaTK.Location = new System.Drawing.Point(209, 102);
-            this.cbB_MaTK.Name = "cbB_MaTK";
-            this.cbB_MaTK.Size = new System.Drawing.Size(167, 33);
-            this.cbB_MaTK.TabIndex = 29;
+            this.dgv_NhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellContentClick);
             // 
             // btn_QuayLaiTrangNV
             // 
@@ -280,6 +261,7 @@
             this.btn_SuaNV.Text = "Sửa";
             this.btn_SuaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_SuaNV.UseVisualStyleBackColor = true;
+            this.btn_SuaNV.Click += new System.EventHandler(this.btn_SuaNV_Click);
             // 
             // btn_XoaNV
             // 
@@ -307,6 +289,22 @@
             this.btn_ThemNV.UseVisualStyleBackColor = true;
             this.btn_ThemNV.Click += new System.EventHandler(this.btn_ThemNV_Click);
             // 
+            // txt_MaNV
+            // 
+            this.txt_MaNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaNV.Location = new System.Drawing.Point(211, 18);
+            this.txt_MaNV.Name = "txt_MaNV";
+            this.txt_MaNV.Size = new System.Drawing.Size(230, 34);
+            this.txt_MaNV.TabIndex = 29;
+            // 
+            // txt_MaTK
+            // 
+            this.txt_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaTK.Location = new System.Drawing.Point(211, 64);
+            this.txt_MaTK.Name = "txt_MaTK";
+            this.txt_MaTK.Size = new System.Drawing.Size(230, 34);
+            this.txt_MaTK.TabIndex = 30;
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -314,8 +312,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(998, 621);
-            this.Controls.Add(this.cbB_MaTK);
-            this.Controls.Add(this.cbB_MaNV);
+            this.Controls.Add(this.txt_MaTK);
+            this.Controls.Add(this.txt_MaNV);
             this.Controls.Add(this.dgv_NhanVien);
             this.Controls.Add(this.btn_QuayLaiTrangNV);
             this.Controls.Add(this.rad_Nu);
@@ -369,7 +367,7 @@
         private System.Windows.Forms.TextBox txt_TiemKiemNV;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView dgv_NhanVien;
-        private System.Windows.Forms.ComboBox cbB_MaNV;
-        private System.Windows.Forms.ComboBox cbB_MaTK;
+        private System.Windows.Forms.TextBox txt_MaNV;
+        private System.Windows.Forms.TextBox txt_MaTK;
     }
 }

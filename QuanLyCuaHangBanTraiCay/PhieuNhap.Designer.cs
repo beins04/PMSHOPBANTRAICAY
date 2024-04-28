@@ -34,7 +34,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbB_MaSPN = new System.Windows.Forms.ComboBox();
             this.btn_ThemChiTietPhieuNhap = new System.Windows.Forms.Button();
             this.btn_XemChiTietPhieuNhap = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -45,16 +44,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.txt_MaSPN = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txt_MaSPN);
             this.groupBox1.Controls.Add(this.textBox9);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBox8);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cbB_MaSPN);
             this.groupBox1.Controls.Add(this.btn_ThemChiTietPhieuNhap);
             this.groupBox1.Controls.Add(this.btn_XemChiTietPhieuNhap);
             this.groupBox1.Controls.Add(this.textBox4);
@@ -104,18 +104,10 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Giá Nhập:";
             // 
-            // cbB_MaSPN
-            // 
-            this.cbB_MaSPN.FormattingEnabled = true;
-            this.cbB_MaSPN.Location = new System.Drawing.Point(254, 47);
-            this.cbB_MaSPN.Name = "cbB_MaSPN";
-            this.cbB_MaSPN.Size = new System.Drawing.Size(286, 31);
-            this.cbB_MaSPN.TabIndex = 11;
-            // 
             // btn_ThemChiTietPhieuNhap
             // 
             this.btn_ThemChiTietPhieuNhap.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them1;
-            this.btn_ThemChiTietPhieuNhap.Location = new System.Drawing.Point(147, 274);
+            this.btn_ThemChiTietPhieuNhap.Location = new System.Drawing.Point(172, 274);
             this.btn_ThemChiTietPhieuNhap.Name = "btn_ThemChiTietPhieuNhap";
             this.btn_ThemChiTietPhieuNhap.Size = new System.Drawing.Size(138, 44);
             this.btn_ThemChiTietPhieuNhap.TabIndex = 10;
@@ -127,9 +119,9 @@
             // 
             this.btn_XemChiTietPhieuNhap.Image = ((System.Drawing.Image)(resources.GetObject("btn_XemChiTietPhieuNhap.Image")));
             this.btn_XemChiTietPhieuNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XemChiTietPhieuNhap.Location = new System.Drawing.Point(465, 274);
+            this.btn_XemChiTietPhieuNhap.Location = new System.Drawing.Point(396, 274);
             this.btn_XemChiTietPhieuNhap.Name = "btn_XemChiTietPhieuNhap";
-            this.btn_XemChiTietPhieuNhap.Size = new System.Drawing.Size(132, 44);
+            this.btn_XemChiTietPhieuNhap.Size = new System.Drawing.Size(167, 44);
             this.btn_XemChiTietPhieuNhap.TabIndex = 8;
             this.btn_XemChiTietPhieuNhap.Text = "Xem Chi Tiết";
             this.btn_XemChiTietPhieuNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -192,6 +184,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Sản Phẩm Nhập:";
             // 
+            // txt_MaSPN
+            // 
+            this.txt_MaSPN.Location = new System.Drawing.Point(254, 46);
+            this.txt_MaSPN.Name = "txt_MaSPN";
+            this.txt_MaSPN.Size = new System.Drawing.Size(286, 30);
+            this.txt_MaSPN.TabIndex = 20;
+            // 
             // PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -221,10 +220,10 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_ThemChiTietPhieuNhap;
-        private System.Windows.Forms.ComboBox cbB_MaSPN;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_MaSPN;
     }
 }

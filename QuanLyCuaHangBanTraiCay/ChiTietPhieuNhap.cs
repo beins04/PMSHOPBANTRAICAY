@@ -52,5 +52,10 @@ namespace QuanLyCuaHangBanTraiCay
         {
             XemDanhSach();
         }
+
+        private void ChiTietPhieuNhap_Load(object sender, EventArgs e)
+        {
+            txt_MaSPN.ReadOnly = true;
+        }
     }
 }

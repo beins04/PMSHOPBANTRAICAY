@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_LoaiSanPham = new System.Windows.Forms.DataGridView();
-            this.cbB_MaSP = new System.Windows.Forms.ComboBox();
+            this.txt_MaLSP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiSanPham)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.btn_SuaLSP.Text = "Sửa";
             this.btn_SuaLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_SuaLSP.UseVisualStyleBackColor = true;
+            this.btn_SuaLSP.Click += new System.EventHandler(this.btn_SuaLSP_Click);
             // 
             // btn_XoaLSP
             // 
@@ -151,14 +152,13 @@
             this.dgv_LoaiSanPham.TabIndex = 2;
             this.dgv_LoaiSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LoaiSanPham_CellContentClick);
             // 
-            // cbB_MaSP
+            // txt_MaLSP
             // 
-            this.cbB_MaSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbB_MaSP.FormattingEnabled = true;
-            this.cbB_MaSP.Location = new System.Drawing.Point(195, 22);
-            this.cbB_MaSP.Name = "cbB_MaSP";
-            this.cbB_MaSP.Size = new System.Drawing.Size(194, 31);
-            this.cbB_MaSP.TabIndex = 31;
+            this.txt_MaLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaLSP.Location = new System.Drawing.Point(204, 22);
+            this.txt_MaLSP.Name = "txt_MaLSP";
+            this.txt_MaLSP.Size = new System.Drawing.Size(196, 30);
+            this.txt_MaLSP.TabIndex = 31;
             // 
             // LoaiSP
             // 
@@ -167,7 +167,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1125, 377);
-            this.Controls.Add(this.cbB_MaSP);
+            this.Controls.Add(this.txt_MaLSP);
             this.Controls.Add(this.btn_QuayLaiLSP);
             this.Controls.Add(this.dgv_LoaiSanPham);
             this.Controls.Add(this.btn_SuaLSP);
@@ -199,6 +199,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_LoaiSanPham;
-        private System.Windows.Forms.ComboBox cbB_MaSP;
+        private System.Windows.Forms.TextBox txt_MaLSP;
     }
 }

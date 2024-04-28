@@ -90,6 +90,23 @@ namespace QuanLyCuaHangBanTraiCay
                 }
             }
         }
+
+        private void btn_eyeclose_Click(object sender, EventArgs e)
+        {
+            if ((count % 2) == 0)
+            {
+                txt_MatKhau.PasswordChar = '\0';
+                btn_eyeopen.Visible = true;
+                btn_eyeclose.Visible = false;
+            }
+            else
+            {
+                txt_MatKhau.PasswordChar = '*';
+                btn_eyeclose.Visible = true;
+                btn_eyeopen.Visible = false;
+            }
+            count += 1;
+        }
     }
 
 }

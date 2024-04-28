@@ -19,36 +19,11 @@ namespace QuanLyCuaHangBanTraiCay
         }
         string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
 
-        private void hienThi()
-        {
-            SqlConnection myConnection = new SqlConnection(scon);
-
-            string sSQL = "SELECT MaNCC FROM NHACUNGCAP";
-
-            try
-            {
-                myConnection.Open();
-
-                SqlDataAdapter myDataAdapter = new SqlDataAdapter(sSQL, myConnection);
-                DataSet ds = new DataSet();
-                myDataAdapter.Fill(ds);
-
-                myConnection.Close();
-
-                cbB_MaNCC.DataSource = ds.Tables[0];
-                cbB_MaNCC.DisplayMember = "MaNCC";
-                cbB_MaNCC.ValueMember = "MaNCC";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi. Chi tiet: " + ex.Message);
-            }
-        }
         public void XemDanhSach()
         {
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT 'NCC0' + CAST(MaNCC AS NVARCHAR(10)) AS MaNCC, TenNCC, DiaChi, SDT, TrangThai FROM NHACUNGCAP; ";
+            string sSQL = "SELECT MaNCC, TenNCC, DiaChi, SDT, TrangThai FROM NHACUNGCAP; ";
             try
             {
                 myConnection.Open();
@@ -67,7 +42,7 @@ namespace QuanLyCuaHangBanTraiCay
         }
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
-            hienThi();
+            txt_MaNCC.ReadOnly = true;
             XemDanhSach();
         }
 
@@ -106,7 +81,7 @@ namespace QuanLyCuaHangBanTraiCay
             sTenNhaCungCap = txt_TenNhaCungCap.Text;
             sDiaChi = txt_DiaChi.Text;
             sSDT = txt_SDT.Text;
-            sTrangThai = ck_TrangThai.Checked ? "Hoạt động" : "Ngưng hoạt động";
+            sTrangThai = chk_TrangThai.Checked ? "Hoạt động" : "Ngưng hoạt động";
 
             bool kq = ThemNhaCungCap(sTenNhaCungCap, sDiaChi, sSDT, sTrangThai);
             if (kq)
@@ -123,7 +98,7 @@ namespace QuanLyCuaHangBanTraiCay
         //XÓA SẢN PHẨM
         public void XoaNhaCungCap()
         {
-            int MaNCC = (int)cbB_MaNCC.SelectedValue;
+            string MaNCC = txt_MaNCC.Text;
 
 
             SqlConnection myConnection = new SqlConnection(scon);
@@ -152,23 +127,93 @@ namespace QuanLyCuaHangBanTraiCay
                 MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message);
             }
         }
-
         private void btn_XoaNCCcc_Click(object sender, EventArgs e)
         {
             XoaNhaCungCap();
             XemDanhSach();
         }
 
-        private void dgv_NhaCungCap_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //SỬA NHÀ CUNG CẤP
+        public void SuaNhaCungCap()
         {
+            string MaNCC = txt_MaNCC.Text;
+            int TrangThai;
+            if (chk_TrangThai.Checked == false)
+            {
+                TrangThai = 0;
+            }
+            else
+            {
+                TrangThai = 1;
+            }
+
+            // Khởi tạo kết nối
+            using (SqlConnection myConnection = new SqlConnection(scon))
+            {
+                // Chuỗi truy vấn cập nhật
+                string sSQL = "UPDATE NHACUNGCAP SET TenNCC = @TenNCC, DiaChi = @DiaChi, SDT = @SDT, TrangThai = @TrangThai WHERE MaNCC = @MaNCC";
+
+                try
+                {
+                    myConnection.Open();
+                    // Khởi tạo đối tượng SqlCommand
+                    using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
+                    {
+                        // Thêm các tham số vào truy vấn
+                        cmd.Parameters.AddWithValue("@TenNCC", txt_TenNhaCungCap.Text);
+                        cmd.Parameters.AddWithValue("@DiaChi", txt_DiaChi.Text);
+                        cmd.Parameters.AddWithValue("@SDT", txt_SDT.Text);
+                        cmd.Parameters.AddWithValue("@TrangThai", TrangThai);
+                        cmd.Parameters.AddWithValue("@MaNCC", MaNCC);
+
+                        // Thực thi truy vấn cập nhật
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Bạn đã thay đổi thành công sản phẩm có mã sản phẩm là : " + MaNCC, "Thông báo");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không có sản phẩm nào được cập nhật.", "Thông báo");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                }
+            }
 
         }
+        private void btn_SuaNCCcc_Click(object sender, EventArgs e)
+        {
+            SuaNhaCungCap();
+            XemDanhSach();
+        }
 
+        private void dgv_NhaCungCap_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dgv_NhaCungCap.CurrentRow.Index;
+            txt_MaNCC.Text = dgv_NhaCungCap.Rows[i].Cells[0].Value.ToString();
+            txt_TenNhaCungCap.Text = dgv_NhaCungCap.Rows[i].Cells[1].Value.ToString();
+            txt_DiaChi.Text = dgv_NhaCungCap.Rows[i].Cells[2].Value.ToString();
+            txt_SDT.Text = dgv_NhaCungCap.Rows[i].Cells[3].Value.ToString();
+            if ((bool)dgv_NhaCungCap.Rows[i].Cells[4].Value == false)
+            {
+                chk_TrangThai.Checked = false;
+            }
+            else
+            {
+                chk_TrangThai.Checked = true;
+            }
+        }
         private void btn_QuayLai_Click(object sender, EventArgs e)
         {
             this.Hide();
             TrangQuanLy  ql = new TrangQuanLy();
             ql.Show();
         }
+
+        
     }
 }

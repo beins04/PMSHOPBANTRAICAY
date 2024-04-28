@@ -20,36 +20,10 @@ namespace QuanLyCuaHangBanTraiCay
         }
         string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
 
-        private void hienThi()
-        {
-            SqlConnection myConnection = new SqlConnection(scon);
-
-            string sSQL = "SELECT MaKH FROM KHACHHANG";
-
-            try
-            {
-                myConnection.Open();
-
-                SqlDataAdapter myDataAdapter = new SqlDataAdapter(sSQL, myConnection);
-                DataSet ds = new DataSet();
-                myDataAdapter.Fill(ds);
-
-                myConnection.Close();
-
-                cbB_MaKhachHang.DataSource = ds.Tables[0];
-                cbB_MaKhachHang.DisplayMember = "MaKH";
-                cbB_MaKhachHang.ValueMember = "MaKH";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi. Chi tiet: " + ex.Message);
-            }
-        }
         public void XemDanhSach()
         {
-
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT 'KH0' + CAST(MaKH AS NVARCHAR(10)) AS MaKH, TenKH, DiaChi, SDT, GioiTinh FROM KHACHHANG; ";
+            string sSQL = "SELECT MaKH, TenKH, DiaChi, SDT, GioiTinh FROM KHACHHANG; ";
             try
             {
                 myConnection.Open();
@@ -68,8 +42,8 @@ namespace QuanLyCuaHangBanTraiCay
         }
 
         private void KhachHang_Load(object sender, EventArgs e)
-        {                                       
-            hienThi();
+        {       
+            txt_MaKH.ReadOnly = true;
             XemDanhSach();
         }
 
@@ -81,7 +55,7 @@ namespace QuanLyCuaHangBanTraiCay
             kq = true;
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSql = string.Format("INSERT INTO KHACHHANG VALUES (N'{0}', N'{1}', N'{2}', N'{3}')", sTenKhachHang, sDiaChi, sSDT, sGioiTinh        );
+            string sSql = string.Format("INSERT INTO KHACHHANG VALUES (N'{0}', N'{1}', N'{2}', N'{3}')", sTenKhachHang, sDiaChi, sSDT, sGioiTinh);
             MessageBox.Show(sSql);
 
             try
@@ -126,33 +100,35 @@ namespace QuanLyCuaHangBanTraiCay
         //XÓA KHÁCH HÀNG
         public void XoaKhachHang()
         {
-            int MaKH = (int)cbB_MaKhachHang.SelectedValue;
+            string MaKhachHang = txt_MaKH.Text;
 
-
-            SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "DELETE FROM KHACHHANG WHERE MaKH = @makhachhang";
-            try
+            // Khởi tạo kết nối
+            using (SqlConnection myConnection = new SqlConnection(scon))
             {
-                myConnection.Open();
+                // Chuỗi truy vấn xóa
+                string sSQL = "DELETE FROM KHACHHANG WHERE MaKH = @MaKH";
 
-                SqlCommand myCommand = new SqlCommand(sSQL, myConnection);
-                myCommand.Parameters.AddWithValue("@makhachhang", MaKH);
-                int row = myCommand.ExecuteNonQuery();
-
-                if (row > 0)
+                try
                 {
-                    MessageBox.Show("Đã xóa khách hàng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy khách hàng có mã: " + MaKH, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    myConnection.Open();
+                    // Khởi tạo đối tượng SqlCommand
+                    using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
+                    {
+                        // Thêm tham số vào truy vấn
+                        cmd.Parameters.AddWithValue("@MaKH", MaKhachHang);
 
-                myConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message);
+                        // Thực thi truy vấn xóa
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Đã xóa khách hàng có mã là: " + MaKhachHang, "THÔNG BÁO");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message);
+                }
             }
         }
 
@@ -162,9 +138,78 @@ namespace QuanLyCuaHangBanTraiCay
             XemDanhSach();
         }
 
+        //SỬA KHÁCH HÀNG
+        public void SuaKhachHang()
+        {
+            string MaKhachHang = txt_MaKH.Text;
+            
+            // Khởi tạo kết nối
+            using (SqlConnection myConnection = new SqlConnection(scon))
+            {
+                // Chuỗi truy vấn cập nhật
+                string sSQL = "UPDATE KHACHHANG SET TenKH = @TenKH, DiaChi = @DiaChi, SDT = @SDT, GioiTinh = @GioiTinh WHERE MaKH = @MaKH";
+
+                try
+                {
+                    myConnection.Open();
+                    // Khởi tạo đối tượng SqlCommand
+                    using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
+                    {
+                        // Thêm các tham số vào truy vấn
+                        cmd.Parameters.AddWithValue("@TenKH", txt_TenKH.Text);
+                        cmd.Parameters.AddWithValue("@DiaChi", txt_DiaChiKH.Text);
+                        
+                        cmd.Parameters.AddWithValue("@SDT", txt_SDTKH.Text); 
+                        if (rad_Nam.Checked)
+                        {
+                            cmd.Parameters.AddWithValue("@GioiTinh", "Nam");
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@GioiTinh", "Nữ");
+                        }
+                        cmd.Parameters.AddWithValue("@MaKH", txt_MaKH.Text);
+
+                        // Thực thi truy vấn cập nhật
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Bạn đã thay đổi thành công sản phẩm có mã sản phẩm là : " + MaKhachHang, "Thông báo");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không có sản phẩm nào được cập nhật.", "Thông báo");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                }
+            }
+
+        }
+        private void btn_SuaKH_Click(object sender, EventArgs e)
+        {
+            SuaKhachHang();
+            XemDanhSach();
+        }
         private void dgv_KhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int i = dgv_KhachHang.CurrentRow.Index;
+            txt_MaKH.Text = dgv_KhachHang.Rows[i].Cells[0].Value.ToString();
+            txt_TenKH.Text = dgv_KhachHang.Rows[i].Cells[1].Value.ToString();
+            txt_DiaChiKH.Text = dgv_KhachHang.Rows[i].Cells[2].Value.ToString();
+            txt_SDTKH.Text = dgv_KhachHang.Rows[i].Cells[3].Value.ToString();
+            string gioiTinhValue = (string)dgv_KhachHang.Rows[i].Cells[4].Value;
+            if (gioiTinhValue == "Nam")
+            {
+                rad_Nam.Checked = true;
+            }
+            else
+            {
+                rad_Nu.Checked = true;
+            }
         }
 
         private void btn_QuayLaiTrangKH_Click(object sender, EventArgs e)

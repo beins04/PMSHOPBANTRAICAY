@@ -50,6 +50,7 @@
             this.btn_Them = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTiet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(115, 157);
+            this.label4.Location = new System.Drawing.Point(574, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 23);
             this.label4.TabIndex = 3;
@@ -67,7 +68,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(471, 109);
+            this.label3.Location = new System.Drawing.Point(36, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 23);
             this.label3.TabIndex = 2;
@@ -114,9 +115,9 @@
             // txt_NCC
             // 
             this.txt_NCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NCC.Location = new System.Drawing.Point(653, 106);
+            this.txt_NCC.Location = new System.Drawing.Point(228, 154);
             this.txt_NCC.Name = "txt_NCC";
-            this.txt_NCC.Size = new System.Drawing.Size(150, 30);
+            this.txt_NCC.Size = new System.Drawing.Size(199, 30);
             this.txt_NCC.TabIndex = 11;
             // 
             // txt_SLN
@@ -130,16 +131,16 @@
             // txt_KhoiLuong
             // 
             this.txt_KhoiLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_KhoiLuong.Location = new System.Drawing.Point(653, 28);
+            this.txt_KhoiLuong.Location = new System.Drawing.Point(677, 28);
             this.txt_KhoiLuong.Name = "txt_KhoiLuong";
-            this.txt_KhoiLuong.Size = new System.Drawing.Size(150, 30);
+            this.txt_KhoiLuong.Size = new System.Drawing.Size(164, 30);
             this.txt_KhoiLuong.TabIndex = 13;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(530, 31);
+            this.label6.Location = new System.Drawing.Point(554, 31);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 23);
             this.label6.TabIndex = 14;
@@ -148,9 +149,9 @@
             // txt_ThanhTien
             // 
             this.txt_ThanhTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ThanhTien.Location = new System.Drawing.Point(653, 67);
+            this.txt_ThanhTien.Location = new System.Drawing.Point(677, 70);
             this.txt_ThanhTien.Name = "txt_ThanhTien";
-            this.txt_ThanhTien.Size = new System.Drawing.Size(150, 30);
+            this.txt_ThanhTien.Size = new System.Drawing.Size(164, 30);
             this.txt_ThanhTien.TabIndex = 15;
             // 
             // dgv_ChiTiet
@@ -160,23 +161,23 @@
             this.dgv_ChiTiet.Name = "dgv_ChiTiet";
             this.dgv_ChiTiet.RowHeadersWidth = 51;
             this.dgv_ChiTiet.RowTemplate.Height = 24;
-            this.dgv_ChiTiet.Size = new System.Drawing.Size(812, 320);
+            this.dgv_ChiTiet.Size = new System.Drawing.Size(812, 342);
             this.dgv_ChiTiet.TabIndex = 16;
             this.dgv_ChiTiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ChiTiet_CellContentClick);
             // 
             // txt_GiaNhap
             // 
             this.txt_GiaNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_GiaNhap.Location = new System.Drawing.Point(228, 154);
+            this.txt_GiaNhap.Location = new System.Drawing.Point(677, 112);
             this.txt_GiaNhap.Name = "txt_GiaNhap";
-            this.txt_GiaNhap.Size = new System.Drawing.Size(199, 30);
+            this.txt_GiaNhap.Size = new System.Drawing.Size(164, 30);
             this.txt_GiaNhap.TabIndex = 24;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(534, 70);
+            this.label7.Location = new System.Drawing.Point(558, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 23);
             this.label7.TabIndex = 23;
@@ -255,7 +256,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(809, 31);
+            this.label13.Location = new System.Drawing.Point(848, 35);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 23);
             this.label13.TabIndex = 27;
@@ -265,11 +266,21 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(809, 67);
+            this.label12.Location = new System.Drawing.Point(847, 73);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 23);
             this.label12.TabIndex = 26;
             this.label12.Text = "(VNĐ)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(848, 115);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 23);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "(VNĐ)";
             // 
             // ChiTietPhieuNhap
             // 
@@ -277,6 +288,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1039, 578);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txt_MaSPN);
@@ -302,6 +314,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ChiTietPhieuNhap";
             this.Text = "ChiTietPhieuNhap";
+            this.Load += new System.EventHandler(this.ChiTietPhieuNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTiet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,5 +344,6 @@
         private System.Windows.Forms.TextBox txt_MaSPN;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label8;
     }
 }
