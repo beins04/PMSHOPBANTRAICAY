@@ -46,12 +46,12 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_TimKiemTK = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.dgv_TaiKhoan = new System.Windows.Forms.DataGridView();
+            this.chk_TrangThai = new System.Windows.Forms.CheckBox();
             this.rad_Staff = new System.Windows.Forms.RadioButton();
             this.rad_Admin = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_QuayLaiTK
@@ -65,6 +65,7 @@
             this.btn_QuayLaiTK.Text = "Quay Lại";
             this.btn_QuayLaiTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_QuayLaiTK.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiTK.Click += new System.EventHandler(this.btn_QuayLaiTK_Click);
             // 
             // btn_SuaTK
             // 
@@ -77,6 +78,7 @@
             this.btn_SuaTK.Text = "Sửa";
             this.btn_SuaTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_SuaTK.UseVisualStyleBackColor = true;
+            this.btn_SuaTK.Click += new System.EventHandler(this.btn_SuaTK_Click);
             // 
             // btn_XoaTK
             // 
@@ -89,6 +91,7 @@
             this.btn_XoaTK.Text = "Xóa ";
             this.btn_XoaTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_XoaTK.UseVisualStyleBackColor = true;
+            this.btn_XoaTK.Click += new System.EventHandler(this.btn_XoaTK_Click);
             // 
             // btn_ThemTK
             // 
@@ -101,6 +104,7 @@
             this.btn_ThemTK.Text = "Thêm";
             this.btn_ThemTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_ThemTK.UseVisualStyleBackColor = true;
+            this.btn_ThemTK.Click += new System.EventHandler(this.btn_ThemTK_Click);
             // 
             // txt_MK
             // 
@@ -130,11 +134,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(379, 58);
+            this.label6.Location = new System.Drawing.Point(404, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 23);
+            this.label6.Size = new System.Drawing.Size(87, 23);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Thuộc Loại:";
+            this.label6.Text = "Chức vụ:";
             // 
             // label5
             // 
@@ -237,26 +241,26 @@
             this.txt_TimKiemTK.Size = new System.Drawing.Size(231, 30);
             this.txt_TimKiemTK.TabIndex = 15;
             // 
-            // dataGridView1
+            // dgv_TaiKhoan
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 200);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1080, 373);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgv_TaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_TaiKhoan.Location = new System.Drawing.Point(35, 200);
+            this.dgv_TaiKhoan.Name = "dgv_TaiKhoan";
+            this.dgv_TaiKhoan.RowHeadersWidth = 51;
+            this.dgv_TaiKhoan.RowTemplate.Height = 24;
+            this.dgv_TaiKhoan.Size = new System.Drawing.Size(1080, 373);
+            this.dgv_TaiKhoan.TabIndex = 0;
+            this.dgv_TaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_TaiKhoan_CellContentClick);
             // 
-            // checkBox3
+            // chk_TrangThai
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(506, 23);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(18, 17);
-            this.checkBox3.TabIndex = 27;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chk_TrangThai.AutoSize = true;
+            this.chk_TrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_TrangThai.Location = new System.Drawing.Point(506, 23);
+            this.chk_TrangThai.Name = "chk_TrangThai";
+            this.chk_TrangThai.Size = new System.Drawing.Size(18, 17);
+            this.chk_TrangThai.TabIndex = 27;
+            this.chk_TrangThai.UseVisualStyleBackColor = true;
             // 
             // rad_Staff
             // 
@@ -279,7 +283,6 @@
             this.rad_Admin.TabIndex = 29;
             this.rad_Admin.Text = "Quản Lý";
             this.rad_Admin.UseVisualStyleBackColor = true;
-            this.rad_Admin.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // TaiKhoan
             // 
@@ -290,8 +293,8 @@
             this.ClientSize = new System.Drawing.Size(1253, 591);
             this.Controls.Add(this.rad_Admin);
             this.Controls.Add(this.rad_Staff);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.chk_TrangThai);
+            this.Controls.Add(this.dgv_TaiKhoan);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_QuayLaiTK);
             this.Controls.Add(this.txt_MaTK);
@@ -308,9 +311,10 @@
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TaiKhoan";
             this.Text = "TaiKhoan";
+            this.Load += new System.EventHandler(this.TaiKhoan_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,8 +339,8 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_TimKiemTK;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.DataGridView dgv_TaiKhoan;
+        private System.Windows.Forms.CheckBox chk_TrangThai;
         private System.Windows.Forms.RadioButton rad_Staff;
         private System.Windows.Forms.RadioButton rad_Admin;
     }

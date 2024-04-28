@@ -23,7 +23,7 @@ namespace QuanLyCuaHangBanTraiCay
             //Application.Run(new KhachHang());
             //Application.Run(new QuanLyKhoHang());
             //Application.Run(new ThongKe());
-            //Application.Run(new TaiKhoan());
+            Application.Run(new TaiKhoan());
             //Application.Run(new NhaCungCap());
             //Application.Run(new TrangHoaDon());
             //Application.Run(new ChiTietHoaDon());
@@ -31,7 +31,7 @@ namespace QuanLyCuaHangBanTraiCay
             //Application.Run(new ChiTietPhieuNhap());
             //Application.Run(new TrangQuanLy());
             //Application.Run(new TrangQuanLyChoNhanVien());
-            Application.Run(new LoaiSP());
+            //Application.Run(new LoaiSP());
 
         }
     }

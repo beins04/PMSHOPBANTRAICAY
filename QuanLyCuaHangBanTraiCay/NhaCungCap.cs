@@ -81,7 +81,7 @@ namespace QuanLyCuaHangBanTraiCay
             sTenNhaCungCap = txt_TenNhaCungCap.Text;
             sDiaChi = txt_DiaChi.Text;
             sSDT = txt_SDT.Text;
-            sTrangThai = chk_TrangThai.Checked ? "Hoạt động" : "Ngưng hoạt động";
+            sTrangThai = chk_TrangThai.Checked ? "1" : "0";
 
             bool kq = ThemNhaCungCap(sTenNhaCungCap, sDiaChi, sSDT, sTrangThai);
             if (kq)
@@ -95,7 +95,7 @@ namespace QuanLyCuaHangBanTraiCay
             XemDanhSach();
         }
 
-        //XÓA SẢN PHẨM
+        //XÓA NHÀ CUNG CẤP
         public void XoaNhaCungCap()
         {
             string MaNCC = txt_MaNCC.Text;
