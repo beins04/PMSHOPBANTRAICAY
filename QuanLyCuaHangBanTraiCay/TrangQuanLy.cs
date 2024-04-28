@@ -12,6 +12,7 @@ namespace QuanLyCuaHangBanTraiCay
 {
     public partial class TrangQuanLy : Form
     {
+        public int MaTK;
         public TrangQuanLy()
         {
             InitializeComponent();

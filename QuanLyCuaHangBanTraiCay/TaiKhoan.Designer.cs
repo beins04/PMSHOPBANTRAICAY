@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btn_QuayLaiTK = new System.Windows.Forms.Button();
             this.btn_SuaTK = new System.Windows.Forms.Button();
             this.btn_XoaTK = new System.Windows.Forms.Button();
             this.btn_ThemTK = new System.Windows.Forms.Button();
-            this.txt_TrangThai = new System.Windows.Forms.TextBox();
             this.txt_MK = new System.Windows.Forms.TextBox();
             this.txt_TenDN = new System.Windows.Forms.TextBox();
             this.txt_MaTK = new System.Windows.Forms.TextBox();
@@ -50,31 +47,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_TimKiemTK = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.rad_Staff = new System.Windows.Forms.RadioButton();
+            this.rad_Admin = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(630, 57);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(106, 27);
-            this.checkBox2.TabIndex = 26;
-            this.checkBox2.Text = "Quản Lý";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(506, 55);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 27);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Nhân Viên";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // btn_QuayLaiTK
             // 
@@ -123,14 +101,6 @@
             this.btn_ThemTK.Text = "Thêm";
             this.btn_ThemTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_ThemTK.UseVisualStyleBackColor = true;
-            // 
-            // txt_TrangThai
-            // 
-            this.txt_TrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TrangThai.Location = new System.Drawing.Point(506, 16);
-            this.txt_TrangThai.Name = "txt_TrangThai";
-            this.txt_TrangThai.Size = new System.Drawing.Size(147, 30);
-            this.txt_TrangThai.TabIndex = 18;
             // 
             // txt_MK
             // 
@@ -278,6 +248,39 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.Location = new System.Drawing.Point(506, 23);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(18, 17);
+            this.checkBox3.TabIndex = 27;
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // rad_Staff
+            // 
+            this.rad_Staff.AutoSize = true;
+            this.rad_Staff.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_Staff.Location = new System.Drawing.Point(506, 56);
+            this.rad_Staff.Name = "rad_Staff";
+            this.rad_Staff.Size = new System.Drawing.Size(117, 27);
+            this.rad_Staff.TabIndex = 28;
+            this.rad_Staff.Text = "Nhân Viên";
+            this.rad_Staff.UseVisualStyleBackColor = true;
+            // 
+            // rad_Admin
+            // 
+            this.rad_Admin.AutoSize = true;
+            this.rad_Admin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rad_Admin.Location = new System.Drawing.Point(638, 54);
+            this.rad_Admin.Name = "rad_Admin";
+            this.rad_Admin.Size = new System.Drawing.Size(105, 27);
+            this.rad_Admin.TabIndex = 29;
+            this.rad_Admin.Text = "Quản Lý";
+            this.rad_Admin.UseVisualStyleBackColor = true;
+            this.rad_Admin.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
             // TaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -285,9 +288,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1253, 591);
+            this.Controls.Add(this.rad_Admin);
+            this.Controls.Add(this.rad_Staff);
+            this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_QuayLaiTK);
             this.Controls.Add(this.txt_MaTK);
@@ -297,7 +301,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_ThemTK);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_TrangThai);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_MK);
             this.Controls.Add(this.label6);
@@ -318,7 +321,6 @@
         private System.Windows.Forms.Button btn_SuaTK;
         private System.Windows.Forms.Button btn_XoaTK;
         private System.Windows.Forms.Button btn_ThemTK;
-        private System.Windows.Forms.TextBox txt_TrangThai;
         private System.Windows.Forms.TextBox txt_MK;
         private System.Windows.Forms.TextBox txt_TenDN;
         private System.Windows.Forms.TextBox txt_MaTK;
@@ -333,8 +335,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_TimKiemTK;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.RadioButton rad_Staff;
+        private System.Windows.Forms.RadioButton rad_Admin;
     }
 }

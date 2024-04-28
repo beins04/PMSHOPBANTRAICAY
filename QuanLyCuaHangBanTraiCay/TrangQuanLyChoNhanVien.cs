@@ -12,6 +12,7 @@ namespace QuanLyCuaHangBanTraiCay
 {
     public partial class TrangQuanLyChoNhanVien : Form
     {
+        public int MaTK;
         public TrangQuanLyChoNhanVien()
         {
             InitializeComponent();
@@ -99,6 +100,11 @@ namespace QuanLyCuaHangBanTraiCay
 
             // Đóng form trang chủ
             this.Close();
+        }
+
+        private void TrangQuanLyChoNhanVien_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

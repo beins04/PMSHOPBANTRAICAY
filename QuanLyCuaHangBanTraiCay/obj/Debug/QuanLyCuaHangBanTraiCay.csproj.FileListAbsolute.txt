@@ -213,3 +213,10 @@ C:\Users\Admin\Source\Repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\obj\Debug\Q
 C:\Users\Admin\Source\Repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\QuanLyCuaHangBanTraiCay.exe.config
 C:\Users\Admin\Source\Repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\QuanLyCuaHangBanTraiCay.exe
 C:\Users\Admin\Source\Repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\QuanLyCuaHangBanTraiCay.pdb
+C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\BLL.dll
+C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\DTO.dll
+C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\DAL.dll
+C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\BLL.pdb
+C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\DTO.pdb
+C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\DAL.pdb
+C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\obj\Debug\QuanLyCuaHangBanTraiCay.csproj.CopyComplete
