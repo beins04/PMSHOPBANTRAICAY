@@ -93,14 +93,14 @@
             // 
             // txt_TienThoi
             // 
-            this.txt_TienThoi.Location = new System.Drawing.Point(428, 98);
+            this.txt_TienThoi.Location = new System.Drawing.Point(428, 112);
             this.txt_TienThoi.Name = "txt_TienThoi";
             this.txt_TienThoi.Size = new System.Drawing.Size(106, 30);
             this.txt_TienThoi.TabIndex = 13;
             // 
             // txt_TongTien
             // 
-            this.txt_TongTien.Location = new System.Drawing.Point(114, 95);
+            this.txt_TongTien.Location = new System.Drawing.Point(114, 112);
             this.txt_TongTien.Name = "txt_TongTien";
             this.txt_TongTien.ReadOnly = true;
             this.txt_TongTien.Size = new System.Drawing.Size(137, 30);
@@ -124,7 +124,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(257, 101);
+            this.label6.Location = new System.Drawing.Point(257, 115);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 23);
             this.label6.TabIndex = 7;
@@ -142,7 +142,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 98);
+            this.label4.Location = new System.Drawing.Point(5, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 23);
             this.label4.TabIndex = 5;
@@ -181,7 +181,7 @@
             // btn_Thoat
             // 
             this.btn_Thoat.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.enter;
-            this.btn_Thoat.Location = new System.Drawing.Point(428, 138);
+            this.btn_Thoat.Location = new System.Drawing.Point(431, 168);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(103, 45);
             this.btn_Thoat.TabIndex = 15;
@@ -192,7 +192,7 @@
             // btn_XemChiTiet
             // 
             this.btn_XemChiTiet.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.list__1_;
-            this.btn_XemChiTiet.Location = new System.Drawing.Point(213, 138);
+            this.btn_XemChiTiet.Location = new System.Drawing.Point(221, 168);
             this.btn_XemChiTiet.Name = "btn_XemChiTiet";
             this.btn_XemChiTiet.Size = new System.Drawing.Size(171, 45);
             this.btn_XemChiTiet.TabIndex = 14;
@@ -204,7 +204,7 @@
             // button3
             // 
             this.button3.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.counting;
-            this.button3.Location = new System.Drawing.Point(59, 138);
+            this.button3.Location = new System.Drawing.Point(61, 168);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(103, 45);
             this.button3.TabIndex = 9;
@@ -259,7 +259,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TrangHoaDon";
-            this.Text = "Trang bán hàng";
+            this.Text = "Trang Hóa Đơn";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();

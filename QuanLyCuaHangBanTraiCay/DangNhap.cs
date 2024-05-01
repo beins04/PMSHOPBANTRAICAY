@@ -55,10 +55,6 @@ namespace QuanLyCuaHangBanTraiCay
 
             return quyen;
         }
-        private void DangNhap_Load(object sender, EventArgs e)
-        {
-            
-        }
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
             DangNhapBLL dangNhapBLL = new DangNhapBLL();
@@ -74,7 +70,7 @@ namespace QuanLyCuaHangBanTraiCay
                 int MaTK = PhanQuyenBLL.PhanQuyen(username, password);
                 string quyen = QuyenHang(MaTK); // Lấy quyền từ cơ sở dữ liệu
 
-                if (quyen == "Admin")
+                if (quyen == "Quản Lý")
                 {
                     TrangQuanLy admin = new TrangQuanLy();
                     admin.MaTK = MaTK;

@@ -272,8 +272,68 @@ namespace QuanLyCuaHangBanTraiCay
         private void btn_QuayLaiSP_Click(object sender, EventArgs e)
         {
             this.Hide();
+
             TrangQuanLy ql = new TrangQuanLy();
-            ql.Show();
+            bool isAdmin = ql.isAdmin;
+
+            if (isAdmin)
+            {
+                TrangQuanLy qlch = new TrangQuanLy();
+                qlch.Show();
+            }
+            else
+            {
+                TrangQuanLyChoNhanVien qlnv = new TrangQuanLyChoNhanVien();
+                qlnv.Show();
+            }
+        }
+
+        //TÌM KIẾM
+        public void TimKiem()
+        {
+            string TimKiemTheo = "", TimKiemThongKe = "";
+
+            TimKiemTheo = cbo_TimKiem.Text;
+            TimKiemThongKe = txt_TimKiemSP.Text;
+            try
+            {
+                using (SqlConnection myConnection = new SqlConnection(scon))
+                {
+                    string sSQLs = "SELECT * FROM SANPHAM WHERE " + TimKiemTheo + " = @TimKiemThongKe";
+                    myConnection.Open();
+                    using (SqlCommand cmd = new SqlCommand(sSQLs, myConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@TimKiemThongKe", TimKiemThongKe);
+
+                        SqlDataAdapter daSP = new SqlDataAdapter(cmd);
+                        DataSet dsSP = new DataSet();
+                        daSP.Fill(dsSP);
+
+                        dgv_SanPham.DataSource = dsSP.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+            }
+        }
+
+        private void btn_TimSP_Click(object sender, EventArgs e)
+        {
+            if (cbo_TimKiem.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemSP.Text))
+            {
+                MessageBox.Show("Bạn chưa điền vào ô tìm kiếm hoặc bạn chọn chức năng tìm kiếm chưa phù hợp.", "Thông Báo", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
+                TimKiem();
+            }
+        }
+
+        private void btn_Reset_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

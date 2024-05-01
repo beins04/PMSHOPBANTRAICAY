@@ -23,7 +23,7 @@ namespace QuanLyCuaHangBanTraiCay
         {
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT 'PN0' + CAST(MaCTPN AS NVARCHAR(10)) AS MaCTPN, MaSPN, GiaNhap, KhoiLuong, SoLuongNhap, ThanhTien FROM KHACHHANG; ";
+            string sSQL = "SELECT MaCTPN, MaSPN, GiaNhap, KhoiLuong, SoLuongNhap, ThanhTien FROM CHITIETPHIEUNHAP; ";
             try
             {
                 myConnection.Open();
@@ -34,17 +34,6 @@ namespace QuanLyCuaHangBanTraiCay
 
                 myConnection.Close();
                 dgv_ChiTiet.DataSource = dsChiTietPN.Tables[0];
-                StringBuilder messageBuilder = new StringBuilder();
-                foreach (DataRow row in dsChiTietPN.Tables[0].Rows)
-                {
-                    foreach (DataColumn column in dsChiTietPN.Tables[0].Columns)
-                    {
-                        messageBuilder.Append(column.ColumnName + ": " + row[column.ColumnName].ToString() + "\n");
-                    }
-                    messageBuilder.Append("\n");
-                }
-
-                MessageBox.Show(messageBuilder.ToString(), "Chi Tiết Phiếu Nhập", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -58,15 +47,39 @@ namespace QuanLyCuaHangBanTraiCay
             PhieuNhap ql = new PhieuNhap();
             ql.Show();
         }
-
-        private void dgv_ChiTiet_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            XemDanhSach();
-        }
-
+        
         private void ChiTietPhieuNhap_Load(object sender, EventArgs e)
         {
             txt_MaSPN.ReadOnly = true;
+            XemDanhSach();
+        }
+        //THÊM CHI TIẾT PHIÊU NHẬP
+        public bool ThemCTPN(string sTenKhachHang, string sDiaChi, string sSDT, string sGioiTinh)
+        {
+
+            bool kq;
+            kq = true;
+
+            SqlConnection myConnection = new SqlConnection(scon);
+            string sSql = string.Format("INSERT INTO KHACHHANG VALUES (N'{0}', N'{1}', N'{2}', N'{3}')", sTenKhachHang, sDiaChi, sSDT, sGioiTinh);
+            MessageBox.Show(sSql);
+
+            try
+            {
+                //mở kết nối CSDL
+                myConnection.Open();
+                //thực thi CSDL
+                SqlCommand myCommand = new SqlCommand(sSql, myConnection);
+                myCommand.ExecuteNonQuery();
+                //đóng kết nối CSDL
+                myConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                kq = false; //Thêm KHÔNG thành công
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+            }
+            return kq;
         }
 
         private void btn_Xuat_Click(object sender, EventArgs e)
@@ -148,5 +161,9 @@ namespace QuanLyCuaHangBanTraiCay
             }
         }
 
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

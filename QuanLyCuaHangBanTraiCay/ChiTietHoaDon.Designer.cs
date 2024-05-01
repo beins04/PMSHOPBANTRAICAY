@@ -51,7 +51,7 @@
             this.dgv_ChiTietHoaDon.Name = "dgv_ChiTietHoaDon";
             this.dgv_ChiTietHoaDon.RowHeadersWidth = 51;
             this.dgv_ChiTietHoaDon.RowTemplate.Height = 24;
-            this.dgv_ChiTietHoaDon.Size = new System.Drawing.Size(762, 191);
+            this.dgv_ChiTietHoaDon.Size = new System.Drawing.Size(1022, 191);
             this.dgv_ChiTietHoaDon.TabIndex = 16;
             // 
             // text_TongTienHoaDon

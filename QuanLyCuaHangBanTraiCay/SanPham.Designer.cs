@@ -54,7 +54,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_SanPham = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo_TimKiem = new System.Windows.Forms.ComboBox();
+            this.btn_Reset = new System.Windows.Forms.Button();
+            this.btn_TimSP = new System.Windows.Forms.Button();
             this.txt_TimKiemSP = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dt_Ngay = new System.Windows.Forms.DateTimePicker();
@@ -64,8 +66,6 @@
             this.btn_SuaSP = new System.Windows.Forms.Button();
             this.btn_XoaSP = new System.Windows.Forms.Button();
             this.btn_ThemSP = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btn_TimSP = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SanPham)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -301,8 +301,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.button7);
+            this.groupBox3.Controls.Add(this.cbo_TimKiem);
+            this.groupBox3.Controls.Add(this.btn_Reset);
             this.groupBox3.Controls.Add(this.btn_TimSP);
             this.groupBox3.Controls.Add(this.txt_TimKiemSP);
             this.groupBox3.Controls.Add(this.label14);
@@ -314,25 +314,56 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tìm Kiếm";
             // 
-            // comboBox1
+            // cbo_TimKiem
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(131, 80);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 31);
-            this.comboBox1.TabIndex = 5;
+            this.cbo_TimKiem.FormattingEnabled = true;
+            this.cbo_TimKiem.Items.AddRange(new object[] {
+            "MaSP",
+            "TenSP",
+            "MaNCC",
+            "MaLSP",
+            "XuatXu",
+            ""});
+            this.cbo_TimKiem.Location = new System.Drawing.Point(110, 78);
+            this.cbo_TimKiem.Name = "cbo_TimKiem";
+            this.cbo_TimKiem.Size = new System.Drawing.Size(221, 31);
+            this.cbo_TimKiem.TabIndex = 5;
+            // 
+            // btn_Reset
+            // 
+            this.btn_Reset.Image = ((System.Drawing.Image)(resources.GetObject("btn_Reset.Image")));
+            this.btn_Reset.Location = new System.Drawing.Point(352, 65);
+            this.btn_Reset.Name = "btn_Reset";
+            this.btn_Reset.Size = new System.Drawing.Size(117, 44);
+            this.btn_Reset.TabIndex = 4;
+            this.btn_Reset.Text = "Tải Lại";
+            this.btn_Reset.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Reset.UseVisualStyleBackColor = true;
+            this.btn_Reset.Click += new System.EventHandler(this.btn_Reset_Click);
+            // 
+            // btn_TimSP
+            // 
+            this.btn_TimSP.Image = ((System.Drawing.Image)(resources.GetObject("btn_TimSP.Image")));
+            this.btn_TimSP.Location = new System.Drawing.Point(352, 14);
+            this.btn_TimSP.Name = "btn_TimSP";
+            this.btn_TimSP.Size = new System.Drawing.Size(117, 45);
+            this.btn_TimSP.TabIndex = 3;
+            this.btn_TimSP.Text = "Tìm Kiếm";
+            this.btn_TimSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_TimSP.UseVisualStyleBackColor = true;
+            this.btn_TimSP.Click += new System.EventHandler(this.btn_TimSP_Click);
             // 
             // txt_TimKiemSP
             // 
-            this.txt_TimKiemSP.Location = new System.Drawing.Point(52, 39);
+            this.txt_TimKiemSP.Location = new System.Drawing.Point(5, 39);
             this.txt_TimKiemSP.Name = "txt_TimKiemSP";
-            this.txt_TimKiemSP.Size = new System.Drawing.Size(279, 30);
+            this.txt_TimKiemSP.Size = new System.Drawing.Size(326, 30);
             this.txt_TimKiemSP.TabIndex = 1;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(26, 82);
+            this.label14.Location = new System.Drawing.Point(1, 83);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(103, 23);
             this.label14.TabIndex = 0;
@@ -416,28 +447,6 @@
             this.btn_ThemSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_ThemSP.UseVisualStyleBackColor = true;
             this.btn_ThemSP.Click += new System.EventHandler(this.btn_ThemSP_Click);
-            // 
-            // button7
-            // 
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(352, 74);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(117, 36);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Tải Lại";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // btn_TimSP
-            // 
-            this.btn_TimSP.Image = ((System.Drawing.Image)(resources.GetObject("btn_TimSP.Image")));
-            this.btn_TimSP.Location = new System.Drawing.Point(352, 24);
-            this.btn_TimSP.Name = "btn_TimSP";
-            this.btn_TimSP.Size = new System.Drawing.Size(117, 45);
-            this.btn_TimSP.TabIndex = 3;
-            this.btn_TimSP.Text = "Tìm Kiếm";
-            this.btn_TimSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_TimSP.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -529,9 +538,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txt_TimKiemSP;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_Reset;
         private System.Windows.Forms.Button btn_TimSP;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_TimKiem;
         private System.Windows.Forms.DataGridView dgv_SanPham;
         private System.Windows.Forms.ComboBox cbo_LoaiSP;
         private System.Windows.Forms.Label label15;

@@ -60,7 +60,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(574, 115);
+            this.label4.Location = new System.Drawing.Point(574, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 23);
             this.label4.TabIndex = 3;
@@ -70,7 +70,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 157);
+            this.label3.Location = new System.Drawing.Point(36, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 23);
             this.label3.TabIndex = 2;
@@ -100,7 +100,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(64, 115);
+            this.label5.Location = new System.Drawing.Point(64, 157);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 23);
             this.label5.TabIndex = 9;
@@ -117,7 +117,7 @@
             // txt_NCC
             // 
             this.txt_NCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NCC.Location = new System.Drawing.Point(228, 154);
+            this.txt_NCC.Location = new System.Drawing.Point(228, 108);
             this.txt_NCC.Name = "txt_NCC";
             this.txt_NCC.Size = new System.Drawing.Size(199, 30);
             this.txt_NCC.TabIndex = 11;
@@ -125,7 +125,7 @@
             // txt_SLN
             // 
             this.txt_SLN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_SLN.Location = new System.Drawing.Point(228, 106);
+            this.txt_SLN.Location = new System.Drawing.Point(228, 150);
             this.txt_SLN.Name = "txt_SLN";
             this.txt_SLN.Size = new System.Drawing.Size(199, 30);
             this.txt_SLN.TabIndex = 12;
@@ -151,7 +151,7 @@
             // txt_ThanhTien
             // 
             this.txt_ThanhTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ThanhTien.Location = new System.Drawing.Point(677, 70);
+            this.txt_ThanhTien.Location = new System.Drawing.Point(677, 112);
             this.txt_ThanhTien.Name = "txt_ThanhTien";
             this.txt_ThanhTien.Size = new System.Drawing.Size(164, 30);
             this.txt_ThanhTien.TabIndex = 15;
@@ -165,12 +165,11 @@
             this.dgv_ChiTiet.RowTemplate.Height = 24;
             this.dgv_ChiTiet.Size = new System.Drawing.Size(812, 342);
             this.dgv_ChiTiet.TabIndex = 16;
-            this.dgv_ChiTiet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ChiTiet_CellContentClick);
             // 
             // txt_GiaNhap
             // 
             this.txt_GiaNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_GiaNhap.Location = new System.Drawing.Point(677, 112);
+            this.txt_GiaNhap.Location = new System.Drawing.Point(677, 70);
             this.txt_GiaNhap.Name = "txt_GiaNhap";
             this.txt_GiaNhap.Size = new System.Drawing.Size(164, 30);
             this.txt_GiaNhap.TabIndex = 24;
@@ -179,7 +178,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(558, 73);
+            this.label7.Location = new System.Drawing.Point(558, 119);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 23);
             this.label7.TabIndex = 23;
@@ -284,6 +283,7 @@
             this.btn_Them.Text = "Thêm";
             this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Them.UseVisualStyleBackColor = true;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // pictureBox1
             // 

@@ -13,6 +13,7 @@ namespace QuanLyCuaHangBanTraiCay
     public partial class TrangQuanLy : Form
     {
         public int MaTK;
+        public bool isAdmin { get; set; }
         public TrangQuanLy()
         {
             InitializeComponent();
