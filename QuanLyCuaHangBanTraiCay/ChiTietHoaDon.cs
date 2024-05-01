@@ -51,6 +51,18 @@ namespace QuanLyCuaHangBanTraiCay
 
         private void btn_XuatHoaDon_Click(object sender, EventArgs e)
         {
+            // Lấy thông tin từ các TextBox tương ứng
+            string maHoaDon = txt_MaHoaDon.Text;
+            string maNhanVien = txt_MaNVHoaDon.Text;
+            string ngayLap = dateTimePicker1.Text;
+
+            // Kiểm tra và xử lý nếu có thông tin bị thiếu
+            if (string.IsNullOrWhiteSpace(maHoaDon) || string.IsNullOrWhiteSpace(maNhanVien) || string.IsNullOrWhiteSpace(ngayLap))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin mã hóa đơn, mã nhân viên và ngày lập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Chuỗi kết nối đến cơ sở dữ liệu
             string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
 
@@ -88,6 +100,11 @@ namespace QuanLyCuaHangBanTraiCay
                         messageBuilder.Append("\n");
                     }
 
+                    // Thêm thông tin mã hóa đơn, mã nhân viên và ngày lập từ TextBox vào MessageBox
+                    messageBuilder.Insert(0, "Ngày Lập: " + ngayLap + "\n");
+                    messageBuilder.Insert(0, "Mã Nhân Viên: " + maNhanVien + "\n");
+                    messageBuilder.Insert(0, "Mã Hóa Đơn: " + maHoaDon + "\n");
+
                     MessageBox.Show(messageBuilder.ToString(), "Hóa Đơn", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -97,6 +114,7 @@ namespace QuanLyCuaHangBanTraiCay
                 MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
+
     }
 }
+

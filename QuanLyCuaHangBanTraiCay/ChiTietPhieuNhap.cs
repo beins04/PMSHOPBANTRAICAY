@@ -71,8 +71,29 @@ namespace QuanLyCuaHangBanTraiCay
 
         private void btn_Xuat_Click(object sender, EventArgs e)
         {
+            // Lấy thông tin từ các TextBox
+            string maSanPhamNhap = txt_MaSPN.Text;
+            string tenSanPhamNhap = txt_TenSPN.Text;
+            string soLuongNhap = txt_SLN.Text;
+            string tenNhaCungCap = txt_NCC.Text;
+            string khoiLuong = txt_KhoiLuong.Text;
+            string thanhTien = txt_ThanhTien.Text;
+            string giaNhap = txt_GiaNhap.Text;
+
+            // Kiểm tra và xử lý nếu có thông tin bị thiếu
+            if (string.IsNullOrWhiteSpace(maSanPhamNhap) || string.IsNullOrWhiteSpace(tenSanPhamNhap) || string.IsNullOrWhiteSpace(soLuongNhap) ||
+                string.IsNullOrWhiteSpace(tenNhaCungCap) || string.IsNullOrWhiteSpace(khoiLuong) || string.IsNullOrWhiteSpace(thanhTien) ||
+                string.IsNullOrWhiteSpace(giaNhap))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Chuỗi kết nối đến cơ sở dữ liệu SQL Server
             string scon = "Chuỗi_Kết_Nối_CSDL_SQL_Server";
-            string sSQL = "SELECT 'PN0' + CAST(MaCTPN AS NVARCHAR(10)) AS MaCTPN, MaSPN, GiaNhap, KhoiLuong, SoLuongNhap, ThanhTien FROM KHACHHANG; ";
+
+            // Câu truy vấn SQL để lấy dữ liệu chi tiết phiếu nhập từ cơ sở dữ liệu
+            string sSQL = "SELECT 'PN0' + CAST(MaCTPN AS NVARCHAR(10)) AS MaCTPN, MaSPN, GiaNhap, KhoiLuong, SoLuongNhap, ThanhTien FROM KHACHHANG;";
 
             try
             {
@@ -90,11 +111,32 @@ namespace QuanLyCuaHangBanTraiCay
                     StringBuilder messageBuilder = new StringBuilder();
                     foreach (DataRow row in dsChiTietPN.Tables[0].Rows)
                     {
-                        foreach (DataColumn column in dsChiTietPN.Tables[0].Columns)
-                        {
-                            messageBuilder.Append(column.ColumnName + ": " + row[column.ColumnName].ToString() + "\n");
-                        }
-                        messageBuilder.Append("\n");
+                        // Lấy thông tin từ cơ sở dữ liệu
+                        string maCTPN = row["MaCTPN"].ToString();
+                        string maSPN = row["MaSPN"].ToString();
+                        string giaNhapDB = row["GiaNhap"].ToString();
+                        string khoiLuongDB = row["KhoiLuong"].ToString();
+                        string soLuongNhapDB = row["SoLuongNhap"].ToString();
+                        string thanhTienDB = row["ThanhTien"].ToString();
+
+                        // Thêm thông tin từ cơ sở dữ liệu vào chuỗi
+                        messageBuilder.AppendLine("Mã Chi Tiết Phiếu Nhập (Từ DB): " + maCTPN);
+                        messageBuilder.AppendLine("Mã Sản Phẩm Nhập (Từ DB): " + maSPN);
+                        messageBuilder.AppendLine("Giá Nhập (Từ DB): " + giaNhapDB);
+                        messageBuilder.AppendLine("Khối Lượng (Từ DB): " + khoiLuongDB);
+                        messageBuilder.AppendLine("Số Lượng Nhập (Từ DB): " + soLuongNhapDB);
+                        messageBuilder.AppendLine("Thành Tiền (Từ DB): " + thanhTienDB);
+
+                        // Thêm thông tin từ TextBox vào chuỗi
+                        messageBuilder.AppendLine("Mã Sản Phẩm Nhập (Từ TextBox): " + maSanPhamNhap);
+                        messageBuilder.AppendLine("Tên Sản Phẩm Nhập (Từ TextBox): " + tenSanPhamNhap);
+                        messageBuilder.AppendLine("Số Lượng Nhập (Từ TextBox): " + soLuongNhap);
+                        messageBuilder.AppendLine("Tên Nhà Cung Cấp (Từ TextBox): " + tenNhaCungCap);
+                        messageBuilder.AppendLine("Khối Lượng (Từ TextBox): " + khoiLuong);
+                        messageBuilder.AppendLine("Thành Tiền (Từ TextBox): " + thanhTien);
+                        messageBuilder.AppendLine("Giá Nhập (Từ TextBox): " + giaNhap);
+
+                        messageBuilder.AppendLine(); // Dòng trống để phân tách giữa các chi tiết phiếu nhập
                     }
 
                     MessageBox.Show(messageBuilder.ToString(), "Chi Tiết Phiếu Nhập", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -105,5 +147,6 @@ namespace QuanLyCuaHangBanTraiCay
                 MessageBox.Show("Lỗi!!!. Chi tiết: " + ex.Message);
             }
         }
+
     }
 }
