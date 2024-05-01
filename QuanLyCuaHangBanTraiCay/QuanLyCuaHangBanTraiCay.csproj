@@ -332,5 +332,8 @@
   <ItemGroup>
     <None Include="Resources\eyeopen.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống %283%29.jpg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

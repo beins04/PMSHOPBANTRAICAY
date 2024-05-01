@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_QuayLai = new System.Windows.Forms.Button();
             this.chk_TrangThai = new System.Windows.Forms.CheckBox();
-            this.btn_SuaNCCcc = new System.Windows.Forms.Button();
-            this.btn_XoaNCCcc = new System.Windows.Forms.Button();
-            this.btn_ThemNCCcc = new System.Windows.Forms.Button();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.txt_DiaChi = new System.Windows.Forms.TextBox();
             this.txt_TenNhaCungCap = new System.Windows.Forms.TextBox();
@@ -43,21 +39,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.dgv_NhaCungCap = new System.Windows.Forms.DataGridView();
             this.txt_MaNCC = new System.Windows.Forms.TextBox();
+            this.btn_QuayLai = new System.Windows.Forms.Button();
+            this.btn_SuaNCCcc = new System.Windows.Forms.Button();
+            this.btn_XoaNCCcc = new System.Windows.Forms.Button();
+            this.btn_ThemNCCcc = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCungCap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_QuayLai
-            // 
-            this.btn_QuayLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QuayLai.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.quaylai;
-            this.btn_QuayLai.Location = new System.Drawing.Point(499, 168);
-            this.btn_QuayLai.Name = "btn_QuayLai";
-            this.btn_QuayLai.Size = new System.Drawing.Size(138, 53);
-            this.btn_QuayLai.TabIndex = 26;
-            this.btn_QuayLai.Text = "Quay Lại";
-            this.btn_QuayLai.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_QuayLai.UseVisualStyleBackColor = true;
-            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
             // chk_TrangThai
             // 
@@ -68,45 +57,6 @@
             this.chk_TrangThai.Size = new System.Drawing.Size(18, 17);
             this.chk_TrangThai.TabIndex = 24;
             this.chk_TrangThai.UseVisualStyleBackColor = true;
-            // 
-            // btn_SuaNCCcc
-            // 
-            this.btn_SuaNCCcc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SuaNCCcc.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.suaall;
-            this.btn_SuaNCCcc.Location = new System.Drawing.Point(369, 168);
-            this.btn_SuaNCCcc.Name = "btn_SuaNCCcc";
-            this.btn_SuaNCCcc.Size = new System.Drawing.Size(89, 53);
-            this.btn_SuaNCCcc.TabIndex = 23;
-            this.btn_SuaNCCcc.Text = "Sửa";
-            this.btn_SuaNCCcc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_SuaNCCcc.UseVisualStyleBackColor = true;
-            this.btn_SuaNCCcc.Click += new System.EventHandler(this.btn_SuaNCCcc_Click);
-            // 
-            // btn_XoaNCCcc
-            // 
-            this.btn_XoaNCCcc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XoaNCCcc.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.xoa;
-            this.btn_XoaNCCcc.Location = new System.Drawing.Point(224, 168);
-            this.btn_XoaNCCcc.Name = "btn_XoaNCCcc";
-            this.btn_XoaNCCcc.Size = new System.Drawing.Size(98, 53);
-            this.btn_XoaNCCcc.TabIndex = 23;
-            this.btn_XoaNCCcc.Text = "Xóa";
-            this.btn_XoaNCCcc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_XoaNCCcc.UseVisualStyleBackColor = true;
-            this.btn_XoaNCCcc.Click += new System.EventHandler(this.btn_XoaNCCcc_Click);
-            // 
-            // btn_ThemNCCcc
-            // 
-            this.btn_ThemNCCcc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThemNCCcc.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them;
-            this.btn_ThemNCCcc.Location = new System.Drawing.Point(73, 168);
-            this.btn_ThemNCCcc.Name = "btn_ThemNCCcc";
-            this.btn_ThemNCCcc.Size = new System.Drawing.Size(118, 53);
-            this.btn_ThemNCCcc.TabIndex = 12;
-            this.btn_ThemNCCcc.Text = "Thêm";
-            this.btn_ThemNCCcc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_ThemNCCcc.UseVisualStyleBackColor = true;
-            this.btn_ThemNCCcc.Click += new System.EventHandler(this.btn_ThemNCCcc_Click);
             // 
             // txt_SDT
             // 
@@ -201,13 +151,76 @@
             this.txt_MaNCC.Size = new System.Drawing.Size(196, 30);
             this.txt_MaNCC.TabIndex = 27;
             // 
+            // btn_QuayLai
+            // 
+            this.btn_QuayLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuayLai.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.quaylai;
+            this.btn_QuayLai.Location = new System.Drawing.Point(499, 168);
+            this.btn_QuayLai.Name = "btn_QuayLai";
+            this.btn_QuayLai.Size = new System.Drawing.Size(138, 53);
+            this.btn_QuayLai.TabIndex = 26;
+            this.btn_QuayLai.Text = "Quay Lại";
+            this.btn_QuayLai.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_QuayLai.UseVisualStyleBackColor = true;
+            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
+            // 
+            // btn_SuaNCCcc
+            // 
+            this.btn_SuaNCCcc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SuaNCCcc.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.suaall;
+            this.btn_SuaNCCcc.Location = new System.Drawing.Point(369, 168);
+            this.btn_SuaNCCcc.Name = "btn_SuaNCCcc";
+            this.btn_SuaNCCcc.Size = new System.Drawing.Size(89, 53);
+            this.btn_SuaNCCcc.TabIndex = 23;
+            this.btn_SuaNCCcc.Text = "Sửa";
+            this.btn_SuaNCCcc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_SuaNCCcc.UseVisualStyleBackColor = true;
+            this.btn_SuaNCCcc.Click += new System.EventHandler(this.btn_SuaNCCcc_Click);
+            // 
+            // btn_XoaNCCcc
+            // 
+            this.btn_XoaNCCcc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XoaNCCcc.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.xoa;
+            this.btn_XoaNCCcc.Location = new System.Drawing.Point(224, 168);
+            this.btn_XoaNCCcc.Name = "btn_XoaNCCcc";
+            this.btn_XoaNCCcc.Size = new System.Drawing.Size(98, 53);
+            this.btn_XoaNCCcc.TabIndex = 23;
+            this.btn_XoaNCCcc.Text = "Xóa";
+            this.btn_XoaNCCcc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_XoaNCCcc.UseVisualStyleBackColor = true;
+            this.btn_XoaNCCcc.Click += new System.EventHandler(this.btn_XoaNCCcc_Click);
+            // 
+            // btn_ThemNCCcc
+            // 
+            this.btn_ThemNCCcc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThemNCCcc.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them;
+            this.btn_ThemNCCcc.Location = new System.Drawing.Point(73, 168);
+            this.btn_ThemNCCcc.Name = "btn_ThemNCCcc";
+            this.btn_ThemNCCcc.Size = new System.Drawing.Size(118, 53);
+            this.btn_ThemNCCcc.TabIndex = 12;
+            this.btn_ThemNCCcc.Text = "Thêm";
+            this.btn_ThemNCCcc.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_ThemNCCcc.UseVisualStyleBackColor = true;
+            this.btn_ThemNCCcc.Click += new System.EventHandler(this.btn_ThemNCCcc_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(793, 477);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(870, 484);
+            this.ClientSize = new System.Drawing.Size(870, 557);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_MaNCC);
             this.Controls.Add(this.btn_QuayLai);
             this.Controls.Add(this.dgv_NhaCungCap);
@@ -228,6 +241,7 @@
             this.Text = "NhaCungCap";
             this.Load += new System.EventHandler(this.NhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhaCungCap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +263,6 @@
         private System.Windows.Forms.DataGridView dgv_NhaCungCap;
         private System.Windows.Forms.Button btn_QuayLai;
         private System.Windows.Forms.TextBox txt_MaNCC;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -17,19 +17,11 @@ namespace QuanLyCuaHangBanTraiCay
             InitializeComponent();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btn_XemChiTiet_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_TongTien_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            ChiTietHoaDon ql = new ChiTietHoaDon();
+            ql.Show();
         }
     }
 }

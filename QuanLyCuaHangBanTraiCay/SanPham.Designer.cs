@@ -55,19 +55,21 @@
             this.dgv_SanPham = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.btn_TimSP = new System.Windows.Forms.Button();
             this.txt_TimKiemSP = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dt_Ngay = new System.Windows.Forms.DateTimePicker();
+            this.chk_TrangThai = new System.Windows.Forms.CheckBox();
+            this.txt_MaSP = new System.Windows.Forms.TextBox();
             this.btn_QuayLaiSP = new System.Windows.Forms.Button();
             this.btn_SuaSP = new System.Windows.Forms.Button();
             this.btn_XoaSP = new System.Windows.Forms.Button();
             this.btn_ThemSP = new System.Windows.Forms.Button();
-            this.chk_TrangThai = new System.Windows.Forms.CheckBox();
-            this.txt_MaSP = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btn_TimSP = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SanPham)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label16
@@ -320,28 +322,6 @@
             this.comboBox1.Size = new System.Drawing.Size(157, 31);
             this.comboBox1.TabIndex = 5;
             // 
-            // button7
-            // 
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(352, 74);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(117, 36);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Tải Lại";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // btn_TimSP
-            // 
-            this.btn_TimSP.Image = ((System.Drawing.Image)(resources.GetObject("btn_TimSP.Image")));
-            this.btn_TimSP.Location = new System.Drawing.Point(352, 24);
-            this.btn_TimSP.Name = "btn_TimSP";
-            this.btn_TimSP.Size = new System.Drawing.Size(117, 45);
-            this.btn_TimSP.TabIndex = 3;
-            this.btn_TimSP.Text = "Tìm Kiếm";
-            this.btn_TimSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_TimSP.UseVisualStyleBackColor = true;
-            // 
             // txt_TimKiemSP
             // 
             this.txt_TimKiemSP.Location = new System.Drawing.Point(52, 39);
@@ -365,6 +345,23 @@
             this.dt_Ngay.Name = "dt_Ngay";
             this.dt_Ngay.Size = new System.Drawing.Size(300, 30);
             this.dt_Ngay.TabIndex = 20;
+            // 
+            // chk_TrangThai
+            // 
+            this.chk_TrangThai.AutoSize = true;
+            this.chk_TrangThai.Location = new System.Drawing.Point(163, 178);
+            this.chk_TrangThai.Name = "chk_TrangThai";
+            this.chk_TrangThai.Size = new System.Drawing.Size(18, 17);
+            this.chk_TrangThai.TabIndex = 42;
+            this.chk_TrangThai.UseVisualStyleBackColor = true;
+            // 
+            // txt_MaSP
+            // 
+            this.txt_MaSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaSP.Location = new System.Drawing.Point(163, 13);
+            this.txt_MaSP.Name = "txt_MaSP";
+            this.txt_MaSP.Size = new System.Drawing.Size(119, 30);
+            this.txt_MaSP.TabIndex = 43;
             // 
             // btn_QuayLaiSP
             // 
@@ -420,31 +417,47 @@
             this.btn_ThemSP.UseVisualStyleBackColor = true;
             this.btn_ThemSP.Click += new System.EventHandler(this.btn_ThemSP_Click);
             // 
-            // chk_TrangThai
+            // button7
             // 
-            this.chk_TrangThai.AutoSize = true;
-            this.chk_TrangThai.Location = new System.Drawing.Point(163, 178);
-            this.chk_TrangThai.Name = "chk_TrangThai";
-            this.chk_TrangThai.Size = new System.Drawing.Size(18, 17);
-            this.chk_TrangThai.TabIndex = 42;
-            this.chk_TrangThai.UseVisualStyleBackColor = true;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(352, 74);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(117, 36);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Tải Lại";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // txt_MaSP
+            // btn_TimSP
             // 
-            this.txt_MaSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaSP.Location = new System.Drawing.Point(163, 13);
-            this.txt_MaSP.Name = "txt_MaSP";
-            this.txt_MaSP.Size = new System.Drawing.Size(119, 30);
-            this.txt_MaSP.TabIndex = 43;
+            this.btn_TimSP.Image = ((System.Drawing.Image)(resources.GetObject("btn_TimSP.Image")));
+            this.btn_TimSP.Location = new System.Drawing.Point(352, 24);
+            this.btn_TimSP.Name = "btn_TimSP";
+            this.btn_TimSP.Size = new System.Drawing.Size(117, 45);
+            this.btn_TimSP.TabIndex = 3;
+            this.btn_TimSP.Text = "Tìm Kiếm";
+            this.btn_TimSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_TimSP.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1141, 767);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 44;
+            this.pictureBox1.TabStop = false;
             // 
             // SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1218, 759);
+            this.ClientSize = new System.Drawing.Size(1218, 847);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_MaSP);
             this.Controls.Add(this.chk_TrangThai);
             this.Controls.Add(this.dgv_SanPham);
@@ -484,6 +497,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SanPham)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,5 +541,6 @@
         private System.Windows.Forms.DateTimePicker dt_Ngay;
         private System.Windows.Forms.CheckBox chk_TrangThai;
         private System.Windows.Forms.TextBox txt_MaSP;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgv_ChiTietHoaDon = new System.Windows.Forms.DataGridView();
             this.text_TongTienHoaDon = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -37,20 +37,22 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_TaoMoiHoaDon = new System.Windows.Forms.Button();
             this.btn_XuatHoaDon = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTietHoaDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView3
+            // dgv_ChiTietHoaDon
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(58, 86);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(762, 191);
-            this.dataGridView3.TabIndex = 16;
+            this.dgv_ChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ChiTietHoaDon.Location = new System.Drawing.Point(58, 86);
+            this.dgv_ChiTietHoaDon.Name = "dgv_ChiTietHoaDon";
+            this.dgv_ChiTietHoaDon.RowHeadersWidth = 51;
+            this.dgv_ChiTietHoaDon.RowTemplate.Height = 24;
+            this.dgv_ChiTietHoaDon.Size = new System.Drawing.Size(762, 191);
+            this.dgv_ChiTietHoaDon.TabIndex = 16;
             // 
             // text_TongTienHoaDon
             // 
@@ -119,11 +121,21 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(55, 42);
+            this.label7.Location = new System.Drawing.Point(44, 42);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 23);
             this.label7.TabIndex = 5;
             this.label7.Text = "Mã Hóa Đơn:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1012, 346);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_TaoMoiHoaDon
             // 
@@ -142,22 +154,24 @@
             // 
             this.btn_XuatHoaDon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XuatHoaDon.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.xuathoadon;
-            this.btn_XuatHoaDon.Location = new System.Drawing.Point(296, 361);
+            this.btn_XuatHoaDon.Location = new System.Drawing.Point(281, 361);
             this.btn_XuatHoaDon.Name = "btn_XuatHoaDon";
-            this.btn_XuatHoaDon.Size = new System.Drawing.Size(164, 49);
+            this.btn_XuatHoaDon.Size = new System.Drawing.Size(178, 49);
             this.btn_XuatHoaDon.TabIndex = 5;
             this.btn_XuatHoaDon.Text = "Xuất Hóa Đơn";
             this.btn_XuatHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_XuatHoaDon.UseVisualStyleBackColor = true;
+            this.btn_XuatHoaDon.Click += new System.EventHandler(this.btn_XuatHoaDon_Click);
             // 
             // ChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1092, 422);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.ClientSize = new System.Drawing.Size(1092, 429);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.text_TongTienHoaDon);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dgv_ChiTietHoaDon);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btn_TaoMoiHoaDon);
             this.Controls.Add(this.btn_XuatHoaDon);
@@ -170,14 +184,15 @@
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ChiTietHoaDon";
             this.Text = "ChiTietHoaDon";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTietHoaDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dgv_ChiTietHoaDon;
         private System.Windows.Forms.TextBox text_TongTienHoaDon;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -188,5 +203,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_TaoMoiHoaDon;
         private System.Windows.Forms.Button btn_XuatHoaDon;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

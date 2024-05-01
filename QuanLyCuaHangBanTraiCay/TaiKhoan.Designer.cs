@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_QuayLaiTK = new System.Windows.Forms.Button();
-            this.btn_SuaTK = new System.Windows.Forms.Button();
-            this.btn_XoaTK = new System.Windows.Forms.Button();
-            this.btn_ThemTK = new System.Windows.Forms.Button();
             this.txt_MK = new System.Windows.Forms.TextBox();
             this.txt_TenDN = new System.Windows.Forms.TextBox();
             this.txt_MaTK = new System.Windows.Forms.TextBox();
@@ -41,8 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_TaiLaiTK = new System.Windows.Forms.Button();
-            this.btn_TimKiemTK = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_TimKiemTK = new System.Windows.Forms.TextBox();
@@ -50,61 +44,17 @@
             this.chk_TrangThai = new System.Windows.Forms.CheckBox();
             this.rad_Staff = new System.Windows.Forms.RadioButton();
             this.rad_Admin = new System.Windows.Forms.RadioButton();
+            this.btn_TaiLaiTK = new System.Windows.Forms.Button();
+            this.btn_TimKiemTK = new System.Windows.Forms.Button();
+            this.btn_QuayLaiTK = new System.Windows.Forms.Button();
+            this.btn_SuaTK = new System.Windows.Forms.Button();
+            this.btn_XoaTK = new System.Windows.Forms.Button();
+            this.btn_ThemTK = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_QuayLaiTK
-            // 
-            this.btn_QuayLaiTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QuayLaiTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.quaylai;
-            this.btn_QuayLaiTK.Location = new System.Drawing.Point(430, 154);
-            this.btn_QuayLaiTK.Name = "btn_QuayLaiTK";
-            this.btn_QuayLaiTK.Size = new System.Drawing.Size(136, 40);
-            this.btn_QuayLaiTK.TabIndex = 25;
-            this.btn_QuayLaiTK.Text = "Quay Lại";
-            this.btn_QuayLaiTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_QuayLaiTK.UseVisualStyleBackColor = true;
-            this.btn_QuayLaiTK.Click += new System.EventHandler(this.btn_QuayLaiTK_Click);
-            // 
-            // btn_SuaTK
-            // 
-            this.btn_SuaTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SuaTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.suaall;
-            this.btn_SuaTK.Location = new System.Drawing.Point(306, 154);
-            this.btn_SuaTK.Name = "btn_SuaTK";
-            this.btn_SuaTK.Size = new System.Drawing.Size(118, 40);
-            this.btn_SuaTK.TabIndex = 23;
-            this.btn_SuaTK.Text = "Sửa";
-            this.btn_SuaTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_SuaTK.UseVisualStyleBackColor = true;
-            this.btn_SuaTK.Click += new System.EventHandler(this.btn_SuaTK_Click);
-            // 
-            // btn_XoaTK
-            // 
-            this.btn_XoaTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XoaTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.xoa;
-            this.btn_XoaTK.Location = new System.Drawing.Point(185, 154);
-            this.btn_XoaTK.Name = "btn_XoaTK";
-            this.btn_XoaTK.Size = new System.Drawing.Size(110, 40);
-            this.btn_XoaTK.TabIndex = 22;
-            this.btn_XoaTK.Text = "Xóa ";
-            this.btn_XoaTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_XoaTK.UseVisualStyleBackColor = true;
-            this.btn_XoaTK.Click += new System.EventHandler(this.btn_XoaTK_Click);
-            // 
-            // btn_ThemTK
-            // 
-            this.btn_ThemTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThemTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them;
-            this.btn_ThemTK.Location = new System.Drawing.Point(35, 154);
-            this.btn_ThemTK.Name = "btn_ThemTK";
-            this.btn_ThemTK.Size = new System.Drawing.Size(129, 40);
-            this.btn_ThemTK.TabIndex = 21;
-            this.btn_ThemTK.Text = "Thêm";
-            this.btn_ThemTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_ThemTK.UseVisualStyleBackColor = true;
-            this.btn_ThemTK.Click += new System.EventHandler(this.btn_ThemTK_Click);
             // 
             // txt_MK
             // 
@@ -195,28 +145,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
             // 
-            // btn_TaiLaiTK
-            // 
-            this.btn_TaiLaiTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.lammoiall1;
-            this.btn_TaiLaiTK.Location = new System.Drawing.Point(308, 74);
-            this.btn_TaiLaiTK.Name = "btn_TaiLaiTK";
-            this.btn_TaiLaiTK.Size = new System.Drawing.Size(118, 45);
-            this.btn_TaiLaiTK.TabIndex = 19;
-            this.btn_TaiLaiTK.Text = "Tải Lại";
-            this.btn_TaiLaiTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_TaiLaiTK.UseVisualStyleBackColor = true;
-            // 
-            // btn_TimKiemTK
-            // 
-            this.btn_TimKiemTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.searchall;
-            this.btn_TimKiemTK.Location = new System.Drawing.Point(308, 21);
-            this.btn_TimKiemTK.Name = "btn_TimKiemTK";
-            this.btn_TimKiemTK.Size = new System.Drawing.Size(118, 47);
-            this.btn_TimKiemTK.TabIndex = 18;
-            this.btn_TimKiemTK.Text = "Tìm";
-            this.btn_TimKiemTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_TimKiemTK.UseVisualStyleBackColor = true;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -284,13 +212,98 @@
             this.rad_Admin.Text = "Quản Lý";
             this.rad_Admin.UseVisualStyleBackColor = true;
             // 
+            // btn_TaiLaiTK
+            // 
+            this.btn_TaiLaiTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.lammoiall1;
+            this.btn_TaiLaiTK.Location = new System.Drawing.Point(308, 74);
+            this.btn_TaiLaiTK.Name = "btn_TaiLaiTK";
+            this.btn_TaiLaiTK.Size = new System.Drawing.Size(118, 45);
+            this.btn_TaiLaiTK.TabIndex = 19;
+            this.btn_TaiLaiTK.Text = "Tải Lại";
+            this.btn_TaiLaiTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_TaiLaiTK.UseVisualStyleBackColor = true;
+            // 
+            // btn_TimKiemTK
+            // 
+            this.btn_TimKiemTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.searchall;
+            this.btn_TimKiemTK.Location = new System.Drawing.Point(308, 21);
+            this.btn_TimKiemTK.Name = "btn_TimKiemTK";
+            this.btn_TimKiemTK.Size = new System.Drawing.Size(118, 47);
+            this.btn_TimKiemTK.TabIndex = 18;
+            this.btn_TimKiemTK.Text = "Tìm";
+            this.btn_TimKiemTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_TimKiemTK.UseVisualStyleBackColor = true;
+            // 
+            // btn_QuayLaiTK
+            // 
+            this.btn_QuayLaiTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuayLaiTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.quaylai;
+            this.btn_QuayLaiTK.Location = new System.Drawing.Point(430, 154);
+            this.btn_QuayLaiTK.Name = "btn_QuayLaiTK";
+            this.btn_QuayLaiTK.Size = new System.Drawing.Size(136, 40);
+            this.btn_QuayLaiTK.TabIndex = 25;
+            this.btn_QuayLaiTK.Text = "Quay Lại";
+            this.btn_QuayLaiTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_QuayLaiTK.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiTK.Click += new System.EventHandler(this.btn_QuayLaiTK_Click);
+            // 
+            // btn_SuaTK
+            // 
+            this.btn_SuaTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SuaTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.suaall;
+            this.btn_SuaTK.Location = new System.Drawing.Point(306, 154);
+            this.btn_SuaTK.Name = "btn_SuaTK";
+            this.btn_SuaTK.Size = new System.Drawing.Size(118, 40);
+            this.btn_SuaTK.TabIndex = 23;
+            this.btn_SuaTK.Text = "Sửa";
+            this.btn_SuaTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_SuaTK.UseVisualStyleBackColor = true;
+            this.btn_SuaTK.Click += new System.EventHandler(this.btn_SuaTK_Click);
+            // 
+            // btn_XoaTK
+            // 
+            this.btn_XoaTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XoaTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.xoa;
+            this.btn_XoaTK.Location = new System.Drawing.Point(185, 154);
+            this.btn_XoaTK.Name = "btn_XoaTK";
+            this.btn_XoaTK.Size = new System.Drawing.Size(110, 40);
+            this.btn_XoaTK.TabIndex = 22;
+            this.btn_XoaTK.Text = "Xóa ";
+            this.btn_XoaTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_XoaTK.UseVisualStyleBackColor = true;
+            this.btn_XoaTK.Click += new System.EventHandler(this.btn_XoaTK_Click);
+            // 
+            // btn_ThemTK
+            // 
+            this.btn_ThemTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThemTK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them;
+            this.btn_ThemTK.Location = new System.Drawing.Point(35, 154);
+            this.btn_ThemTK.Name = "btn_ThemTK";
+            this.btn_ThemTK.Size = new System.Drawing.Size(129, 40);
+            this.btn_ThemTK.TabIndex = 21;
+            this.btn_ThemTK.Text = "Thêm";
+            this.btn_ThemTK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_ThemTK.UseVisualStyleBackColor = true;
+            this.btn_ThemTK.Click += new System.EventHandler(this.btn_ThemTK_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1176, 586);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
             // TaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1253, 591);
+            this.ClientSize = new System.Drawing.Size(1253, 666);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rad_Admin);
             this.Controls.Add(this.rad_Staff);
             this.Controls.Add(this.chk_TrangThai);
@@ -315,6 +328,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,5 +357,6 @@
         private System.Windows.Forms.CheckBox chk_TrangThai;
         private System.Windows.Forms.RadioButton rad_Staff;
         private System.Windows.Forms.RadioButton rad_Admin;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -4,3 +4,9 @@ C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\DTO\obj\Debug\DTO.csproj.AssemblyRe
 C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\DTO\obj\Debug\DTO.dll
 C:\Users\Admin\source\repos\PMSHOPBANTRAICAY\DTO\obj\Debug\DTO.pdb
+C:\Users\phu27\Source\Repos\PMSHOPBANTRAICAY\DTO\bin\Debug\DTO.dll
+C:\Users\phu27\Source\Repos\PMSHOPBANTRAICAY\DTO\bin\Debug\DTO.pdb
+C:\Users\phu27\Source\Repos\PMSHOPBANTRAICAY\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\phu27\Source\Repos\PMSHOPBANTRAICAY\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\phu27\Source\Repos\PMSHOPBANTRAICAY\DTO\obj\Debug\DTO.dll
+C:\Users\phu27\Source\Repos\PMSHOPBANTRAICAY\DTO\obj\Debug\DTO.pdb

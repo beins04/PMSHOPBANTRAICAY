@@ -43,15 +43,17 @@
             this.txt_GiaNhap = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_MaSPN = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.btn_QuayLai = new System.Windows.Forms.Button();
             this.btn_Xuat = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTiet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -191,6 +193,36 @@
             this.txt_MaSPN.Size = new System.Drawing.Size(199, 30);
             this.txt_MaSPN.TabIndex = 25;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(848, 35);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 23);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "(KG)";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(847, 73);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 23);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "(VNĐ)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(848, 115);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 23);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "(VNĐ)";
+            // 
             // btn_QuayLai
             // 
             this.btn_QuayLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -215,6 +247,7 @@
             this.btn_Xuat.Text = "Xuất";
             this.btn_Xuat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Xuat.UseVisualStyleBackColor = true;
+            this.btn_Xuat.Click += new System.EventHandler(this.btn_Xuat_Click);
             // 
             // btn_Sua
             // 
@@ -252,42 +285,23 @@
             this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Them.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // pictureBox1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(848, 35);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 23);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "(KG)";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(847, 73);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 23);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "(VNĐ)";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(848, 115);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 23);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "(VNĐ)";
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(959, 498);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
             // ChiTietPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1039, 578);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -316,6 +330,7 @@
             this.Text = "ChiTietPhieuNhap";
             this.Load += new System.EventHandler(this.ChiTietPhieuNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTiet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +360,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

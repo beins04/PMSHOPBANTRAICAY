@@ -33,7 +33,6 @@
             this.txt_NhapMa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btn_Thoat = new System.Windows.Forms.Button();
             this.txt_TienThoi = new System.Windows.Forms.TextBox();
             this.txt_TongTien = new System.Windows.Forms.TextBox();
             this.txt_TienKhachDua = new System.Windows.Forms.TextBox();
@@ -43,13 +42,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Thoat = new System.Windows.Forms.Button();
+            this.btn_XemChiTiet = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_XoaSPTrongDS = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView2
@@ -89,17 +91,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhập Mã:";
             // 
-            // btn_Thoat
-            // 
-            this.btn_Thoat.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.enter;
-            this.btn_Thoat.Location = new System.Drawing.Point(428, 138);
-            this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(103, 45);
-            this.btn_Thoat.TabIndex = 15;
-            this.btn_Thoat.Text = "Thoát";
-            this.btn_Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_Thoat.UseVisualStyleBackColor = true;
-            // 
             // txt_TienThoi
             // 
             this.txt_TienThoi.Location = new System.Drawing.Point(428, 98);
@@ -114,7 +105,6 @@
             this.txt_TongTien.ReadOnly = true;
             this.txt_TongTien.Size = new System.Drawing.Size(137, 30);
             this.txt_TongTien.TabIndex = 12;
-            this.txt_TongTien.TextChanged += new System.EventHandler(this.txt_TongTien_TextChanged);
             // 
             // txt_TienKhachDua
             // 
@@ -170,7 +160,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btn_Thoat);
-            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.btn_XemChiTiet);
             this.groupBox4.Controls.Add(this.txt_TienThoi);
             this.groupBox4.Controls.Add(this.txt_TongTien);
             this.groupBox4.Controls.Add(this.txt_TienKhachDua);
@@ -188,16 +178,28 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thanh Toán";
             // 
-            // button1
+            // btn_Thoat
             // 
-            this.button1.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.list__1_;
-            this.button1.Location = new System.Drawing.Point(213, 138);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 45);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Xem Chi Tiết";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Thoat.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.enter;
+            this.btn_Thoat.Location = new System.Drawing.Point(428, 138);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(103, 45);
+            this.btn_Thoat.TabIndex = 15;
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Thoat.UseVisualStyleBackColor = true;
+            // 
+            // btn_XemChiTiet
+            // 
+            this.btn_XemChiTiet.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.list__1_;
+            this.btn_XemChiTiet.Location = new System.Drawing.Point(213, 138);
+            this.btn_XemChiTiet.Name = "btn_XemChiTiet";
+            this.btn_XemChiTiet.Size = new System.Drawing.Size(171, 45);
+            this.btn_XemChiTiet.TabIndex = 14;
+            this.btn_XemChiTiet.Text = "Xem Chi Tiết";
+            this.btn_XemChiTiet.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_XemChiTiet.UseVisualStyleBackColor = true;
+            this.btn_XemChiTiet.Click += new System.EventHandler(this.btn_XemChiTiet_Click);
             // 
             // button3
             // 
@@ -217,12 +219,11 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txt_NhapMa);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(10, 46);
+            this.groupBox1.Location = new System.Drawing.Point(12, 46);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(627, 494);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sản Phẩm";
             // 
             // btn_XoaSPTrongDS
             // 
@@ -236,13 +237,24 @@
             this.btn_XoaSPTrongDS.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_XoaSPTrongDS.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1165, 496);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // TrangHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1244, 576);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -253,6 +265,7 @@
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,9 +286,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_XemChiTiet;
         private System.Windows.Forms.Button btn_Thoat;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

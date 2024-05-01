@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangQuanLyChoNhanVien));
             this.btn_HoaDon = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.btn_SanPham = new System.Windows.Forms.Button();
@@ -172,8 +173,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.Uwu;
-            this.ClientSize = new System.Drawing.Size(529, 630);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(560, 630);
             this.Controls.Add(this.btn_HoaDon);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.btn_SanPham);

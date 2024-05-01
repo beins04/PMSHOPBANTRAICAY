@@ -190,6 +190,9 @@
   <data name="sanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sanpham.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="eyeopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eyeopen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tinhtien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tinhtien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -220,7 +223,7 @@
   <data name="them" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\them.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eyeopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eyeopen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tải xuống (3).jpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tải xuống (3).jpg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

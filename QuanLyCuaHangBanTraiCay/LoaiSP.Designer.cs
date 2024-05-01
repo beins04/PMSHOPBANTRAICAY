@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_QuayLaiLSP = new System.Windows.Forms.Button();
-            this.btn_SuaLSP = new System.Windows.Forms.Button();
-            this.btn_XoaLSP = new System.Windows.Forms.Button();
-            this.btn_ThemLSP = new System.Windows.Forms.Button();
             this.txt_XuatXuLSP = new System.Windows.Forms.TextBox();
             this.txt_TenLSP = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -39,61 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_LoaiSanPham = new System.Windows.Forms.DataGridView();
             this.txt_MaLSP = new System.Windows.Forms.TextBox();
+            this.btn_QuayLaiLSP = new System.Windows.Forms.Button();
+            this.btn_SuaLSP = new System.Windows.Forms.Button();
+            this.btn_XoaLSP = new System.Windows.Forms.Button();
+            this.btn_ThemLSP = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_QuayLaiLSP
-            // 
-            this.btn_QuayLaiLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_QuayLaiLSP.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.quaylai;
-            this.btn_QuayLaiLSP.Location = new System.Drawing.Point(556, 66);
-            this.btn_QuayLaiLSP.Name = "btn_QuayLaiLSP";
-            this.btn_QuayLaiLSP.Size = new System.Drawing.Size(153, 40);
-            this.btn_QuayLaiLSP.TabIndex = 30;
-            this.btn_QuayLaiLSP.Text = "Quay Lại";
-            this.btn_QuayLaiLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_QuayLaiLSP.UseVisualStyleBackColor = true;
-            this.btn_QuayLaiLSP.Click += new System.EventHandler(this.btn_QuayLaiLSP_Click);
-            // 
-            // btn_SuaLSP
-            // 
-            this.btn_SuaLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SuaLSP.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.suaall;
-            this.btn_SuaLSP.Location = new System.Drawing.Point(393, 66);
-            this.btn_SuaLSP.Name = "btn_SuaLSP";
-            this.btn_SuaLSP.Size = new System.Drawing.Size(132, 40);
-            this.btn_SuaLSP.TabIndex = 28;
-            this.btn_SuaLSP.Text = "Sửa";
-            this.btn_SuaLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_SuaLSP.UseVisualStyleBackColor = true;
-            this.btn_SuaLSP.Click += new System.EventHandler(this.btn_SuaLSP_Click);
-            // 
-            // btn_XoaLSP
-            // 
-            this.btn_XoaLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XoaLSP.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.xoa;
-            this.btn_XoaLSP.Location = new System.Drawing.Point(241, 66);
-            this.btn_XoaLSP.Name = "btn_XoaLSP";
-            this.btn_XoaLSP.Size = new System.Drawing.Size(114, 40);
-            this.btn_XoaLSP.TabIndex = 27;
-            this.btn_XoaLSP.Text = "Xóa";
-            this.btn_XoaLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_XoaLSP.UseVisualStyleBackColor = true;
-            this.btn_XoaLSP.Click += new System.EventHandler(this.btn_XoaLSP_Click);
-            // 
-            // btn_ThemLSP
-            // 
-            this.btn_ThemLSP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_ThemLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThemLSP.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them1;
-            this.btn_ThemLSP.Location = new System.Drawing.Point(63, 66);
-            this.btn_ThemLSP.Name = "btn_ThemLSP";
-            this.btn_ThemLSP.Size = new System.Drawing.Size(135, 40);
-            this.btn_ThemLSP.TabIndex = 26;
-            this.btn_ThemLSP.Text = "Thêm";
-            this.btn_ThemLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_ThemLSP.UseVisualStyleBackColor = true;
-            this.btn_ThemLSP.Click += new System.EventHandler(this.btn_ThemLSP_Click);
             // 
             // txt_XuatXuLSP
             // 
@@ -160,13 +109,77 @@
             this.txt_MaLSP.Size = new System.Drawing.Size(196, 30);
             this.txt_MaLSP.TabIndex = 31;
             // 
+            // btn_QuayLaiLSP
+            // 
+            this.btn_QuayLaiLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_QuayLaiLSP.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.quaylai;
+            this.btn_QuayLaiLSP.Location = new System.Drawing.Point(556, 66);
+            this.btn_QuayLaiLSP.Name = "btn_QuayLaiLSP";
+            this.btn_QuayLaiLSP.Size = new System.Drawing.Size(153, 40);
+            this.btn_QuayLaiLSP.TabIndex = 30;
+            this.btn_QuayLaiLSP.Text = "Quay Lại";
+            this.btn_QuayLaiLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_QuayLaiLSP.UseVisualStyleBackColor = true;
+            this.btn_QuayLaiLSP.Click += new System.EventHandler(this.btn_QuayLaiLSP_Click);
+            // 
+            // btn_SuaLSP
+            // 
+            this.btn_SuaLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SuaLSP.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.suaall;
+            this.btn_SuaLSP.Location = new System.Drawing.Point(393, 66);
+            this.btn_SuaLSP.Name = "btn_SuaLSP";
+            this.btn_SuaLSP.Size = new System.Drawing.Size(132, 40);
+            this.btn_SuaLSP.TabIndex = 28;
+            this.btn_SuaLSP.Text = "Sửa";
+            this.btn_SuaLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_SuaLSP.UseVisualStyleBackColor = true;
+            this.btn_SuaLSP.Click += new System.EventHandler(this.btn_SuaLSP_Click);
+            // 
+            // btn_XoaLSP
+            // 
+            this.btn_XoaLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XoaLSP.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.xoa;
+            this.btn_XoaLSP.Location = new System.Drawing.Point(241, 66);
+            this.btn_XoaLSP.Name = "btn_XoaLSP";
+            this.btn_XoaLSP.Size = new System.Drawing.Size(114, 40);
+            this.btn_XoaLSP.TabIndex = 27;
+            this.btn_XoaLSP.Text = "Xóa";
+            this.btn_XoaLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_XoaLSP.UseVisualStyleBackColor = true;
+            this.btn_XoaLSP.Click += new System.EventHandler(this.btn_XoaLSP_Click);
+            // 
+            // btn_ThemLSP
+            // 
+            this.btn_ThemLSP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_ThemLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThemLSP.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them1;
+            this.btn_ThemLSP.Location = new System.Drawing.Point(63, 66);
+            this.btn_ThemLSP.Name = "btn_ThemLSP";
+            this.btn_ThemLSP.Size = new System.Drawing.Size(135, 40);
+            this.btn_ThemLSP.TabIndex = 26;
+            this.btn_ThemLSP.Text = "Thêm";
+            this.btn_ThemLSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_ThemLSP.UseVisualStyleBackColor = true;
+            this.btn_ThemLSP.Click += new System.EventHandler(this.btn_ThemLSP_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1048, 352);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoaiSP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1125, 377);
+            this.ClientSize = new System.Drawing.Size(1125, 431);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_MaLSP);
             this.Controls.Add(this.btn_QuayLaiLSP);
             this.Controls.Add(this.dgv_LoaiSanPham);
@@ -183,6 +196,7 @@
             this.Text = "LoaiSP";
             this.Load += new System.EventHandler(this.LoaiSP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +214,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_LoaiSanPham;
         private System.Windows.Forms.TextBox txt_MaLSP;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

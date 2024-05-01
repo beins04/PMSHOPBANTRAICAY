@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoiMK));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_DoiMK = new System.Windows.Forms.Button();
-            this.btn_Thoat = new System.Windows.Forms.Button();
             this.txt_NhapMKCu = new System.Windows.Forms.TextBox();
             this.txt_NhapMKMoi = new System.Windows.Forms.TextBox();
             this.txt_NhapLaiMK = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_NhapTaiKhoan = new System.Windows.Forms.TextBox();
+            this.btn_Thoat = new System.Windows.Forms.Button();
+            this.btn_DoiMK = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,36 +84,10 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Nhập Lại Mật Khẩu:";
             // 
-            // btn_DoiMK
-            // 
-            this.btn_DoiMK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.refresh;
-            this.btn_DoiMK.Location = new System.Drawing.Point(278, 485);
-            this.btn_DoiMK.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.btn_DoiMK.Name = "btn_DoiMK";
-            this.btn_DoiMK.Size = new System.Drawing.Size(189, 58);
-            this.btn_DoiMK.TabIndex = 4;
-            this.btn_DoiMK.Text = "Thay Đổi";
-            this.btn_DoiMK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_DoiMK.UseVisualStyleBackColor = true;
-            this.btn_DoiMK.Click += new System.EventHandler(this.btn_DoiMK_Click);
-            // 
-            // btn_Thoat
-            // 
-            this.btn_Thoat.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.arrow;
-            this.btn_Thoat.Location = new System.Drawing.Point(514, 485);
-            this.btn_Thoat.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(189, 58);
-            this.btn_Thoat.TabIndex = 5;
-            this.btn_Thoat.Text = "Thoát";
-            this.btn_Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_Thoat.UseVisualStyleBackColor = true;
-            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
-            // 
             // txt_NhapMKCu
             // 
             this.txt_NhapMKCu.Location = new System.Drawing.Point(399, 250);
-            this.txt_NhapMKCu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txt_NhapMKCu.Margin = new System.Windows.Forms.Padding(5);
             this.txt_NhapMKCu.Name = "txt_NhapMKCu";
             this.txt_NhapMKCu.Size = new System.Drawing.Size(354, 30);
             this.txt_NhapMKCu.TabIndex = 6;
@@ -120,7 +95,7 @@
             // txt_NhapMKMoi
             // 
             this.txt_NhapMKMoi.Location = new System.Drawing.Point(399, 324);
-            this.txt_NhapMKMoi.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txt_NhapMKMoi.Margin = new System.Windows.Forms.Padding(5);
             this.txt_NhapMKMoi.Name = "txt_NhapMKMoi";
             this.txt_NhapMKMoi.Size = new System.Drawing.Size(354, 30);
             this.txt_NhapMKMoi.TabIndex = 7;
@@ -128,7 +103,7 @@
             // txt_NhapLaiMK
             // 
             this.txt_NhapLaiMK.Location = new System.Drawing.Point(399, 405);
-            this.txt_NhapLaiMK.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txt_NhapLaiMK.Margin = new System.Windows.Forms.Padding(5);
             this.txt_NhapLaiMK.Name = "txt_NhapLaiMK";
             this.txt_NhapLaiMK.Size = new System.Drawing.Size(354, 30);
             this.txt_NhapLaiMK.TabIndex = 8;
@@ -146,18 +121,55 @@
             // txt_NhapTaiKhoan
             // 
             this.txt_NhapTaiKhoan.Location = new System.Drawing.Point(399, 192);
-            this.txt_NhapTaiKhoan.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txt_NhapTaiKhoan.Margin = new System.Windows.Forms.Padding(5);
             this.txt_NhapTaiKhoan.Name = "txt_NhapTaiKhoan";
             this.txt_NhapTaiKhoan.Size = new System.Drawing.Size(354, 30);
             this.txt_NhapTaiKhoan.TabIndex = 10;
+            // 
+            // btn_Thoat
+            // 
+            this.btn_Thoat.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.arrow;
+            this.btn_Thoat.Location = new System.Drawing.Point(514, 485);
+            this.btn_Thoat.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(189, 58);
+            this.btn_Thoat.TabIndex = 5;
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Thoat.UseVisualStyleBackColor = true;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
+            // 
+            // btn_DoiMK
+            // 
+            this.btn_DoiMK.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.refresh;
+            this.btn_DoiMK.Location = new System.Drawing.Point(278, 485);
+            this.btn_DoiMK.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_DoiMK.Name = "btn_DoiMK";
+            this.btn_DoiMK.Size = new System.Drawing.Size(189, 58);
+            this.btn_DoiMK.TabIndex = 4;
+            this.btn_DoiMK.Text = "Thay Đổi";
+            this.btn_DoiMK.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_DoiMK.UseVisualStyleBackColor = true;
+            this.btn_DoiMK.Click += new System.EventHandler(this.btn_DoiMK_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(841, 586);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // DoiMK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(957, 659);
+            this.ClientSize = new System.Drawing.Size(920, 666);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_NhapTaiKhoan);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_NhapLaiMK);
@@ -170,9 +182,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "DoiMK";
             this.Text = "Đổi mật khẩu";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +204,6 @@
         private System.Windows.Forms.TextBox txt_NhapLaiMK;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_NhapTaiKhoan;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

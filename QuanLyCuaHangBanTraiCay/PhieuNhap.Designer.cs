@@ -30,12 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_MaSPN = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_ThemChiTietPhieuNhap = new System.Windows.Forms.Button();
-            this.btn_XemChiTietPhieuNhap = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -44,8 +43,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txt_MaSPN = new System.Windows.Forms.TextBox();
+            this.btn_ThemChiTietPhieuNhap = new System.Windows.Forms.Button();
+            this.btn_XemChiTietPhieuNhap = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -71,6 +73,13 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập Sản Phẩm";
+            // 
+            // txt_MaSPN
+            // 
+            this.txt_MaSPN.Location = new System.Drawing.Point(254, 46);
+            this.txt_MaSPN.Name = "txt_MaSPN";
+            this.txt_MaSPN.Size = new System.Drawing.Size(286, 30);
+            this.txt_MaSPN.TabIndex = 20;
             // 
             // textBox9
             // 
@@ -103,29 +112,6 @@
             this.label5.Size = new System.Drawing.Size(97, 23);
             this.label5.TabIndex = 16;
             this.label5.Text = "Giá Nhập:";
-            // 
-            // btn_ThemChiTietPhieuNhap
-            // 
-            this.btn_ThemChiTietPhieuNhap.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them1;
-            this.btn_ThemChiTietPhieuNhap.Location = new System.Drawing.Point(172, 274);
-            this.btn_ThemChiTietPhieuNhap.Name = "btn_ThemChiTietPhieuNhap";
-            this.btn_ThemChiTietPhieuNhap.Size = new System.Drawing.Size(138, 44);
-            this.btn_ThemChiTietPhieuNhap.TabIndex = 10;
-            this.btn_ThemChiTietPhieuNhap.Text = "Thêm";
-            this.btn_ThemChiTietPhieuNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_ThemChiTietPhieuNhap.UseVisualStyleBackColor = true;
-            // 
-            // btn_XemChiTietPhieuNhap
-            // 
-            this.btn_XemChiTietPhieuNhap.Image = ((System.Drawing.Image)(resources.GetObject("btn_XemChiTietPhieuNhap.Image")));
-            this.btn_XemChiTietPhieuNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XemChiTietPhieuNhap.Location = new System.Drawing.Point(396, 274);
-            this.btn_XemChiTietPhieuNhap.Name = "btn_XemChiTietPhieuNhap";
-            this.btn_XemChiTietPhieuNhap.Size = new System.Drawing.Size(167, 44);
-            this.btn_XemChiTietPhieuNhap.TabIndex = 8;
-            this.btn_XemChiTietPhieuNhap.Text = "Xem Chi Tiết";
-            this.btn_XemChiTietPhieuNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_XemChiTietPhieuNhap.UseVisualStyleBackColor = true;
             // 
             // textBox4
             // 
@@ -184,25 +170,53 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Sản Phẩm Nhập:";
             // 
-            // txt_MaSPN
+            // btn_ThemChiTietPhieuNhap
             // 
-            this.txt_MaSPN.Location = new System.Drawing.Point(254, 46);
-            this.txt_MaSPN.Name = "txt_MaSPN";
-            this.txt_MaSPN.Size = new System.Drawing.Size(286, 30);
-            this.txt_MaSPN.TabIndex = 20;
+            this.btn_ThemChiTietPhieuNhap.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.them1;
+            this.btn_ThemChiTietPhieuNhap.Location = new System.Drawing.Point(172, 274);
+            this.btn_ThemChiTietPhieuNhap.Name = "btn_ThemChiTietPhieuNhap";
+            this.btn_ThemChiTietPhieuNhap.Size = new System.Drawing.Size(138, 44);
+            this.btn_ThemChiTietPhieuNhap.TabIndex = 10;
+            this.btn_ThemChiTietPhieuNhap.Text = "Thêm";
+            this.btn_ThemChiTietPhieuNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_ThemChiTietPhieuNhap.UseVisualStyleBackColor = true;
+            // 
+            // btn_XemChiTietPhieuNhap
+            // 
+            this.btn_XemChiTietPhieuNhap.Image = ((System.Drawing.Image)(resources.GetObject("btn_XemChiTietPhieuNhap.Image")));
+            this.btn_XemChiTietPhieuNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_XemChiTietPhieuNhap.Location = new System.Drawing.Point(396, 274);
+            this.btn_XemChiTietPhieuNhap.Name = "btn_XemChiTietPhieuNhap";
+            this.btn_XemChiTietPhieuNhap.Size = new System.Drawing.Size(167, 44);
+            this.btn_XemChiTietPhieuNhap.TabIndex = 8;
+            this.btn_XemChiTietPhieuNhap.Text = "Xem Chi Tiết";
+            this.btn_XemChiTietPhieuNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_XemChiTietPhieuNhap.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(664, 360);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(743, 426);
+            this.ClientSize = new System.Drawing.Size(743, 439);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "PhieuNhap";
             this.Text = "PhieuNhap";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,5 +239,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_MaSPN;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

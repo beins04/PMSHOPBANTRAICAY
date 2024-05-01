@@ -40,21 +40,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_TaiLaiNV = new System.Windows.Forms.Button();
-            this.btn_TimKiemNV = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_TiemKiemNV = new System.Windows.Forms.TextBox();
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.txt_MaNV = new System.Windows.Forms.TextBox();
+            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
             this.btn_QuayLaiTrangNV = new System.Windows.Forms.Button();
+            this.btn_TaiLaiNV = new System.Windows.Forms.Button();
+            this.btn_TimKiemNV = new System.Windows.Forms.Button();
             this.btn_SuaNV = new System.Windows.Forms.Button();
             this.btn_XoaNV = new System.Windows.Forms.Button();
             this.btn_ThemNV = new System.Windows.Forms.Button();
-            this.txt_MaNV = new System.Windows.Forms.TextBox();
-            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // rad_Nu
@@ -180,28 +181,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
             // 
-            // btn_TaiLaiNV
-            // 
-            this.btn_TaiLaiNV.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.lammoiall;
-            this.btn_TaiLaiNV.Location = new System.Drawing.Point(371, 78);
-            this.btn_TaiLaiNV.Name = "btn_TaiLaiNV";
-            this.btn_TaiLaiNV.Size = new System.Drawing.Size(131, 46);
-            this.btn_TaiLaiNV.TabIndex = 19;
-            this.btn_TaiLaiNV.Text = "Tải Lại";
-            this.btn_TaiLaiNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_TaiLaiNV.UseVisualStyleBackColor = true;
-            // 
-            // btn_TimKiemNV
-            // 
-            this.btn_TimKiemNV.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.searchall;
-            this.btn_TimKiemNV.Location = new System.Drawing.Point(371, 22);
-            this.btn_TimKiemNV.Name = "btn_TimKiemNV";
-            this.btn_TimKiemNV.Size = new System.Drawing.Size(131, 44);
-            this.btn_TimKiemNV.TabIndex = 18;
-            this.btn_TimKiemNV.Text = "Tìm";
-            this.btn_TimKiemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_TimKiemNV.UseVisualStyleBackColor = true;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -237,6 +216,23 @@
             this.dgv_NhanVien.TabIndex = 0;
             this.dgv_NhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NhanVien_CellContentClick);
             // 
+            // txt_MaNV
+            // 
+            this.txt_MaNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaNV.Location = new System.Drawing.Point(211, 18);
+            this.txt_MaNV.Name = "txt_MaNV";
+            this.txt_MaNV.Size = new System.Drawing.Size(230, 34);
+            this.txt_MaNV.TabIndex = 29;
+            // 
+            // cbo_MaTK
+            // 
+            this.cbo_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_MaTK.FormattingEnabled = true;
+            this.cbo_MaTK.Location = new System.Drawing.Point(209, 65);
+            this.cbo_MaTK.Name = "cbo_MaTK";
+            this.cbo_MaTK.Size = new System.Drawing.Size(232, 33);
+            this.cbo_MaTK.TabIndex = 30;
+            // 
             // btn_QuayLaiTrangNV
             // 
             this.btn_QuayLaiTrangNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -249,6 +245,28 @@
             this.btn_QuayLaiTrangNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_QuayLaiTrangNV.UseVisualStyleBackColor = true;
             this.btn_QuayLaiTrangNV.Click += new System.EventHandler(this.btn_QuayLaiTrangNV_Click);
+            // 
+            // btn_TaiLaiNV
+            // 
+            this.btn_TaiLaiNV.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.lammoiall;
+            this.btn_TaiLaiNV.Location = new System.Drawing.Point(371, 78);
+            this.btn_TaiLaiNV.Name = "btn_TaiLaiNV";
+            this.btn_TaiLaiNV.Size = new System.Drawing.Size(131, 46);
+            this.btn_TaiLaiNV.TabIndex = 19;
+            this.btn_TaiLaiNV.Text = "Tải Lại";
+            this.btn_TaiLaiNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_TaiLaiNV.UseVisualStyleBackColor = true;
+            // 
+            // btn_TimKiemNV
+            // 
+            this.btn_TimKiemNV.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.searchall;
+            this.btn_TimKiemNV.Location = new System.Drawing.Point(371, 22);
+            this.btn_TimKiemNV.Name = "btn_TimKiemNV";
+            this.btn_TimKiemNV.Size = new System.Drawing.Size(131, 44);
+            this.btn_TimKiemNV.TabIndex = 18;
+            this.btn_TimKiemNV.Text = "Tìm";
+            this.btn_TimKiemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_TimKiemNV.UseVisualStyleBackColor = true;
             // 
             // btn_SuaNV
             // 
@@ -289,30 +307,24 @@
             this.btn_ThemNV.UseVisualStyleBackColor = true;
             this.btn_ThemNV.Click += new System.EventHandler(this.btn_ThemNV_Click);
             // 
-            // txt_MaNV
+            // pictureBox1
             // 
-            this.txt_MaNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaNV.Location = new System.Drawing.Point(211, 18);
-            this.txt_MaNV.Name = "txt_MaNV";
-            this.txt_MaNV.Size = new System.Drawing.Size(230, 34);
-            this.txt_MaNV.TabIndex = 29;
-            // 
-            // cbo_MaTK
-            // 
-            this.cbo_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_MaTK.FormattingEnabled = true;
-            this.cbo_MaTK.Location = new System.Drawing.Point(209, 65);
-            this.cbo_MaTK.Name = "cbo_MaTK";
-            this.cbo_MaTK.Size = new System.Drawing.Size(232, 33);
-            this.cbo_MaTK.TabIndex = 30;
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(921, 603);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 78);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
             // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(998, 621);
+            this.ClientSize = new System.Drawing.Size(998, 680);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbo_MaTK);
             this.Controls.Add(this.txt_MaNV);
             this.Controls.Add(this.dgv_NhanVien);
@@ -339,6 +351,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,9 +379,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_TiemKiemNV;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView dgv_NhanVien;
         private System.Windows.Forms.TextBox txt_MaNV;
         private System.Windows.Forms.ComboBox cbo_MaTK;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

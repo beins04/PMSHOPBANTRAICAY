@@ -28,25 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_TenDN = new System.Windows.Forms.TextBox();
             this.txt_MatKhau = new System.Windows.Forms.TextBox();
-            this.btn_DangNhap = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_eyeclose = new System.Windows.Forms.Button();
             this.btn_eyeopen = new System.Windows.Forms.Button();
+            this.btn_eyeclose = new System.Windows.Forms.Button();
+            this.btn_DangNhap = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(246)))), ((int)(((byte)(244)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -54,16 +53,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 124);
             this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(62, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 88);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -102,20 +91,6 @@
             this.txt_MatKhau.Size = new System.Drawing.Size(277, 30);
             this.txt_MatKhau.TabIndex = 3;
             // 
-            // btn_DangNhap
-            // 
-            this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DangNhap.ForeColor = System.Drawing.Color.Olive;
-            this.btn_DangNhap.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.enter;
-            this.btn_DangNhap.Location = new System.Drawing.Point(312, 344);
-            this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(149, 46);
-            this.btn_DangNhap.TabIndex = 4;
-            this.btn_DangNhap.Text = "Đăng Nhập";
-            this.btn_DangNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_DangNhap.UseVisualStyleBackColor = true;
-            this.btn_DangNhap.Click += new System.EventHandler(this.btn_DangNhap_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -136,16 +111,6 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Mật Khẩu:";
             // 
-            // btn_eyeclose
-            // 
-            this.btn_eyeclose.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.eye;
-            this.btn_eyeclose.Location = new System.Drawing.Point(572, 277);
-            this.btn_eyeclose.Name = "btn_eyeclose";
-            this.btn_eyeclose.Size = new System.Drawing.Size(30, 31);
-            this.btn_eyeclose.TabIndex = 7;
-            this.btn_eyeclose.UseVisualStyleBackColor = true;
-            this.btn_eyeclose.Click += new System.EventHandler(this.btn_eyeclose_Click);
-            // 
             // btn_eyeopen
             // 
             this.btn_eyeopen.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.eyeopen;
@@ -156,11 +121,45 @@
             this.btn_eyeopen.UseVisualStyleBackColor = true;
             this.btn_eyeopen.Click += new System.EventHandler(this.btn_eyeclose_Click);
             // 
+            // btn_eyeclose
+            // 
+            this.btn_eyeclose.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.eye;
+            this.btn_eyeclose.Location = new System.Drawing.Point(572, 277);
+            this.btn_eyeclose.Name = "btn_eyeclose";
+            this.btn_eyeclose.Size = new System.Drawing.Size(30, 31);
+            this.btn_eyeclose.TabIndex = 7;
+            this.btn_eyeclose.UseVisualStyleBackColor = true;
+            this.btn_eyeclose.Click += new System.EventHandler(this.btn_eyeclose_Click);
+            // 
+            // btn_DangNhap
+            // 
+            this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangNhap.ForeColor = System.Drawing.Color.Olive;
+            this.btn_DangNhap.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.enter;
+            this.btn_DangNhap.Location = new System.Drawing.Point(312, 344);
+            this.btn_DangNhap.Name = "btn_DangNhap";
+            this.btn_DangNhap.Size = new System.Drawing.Size(149, 46);
+            this.btn_DangNhap.TabIndex = 4;
+            this.btn_DangNhap.Text = "Đăng Nhập";
+            this.btn_DangNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_DangNhap.UseVisualStyleBackColor = true;
+            this.btn_DangNhap.Click += new System.EventHandler(this.btn_DangNhap_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(56, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 124);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.nền;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(807, 462);
             this.Controls.Add(this.btn_eyeopen);
@@ -188,7 +187,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_TenDN;
         private System.Windows.Forms.TextBox txt_MatKhau;
@@ -197,6 +195,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_eyeclose;
         private System.Windows.Forms.Button btn_eyeopen;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -273,6 +273,16 @@ namespace QuanLyCuaHangBanTraiCay.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tải_xuống__3__jpg {
+            get {
+                object obj = ResourceManager.GetObject("tải xuống (3).jpg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap them {
             get {
                 object obj = ResourceManager.GetObject("them", resourceCulture);
