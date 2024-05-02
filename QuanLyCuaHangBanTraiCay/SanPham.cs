@@ -68,7 +68,7 @@ namespace QuanLyCuaHangBanTraiCay
         {
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT MaSP,TenSP,MaNCC,MaLSP,KhoiLuongNhap,GiaNhap,GiaBan,NgayNhap,XuatXu,TrangThai,Khuyenmai FROM SANPHAM; ";
+            string sSQL = "SELECT MaSP,TenSP,MaNCC,MaLSP,KhoiLuongNhap,GiaNhap,GiaBan,NgayNhap,XuatXu,TrangThai,Khuyenmai, KhoiLuongTon FROM SANPHAM; ";
             try
             {
                 myConnection.Open();
@@ -87,14 +87,14 @@ namespace QuanLyCuaHangBanTraiCay
         }
 
         //THÊM SẢN PHẨM
-        public bool ThemSanPham(string sTenSanPham, int iMaNCC, int iMaLSP, float fKhoiLuongNhap, decimal dGiaNhap, decimal dGiaBan, string sNgayNhap, string sXuatXu, int iTrangThai, int iKhuyenMai)
+        public bool ThemSanPham(string sTenSanPham, int iMaNCC, int iMaLSP, float fKhoiLuongNhap, decimal dGiaNhap, decimal dGiaBan, string sNgayNhap, string sXuatXu, int iTrangThai, int iKhuyenMai, float fKhoiLuongTon)
         {
 
             bool kq;
             kq = true;
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSql = string.Format("INSERT INTO SanPham VALUES (N'{0}', N'{1}', N'{2}', '{3}', '{4}', '{5}', N'{6}', N'{7}', N'{8}','{9}')", sTenSanPham, iMaNCC, iMaLSP, fKhoiLuongNhap, dGiaNhap, dGiaBan, sNgayNhap, sXuatXu, iTrangThai, iKhuyenMai);
+            string sSql = string.Format("INSERT INTO SanPham VALUES (N'{0}', N'{1}', N'{2}', '{3}', '{4}', '{5}', N'{6}', N'{7}', N'{8}','{9}', '{10}')", sTenSanPham, iMaNCC, iMaLSP, fKhoiLuongNhap, dGiaNhap, dGiaBan, sNgayNhap, sXuatXu, iTrangThai, iKhuyenMai, fKhoiLuongTon);
             MessageBox.Show(sSql);
 
             try
@@ -120,7 +120,7 @@ namespace QuanLyCuaHangBanTraiCay
             
             string Ngay, TenSP, XuatXu;
             int Khuyenmai, MaNCC, MaLSP, TrangThai;
-            float KhoiLuongNhap;
+            float KhoiLuongNhap, KhoiLuongTon;
             decimal GiaNhap, GiaBan;
 
             TenSP = txt_TenSP.Text;
@@ -138,11 +138,12 @@ namespace QuanLyCuaHangBanTraiCay
             MaLSP = (int)cbo_LoaiSP.SelectedValue;
             Khuyenmai = int.Parse(txt_KhuyenMai.Text);
             KhoiLuongNhap = float.Parse(txt_KhoiLuongNhap.Text);
+            KhoiLuongTon = float.Parse(txt_KLTon.Text);
             GiaNhap = decimal.Parse(txt_GiaNhap.Text);
             GiaBan = decimal.Parse(txt_GiaBan.Text);
             //yyyy-MM-dd
             Ngay = dt_Ngay.Value.ToString("yyyy-MM-dd");
-            bool kq = ThemSanPham(TenSP, MaNCC, MaLSP, KhoiLuongNhap, GiaNhap, GiaBan, Ngay, XuatXu, TrangThai, Khuyenmai);
+            bool kq = ThemSanPham(TenSP, MaNCC, MaLSP, KhoiLuongNhap, GiaNhap, GiaBan, Ngay, XuatXu, TrangThai, Khuyenmai, KhoiLuongTon);
             if (kq)
             {
                 MessageBox.Show("Đã thêm Sản phẩm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -188,6 +189,8 @@ namespace QuanLyCuaHangBanTraiCay
         {
             int TrangThai;
             string MaSP = txt_MaSP.Text;
+            string MaNCC = cbB_NCC.Text;
+            string MaLSP = cbo_LoaiSP.Text;
             if (chk_TrangThai.Checked == false)
             {
                 TrangThai = 0;
@@ -201,7 +204,7 @@ namespace QuanLyCuaHangBanTraiCay
             using (SqlConnection myConnection = new SqlConnection(scon))
             {
                 // Chuỗi truy vấn cập nhật
-                string sSQL = "UPDATE SANPHAM SET TenSP = @TenSP, MaNCC = @MaNCC, MaLSP = @MaLSP, KhoiLuongNhap = @KhoiLuong, GiaNhap = @GiaNhap, GiaBan = @GiaBan,NgayNhap = @Ngay, XuatXu = @XuatXu, TrangThai = @TrangThai, KhuyenMai = @KhuyenMai WHERE MaSP = @MaSP";
+                string sSQL = "UPDATE SANPHAM SET TenSP = @TenSP, MaNCC = @MaNCC, MaLSP = @MaLSP, KhoiLuongNhap = @KhoiLuong, GiaNhap = @GiaNhap, GiaBan = @GiaBan,NgayNhap = @Ngay, XuatXu = @XuatXu, TrangThai = @TrangThai, KhuyenMai = @KhuyenMai, KhoiLuongTon = @KhoiLuongTon WHERE MaSP = @MaSP";
 
                 try
                 {
@@ -211,8 +214,8 @@ namespace QuanLyCuaHangBanTraiCay
                     {
                         // Thêm các tham số vào truy vấn
                         cmd.Parameters.AddWithValue("@TenSP", txt_TenSP.Text);
-                        cmd.Parameters.AddWithValue("@MaNCC", cbB_NCC.Text);
-                        cmd.Parameters.AddWithValue("@MaLSP", cbo_LoaiSP.Text);
+                        cmd.Parameters.AddWithValue("@MaNCC", MaNCC);
+                        cmd.Parameters.AddWithValue("@MaLSP", MaLSP);
                         cmd.Parameters.AddWithValue("@KhoiLuong", txt_KhoiLuongNhap.Text);
                         cmd.Parameters.AddWithValue("@GiaNhap", txt_GiaNhap.Text);
                         cmd.Parameters.AddWithValue("@GiaBan", txt_GiaBan.Text);
@@ -220,6 +223,7 @@ namespace QuanLyCuaHangBanTraiCay
                         cmd.Parameters.AddWithValue("@XuatXu", txt_XuatXu.Text);
                         cmd.Parameters.AddWithValue("@TrangThai", TrangThai);
                         cmd.Parameters.AddWithValue("@KhuyenMai", txt_KhuyenMai.Text);
+                        cmd.Parameters.AddWithValue("@KhoiLuongTon", txt_KLTon.Text);
                         cmd.Parameters.AddWithValue("@MaSP", MaSP);
 
                         // Thực thi truy vấn cập nhật
@@ -259,6 +263,7 @@ namespace QuanLyCuaHangBanTraiCay
             dt_Ngay.Value = DateTime.Parse(dgv_SanPham.Rows[i].Cells[7].Value.ToString());
             txt_XuatXu.Text = dgv_SanPham.Rows[i].Cells[8].Value.ToString();
             txt_KhuyenMai.Text = dgv_SanPham.Rows[i].Cells[10].Value.ToString();
+            txt_KLTon.Text = dgv_SanPham.Rows[i].Cells[11].Value.ToString();
             if ((bool)dgv_SanPham.Rows[i].Cells[9].Value == false)
             {
                 chk_TrangThai.Checked = false;
