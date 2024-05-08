@@ -14,9 +14,13 @@ namespace QuanLyCuaHangBanTraiCay
     {
         public int MaTK;
         public bool isAdmin { get; set; }
-        public TrangQuanLy()
+
+        private string role;
+        public TrangQuanLy(string role)
         {
             InitializeComponent();
+
+            this.role = role;
         }
 
         private void btn_DangXuat_Click(object sender, EventArgs e)
@@ -28,7 +32,7 @@ namespace QuanLyCuaHangBanTraiCay
             loginForm.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_DoiMatKhau_Click(object sender, EventArgs e)
@@ -40,7 +44,7 @@ namespace QuanLyCuaHangBanTraiCay
             ChangePassword.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_KhoHang_Click(object sender, EventArgs e)
@@ -52,7 +56,7 @@ namespace QuanLyCuaHangBanTraiCay
             Management.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_DoanhThu_Click(object sender, EventArgs e)
@@ -64,7 +68,7 @@ namespace QuanLyCuaHangBanTraiCay
             Statistical.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_KhachHang_Click(object sender, EventArgs e)
@@ -76,7 +80,7 @@ namespace QuanLyCuaHangBanTraiCay
             Guest.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_NhanVien_Click(object sender, EventArgs e)
@@ -88,7 +92,7 @@ namespace QuanLyCuaHangBanTraiCay
             Staff.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
 
@@ -106,7 +110,7 @@ namespace QuanLyCuaHangBanTraiCay
             Supplier.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_HoaDon_Click_1(object sender, EventArgs e)
@@ -118,7 +122,7 @@ namespace QuanLyCuaHangBanTraiCay
             Bill.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_SanPham_Click(object sender, EventArgs e)
@@ -130,7 +134,12 @@ namespace QuanLyCuaHangBanTraiCay
             Product.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

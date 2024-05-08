@@ -72,8 +72,8 @@ namespace QuanLyCuaHangBanTraiCay
         private void btn_Thoat_Click(object sender, EventArgs e)
         {
             // Quay lại trang chủ
-            TrangQuanLy homePageForm = new TrangQuanLy();
-            homePageForm.Show();
+            //TrangQuanLy homePageForm = new TrangQuanLy();
+            //homePageForm.Show();
 
             // Đóng form đổi mật khẩu
             this.Close();

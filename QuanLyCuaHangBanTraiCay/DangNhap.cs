@@ -61,26 +61,21 @@ namespace QuanLyCuaHangBanTraiCay
             string username = txt_TenDN.Text;
             string password = txt_MatKhau.Text;
 
-            bool isAuthenticated = dangNhapBLL.KiemTraDangNhap(username, password);
+            string role = dangNhapBLL.KiemTraDangNhap(username, password);
 
-            if (isAuthenticated)
+            if (role != "")
             {
-                MessageBox.Show("Đăng nhập thành công!");
-                DangNhapBLL PhanQuyenBLL = new DangNhapBLL();
-                int MaTK = PhanQuyenBLL.PhanQuyen(username, password);
-                string quyen = QuyenHang(MaTK); // Lấy quyền từ cơ sở dữ liệu
-
-                if (quyen == "Quản Lý")
+                if (role == "Admin")
                 {
-                    TrangQuanLy admin = new TrangQuanLy();
-                    admin.MaTK = MaTK;
+                    //Truyền role qua form để xác định role khi sử dụng chức năng khác.
+                    TrangQuanLy admin = new TrangQuanLy(role);
                     admin.Show();
                     this.Hide();
                 }
                 else
                 {
-                    TrangQuanLyChoNhanVien staff = new TrangQuanLyChoNhanVien();
-                    staff.MaTK = MaTK;
+                    //Truyền role qua form để xác định role khi sử dụng chức năng khác.
+                    TrangQuanLyChoNhanVien staff = new TrangQuanLyChoNhanVien(role);
                     staff.Show();
                     this.Hide();
                 }

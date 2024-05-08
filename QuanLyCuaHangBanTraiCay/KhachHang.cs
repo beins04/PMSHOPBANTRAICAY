@@ -214,9 +214,9 @@ namespace QuanLyCuaHangBanTraiCay
 
         private void btn_QuayLaiTrangKH_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TrangQuanLy ql = new TrangQuanLy();
-            ql.Show();
+            this.Close();
+            //TrangQuanLy ql = new TrangQuanLy();
+            //ql.Show();
         }
     }
 }

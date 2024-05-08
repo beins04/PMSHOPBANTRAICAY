@@ -22,7 +22,7 @@ namespace QuanLyCuaHangBanTraiCay
             InitializeComponent();
         }
         //khai báo chuoi ket noi CSDL
-        string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
+        private string scon = "Data Source=DESKTOP-HL6447C\\SQLEXPRESS;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
 
         private void hienThi()
         {
@@ -253,44 +253,53 @@ namespace QuanLyCuaHangBanTraiCay
         private void dgv_SanPham_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgv_SanPham.CurrentRow.Index;
-            txt_MaSP.Text = dgv_SanPham.Rows[i].Cells[0].Value.ToString();
-            txt_TenSP.Text = dgv_SanPham.Rows[i].Cells[1].Value.ToString();
-            cbB_NCC.Text = dgv_SanPham.Rows[i].Cells[2].Value.ToString();
-            cbo_LoaiSP.Text = dgv_SanPham.Rows[i].Cells[3].Value.ToString();
-            txt_KhoiLuongNhap.Text = dgv_SanPham.Rows[i].Cells[4].Value.ToString();
-            txt_GiaNhap.Text = dgv_SanPham.Rows[i].Cells[5].Value.ToString();
-            txt_GiaBan.Text = dgv_SanPham.Rows[i].Cells[6].Value.ToString();
-            dt_Ngay.Value = DateTime.Parse(dgv_SanPham.Rows[i].Cells[7].Value.ToString());
-            txt_XuatXu.Text = dgv_SanPham.Rows[i].Cells[8].Value.ToString();
-            txt_KhuyenMai.Text = dgv_SanPham.Rows[i].Cells[10].Value.ToString();
-            txt_KLTon.Text = dgv_SanPham.Rows[i].Cells[11].Value.ToString();
-            if ((bool)dgv_SanPham.Rows[i].Cells[9].Value == false)
+
+            //DataGridViewCell item = dgv_SanPham.;
+            if (dgv_SanPham.Rows[i].Cells[7].Value.ToString() != "")
             {
-                chk_TrangThai.Checked = false;
+                txt_MaSP.Text = dgv_SanPham.Rows[i].Cells[0].Value.ToString();
+                txt_TenSP.Text = dgv_SanPham.Rows[i].Cells[1].Value.ToString();
+                cbB_NCC.Text = dgv_SanPham.Rows[i].Cells[2].Value.ToString();
+                cbo_LoaiSP.Text = dgv_SanPham.Rows[i].Cells[3].Value.ToString();
+                txt_KhoiLuongNhap.Text = dgv_SanPham.Rows[i].Cells[4].Value.ToString();
+                txt_GiaNhap.Text = dgv_SanPham.Rows[i].Cells[5].Value.ToString();
+                txt_GiaBan.Text = dgv_SanPham.Rows[i].Cells[6].Value.ToString();
+                dt_Ngay.Value = DateTime.Parse(dgv_SanPham.Rows[i].Cells[7].Value.ToString());
+                txt_XuatXu.Text = dgv_SanPham.Rows[i].Cells[8].Value.ToString();
+                txt_KhuyenMai.Text = dgv_SanPham.Rows[i].Cells[10].Value.ToString();
+                txt_KLTon.Text = dgv_SanPham.Rows[i].Cells[11].Value.ToString();
+                if ((bool)dgv_SanPham.Rows[i].Cells[9].Value == false)
+                {
+                    chk_TrangThai.Checked = false;
+                }
+                else
+                {
+                    chk_TrangThai.Checked = true;
+                }
+
+
             }
-            else
-            {
-                chk_TrangThai.Checked = true;
-            }
+           
+            
         }
 
         private void btn_QuayLaiSP_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
 
-            TrangQuanLy ql = new TrangQuanLy();
-            bool isAdmin = ql.isAdmin;
+            //TrangQuanLy ql = new TrangQuanLy();
+            //bool isAdmin = ql.isAdmin;
 
-            if (isAdmin)
-            {
-                TrangQuanLy qlch = new TrangQuanLy();
-                qlch.Show();
-            }
-            else
-            {
-                TrangQuanLyChoNhanVien qlnv = new TrangQuanLyChoNhanVien();
-                qlnv.Show();
-            }
+            //if (isAdmin)
+            //{
+            //    TrangQuanLy qlch = new TrangQuanLy();
+            //    qlch.Show();
+            //}
+            //else
+            //{
+            //    TrangQuanLyChoNhanVien qlnv = new TrangQuanLyChoNhanVien();
+            //    qlnv.Show();
+            //}
         }
 
         //TÌM KIẾM

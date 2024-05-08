@@ -16,7 +16,7 @@ namespace QuanLyCuaHangBanTraiCay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new DangNhap());
+            Application.Run(new DangNhap());
             //Application.Run(new SanPham());
             //Application.Run(new NhanVien());
             //Application.Run(new DoiMK());
@@ -27,7 +27,7 @@ namespace QuanLyCuaHangBanTraiCay
             //Application.Run(new NhaCungCap());
             //Application.Run(new TrangHoaDon());
             //Application.Run(new ChiTietHoaDon());
-            Application.Run(new PhieuNhap());
+            //Application.Run(new PhieuNhap());
             //Application.Run(new ChiTietPhieuNhap());
             //Application.Run(new TrangQuanLy());
             //Application.Run(new TrangQuanLyChoNhanVien());

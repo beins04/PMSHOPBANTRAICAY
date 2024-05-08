@@ -10,7 +10,7 @@ namespace QuanLyCuaHangBanTraiCay
 {
     public static class DP
     {
-        private static SqlConnection conn = new SqlConnection("Data Source=LAPTOP-C5AR9CK3;Initial Catalog=SHOPBANGIAY;Integrated Security=True");
+        private static SqlConnection conn = new SqlConnection("Data Source=DESKTOP-HL6447C\\SQLEXPRESS;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True;");
         public static DataTable query(string query)
         {
             try

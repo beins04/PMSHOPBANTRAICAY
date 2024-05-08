@@ -13,7 +13,7 @@ namespace BLL
     {
         protected DangNhapDAL dangNhapDAL = new DangNhapDAL();
 
-        public bool KiemTraDangNhap(string tenDangNhap, string matKhau)
+        public string KiemTraDangNhap(string tenDangNhap, string matKhau)
         {
             return dangNhapDAL.KiemTraDangNhap(tenDangNhap, matKhau); // Gọi phương thức từ DAL
         }

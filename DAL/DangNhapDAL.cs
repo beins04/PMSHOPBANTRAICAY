@@ -13,9 +13,10 @@ namespace DAL
             db = new dbConnect(); // Khởi tạo đối tượng dbConnect
         }
 
-        public bool KiemTraDangNhap(string tenDangNhap, string matKhau)
+        public string KiemTraDangNhap(string tenDangNhap, string matKhau)
         {
-            string query = "SELECT * FROM TAIKHOAN WHERE TenDangNhap = @username AND MatKhau = @password";
+            //select ra chức vụ của tài khoản
+            string query = "SELECT ChucVu FROM TAIKHOAN WHERE TenDangNhap = @username AND MatKhau = @password";
             using (SqlConnection connection = db.GetConnection()) // Sử dụng kết nối từ dbConnect
             {
                 connection.Open();
@@ -23,8 +24,22 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@username", tenDangNhap);
                 cmd.Parameters.AddWithValue("@password", matKhau);
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                return reader.Read(); // Trả về true nếu có bản ghi phù hợp
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader != null) // Kiểm tra xem có bản ghi nào phù hợp không
+                    {
+                        // Chuyển đổi giá trị từ trường MaTK sang kiểu int
+                        while (reader.Read())
+                        {
+                            //Lấy ra chức vụ nếu tài khoản mk đúng
+                            return reader[0].ToString();
+                        }
+
+                        return "";
+                    }
+
+                    return "";
+                }
             }
         }
         public int PhanQuyen(string tenDangNhap, string matKhau)

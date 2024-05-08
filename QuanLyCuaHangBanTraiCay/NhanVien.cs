@@ -219,9 +219,9 @@ namespace QuanLyCuaHangBanTraiCay
 
         private void btn_QuayLaiTrangNV_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            TrangQuanLy ql = new TrangQuanLy();
-            ql.Show();
+            this.Close();
+            //TrangQuanLy ql = new TrangQuanLy();
+            //ql.Show();
         }
 
         private void dgv_NhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)

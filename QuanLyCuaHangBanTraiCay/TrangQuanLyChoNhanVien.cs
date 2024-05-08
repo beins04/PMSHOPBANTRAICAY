@@ -13,9 +13,13 @@ namespace QuanLyCuaHangBanTraiCay
     public partial class TrangQuanLyChoNhanVien : Form
     {
         public int MaTK;
-        public TrangQuanLyChoNhanVien()
+
+        private string role;
+        public TrangQuanLyChoNhanVien(string role)
         {
             InitializeComponent();
+
+            this.role = role;
         }
 
         private void btn_KhoHang_Click(object sender, EventArgs e)
@@ -27,7 +31,7 @@ namespace QuanLyCuaHangBanTraiCay
             Management.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_DoanhThu_Click(object sender, EventArgs e)
@@ -39,7 +43,7 @@ namespace QuanLyCuaHangBanTraiCay
             Statistical.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_DoiMatKhau_Click(object sender, EventArgs e)
@@ -51,7 +55,7 @@ namespace QuanLyCuaHangBanTraiCay
             ChangePassword.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_KhachHang_Click(object sender, EventArgs e)
@@ -63,7 +67,7 @@ namespace QuanLyCuaHangBanTraiCay
             Guest.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_DangXuat_Click(object sender, EventArgs e)
@@ -75,7 +79,7 @@ namespace QuanLyCuaHangBanTraiCay
             loginForm.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_HoaDon_Click(object sender, EventArgs e)
@@ -87,7 +91,7 @@ namespace QuanLyCuaHangBanTraiCay
             Bill.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void btn_SanPham_Click(object sender, EventArgs e)
@@ -99,7 +103,7 @@ namespace QuanLyCuaHangBanTraiCay
             Product.Show();
 
             // Đóng form trang chủ
-            this.Close();
+            //this.Close();
         }
 
         private void TrangQuanLyChoNhanVien_Load(object sender, EventArgs e)
