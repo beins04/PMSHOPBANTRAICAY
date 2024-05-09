@@ -41,7 +41,6 @@
             this.cbo_MaSP = new System.Windows.Forms.ComboBox();
             this.txt_Gia = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.num_SL = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_KhuyenMai = new System.Windows.Forms.TextBox();
             this.txt_ThanhTien = new System.Windows.Forms.TextBox();
@@ -54,9 +53,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_TongTien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txt_KhoiLuong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTietHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_SL)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_ChiTietHoaDon
@@ -184,25 +183,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(990, 192);
+            this.label1.Location = new System.Drawing.Point(1005, 192);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 23);
             this.label1.TabIndex = 20;
             this.label1.Text = "Khối Lượng";
-            // 
-            // num_SL
-            // 
-            this.num_SL.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num_SL.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.num_SL.Location = new System.Drawing.Point(1108, 189);
-            this.num_SL.Name = "num_SL";
-            this.num_SL.Size = new System.Drawing.Size(81, 30);
-            this.num_SL.TabIndex = 21;
-            this.num_SL.ValueChanged += new System.EventHandler(this.num_SL_ValueChanged);
             // 
             // label2
             // 
@@ -328,12 +313,21 @@
             this.label5.TabIndex = 32;
             this.label5.Text = "Tổng Hóa Đơn";
             // 
+            // txt_KhoiLuong
+            // 
+            this.txt_KhoiLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_KhoiLuong.Location = new System.Drawing.Point(1121, 188);
+            this.txt_KhoiLuong.Name = "txt_KhoiLuong";
+            this.txt_KhoiLuong.Size = new System.Drawing.Size(104, 30);
+            this.txt_KhoiLuong.TabIndex = 34;
+            // 
             // ChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1251, 629);
+            this.Controls.Add(this.txt_KhoiLuong);
             this.Controls.Add(this.txt_TongTien);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_TienGuiLai);
@@ -346,7 +340,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_KhuyenMai);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.num_SL);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Gia);
             this.Controls.Add(this.cbo_MaSP);
@@ -367,7 +360,6 @@
             this.Load += new System.EventHandler(this.ChiTietHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTietHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_SL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,7 +379,6 @@
         private System.Windows.Forms.ComboBox cbo_MaSP;
         private System.Windows.Forms.TextBox txt_Gia;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown num_SL;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_KhuyenMai;
         private System.Windows.Forms.TextBox txt_ThanhTien;
@@ -400,5 +391,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_TongTien;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_KhoiLuong;
     }
 }

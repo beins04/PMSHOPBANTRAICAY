@@ -26,20 +26,20 @@ namespace QuanLyCuaHangBanTraiCay
 
         public bool KiemTraSoLuongSanPham()
         {
-            int Khoiluongmuahang = (int)num_SL.Value;
+            float Khoiluongmuahang = float.Parse(txt_KhoiLuong.Text);
             SqlConnection myConnection = new SqlConnection(scon);
             try
             {
                 myConnection.Open();
 
                 // Lấy số lượng hiện tại của sản phẩm từ CSDL
-                string sSQL = "SELECT KhoiLuongNhap FROM SANPHAM WHERE MaSP = @MaSP";
+                string sSQL = "SELECT KhoiLuongTon FROM SANPHAM WHERE MaSP = @MaSP";
                 SqlCommand command = new SqlCommand(sSQL, myConnection);
                 command.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
-                int khoiluongdb = (int)command.ExecuteScalar();
+                float khoiluongdb = (float)command.ExecuteScalar();
 
                 // Tính số lượng còn lại sau khi mua
-                int khoiluongtravedb = khoiluongdb - Khoiluongmuahang;
+                float khoiluongtravedb = khoiluongdb - Khoiluongmuahang;
 
                 if (khoiluongtravedb< 0)
                 {
@@ -49,7 +49,7 @@ namespace QuanLyCuaHangBanTraiCay
                 else
                 {
                     // Cập nhật số lượng sản phẩm
-                    string updateSQL = "UPDATE SANPHAM SET KhoiLuongNhap = @KhoiLuongTraVedb WHERE MaSP = @MaSP";
+                    string updateSQL = "UPDATE SANPHAM SET KhoiLuongTon = @KhoiLuongTraVedb WHERE MaSP = @MaSP";
                     SqlCommand updateCommand = new SqlCommand(updateSQL, myConnection);
                     updateCommand.Parameters.AddWithValue("@KhoiLuongTraVedb", khoiluongtravedb);
                     updateCommand.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
@@ -183,7 +183,7 @@ namespace QuanLyCuaHangBanTraiCay
         //THÊM CHI TIẾT HÓA ĐƠN
         public void ThemChiTietHoaDon(int MaHD)
         {
-            int KhoiLuong = int.Parse(num_SL.Value.ToString());
+            float KhoiLuong = float.Parse(txt_KhoiLuong.Text);
             int DonGia = int.Parse(txt_Gia.Text);
             int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
             double ThanhTien = (KhoiLuong * DonGia) * ((100.0 - KhuyenMai) / 100.0);
@@ -198,7 +198,7 @@ namespace QuanLyCuaHangBanTraiCay
                     {
                         cmd.Parameters.AddWithValue("@MaHD", MaHD);
                         cmd.Parameters.AddWithValue("@MaSP", cbo_MaSP.Text);
-                        cmd.Parameters.AddWithValue("@SoLuong", num_SL.Value);
+                        cmd.Parameters.AddWithValue("@SoLuong", txt_KhoiLuong.Text);
                         cmd.Parameters.AddWithValue("@ThanhTien", ThanhTien);
                         cmd.ExecuteNonQuery();
                     }
@@ -253,7 +253,7 @@ namespace QuanLyCuaHangBanTraiCay
                     {
                         cmd.Parameters.AddWithValue("@MaHD", MaHD);
                         cmd.Parameters.AddWithValue("@MaSP", cbo_MaSP.Text);
-                        cmd.Parameters.AddWithValue("@SoLuong", num_SL.Text);
+                        cmd.Parameters.AddWithValue("@SoLuong", txt_KhoiLuong.Text);
                         cmd.ExecuteNonQuery();
                     }
                     MessageBox.Show("Cập nhật thành công !", "Thông báo");
@@ -310,8 +310,8 @@ namespace QuanLyCuaHangBanTraiCay
         {
             int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
             int Gia = int.Parse(txt_Gia.Text);
-            int Soluong = (int)num_SL.Value;
-            double ThanhTien = (Soluong * Gia) * ((100.0 - KhuyenMai) / 100);
+            float Khoiluong = float.Parse(txt_KhoiLuong.Text);
+            double ThanhTien = (Khoiluong * Gia) * ((100.0 - KhuyenMai) / 100);
             txt_ThanhTien.Text = ThanhTien.ToString();
 
             TongHD();
@@ -385,7 +385,7 @@ namespace QuanLyCuaHangBanTraiCay
                 txt_TenSP.Text = dgv_ChiTietHoaDon.Rows[i].Cells[2].Value.ToString();
                 txt_Gia.Text = dgv_ChiTietHoaDon.Rows[i].Cells[3].Value.ToString();
                 txt_KhuyenMai.Text = dgv_ChiTietHoaDon.Rows[i].Cells[4].Value.ToString();
-                num_SL.Value = Convert.ToInt32(dgv_ChiTietHoaDon.Rows[i].Cells[5].Value);
+                txt_KhoiLuong.Text = dgv_ChiTietHoaDon.Rows[i].Cells[5].Value.ToString();
                 txt_ThanhTien.Text = dgv_ChiTietHoaDon.Rows[i].Cells[6].Value.ToString();
             }
         }
@@ -423,9 +423,9 @@ namespace QuanLyCuaHangBanTraiCay
         private void btn_Them_Click(object sender, EventArgs e)
         {
             int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
-            int SoLuong = (int)num_SL.Value;
+            float KhoiLuong = float.Parse(txt_KhoiLuong.Text);
 
-            if (SoLuong == 0)
+            if (KhoiLuong == 0)
             {
                 MessageBox.Show("Hãy chọn số lượng sản phẩm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Thoát khỏi hàm nếu không có số lượng
