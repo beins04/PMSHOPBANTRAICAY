@@ -23,7 +23,7 @@ namespace QuanLyCuaHangBanTraiCay
             //Doi tuong ket noi CSDL
             SqlConnection myConnection = new SqlConnection(scon);
             string sSql;
-            sSql = "  SELECT MaTK, TenDangNhap FROM TAIKHOAN Where ChucVu like N'Nhân viên'";
+            sSql = "  SELECT MaTK, TenDangNhap FROM TAIKHOAN" /*Where ChucVu like N'Nhân viên'*/;
             try
             {
                 myConnection.Open();
@@ -46,7 +46,7 @@ namespace QuanLyCuaHangBanTraiCay
         {
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT MaNV, MaTK, TenNV, DiaChi, GioiTinh, SDT FROM NHANVIEN;";
+            string sSQL = "SELECT MaNV, TenNV, DiaChi, GioiTinh, SDT FROM NHANVIEN;";
             try
             {
                 myConnection.Open();
@@ -72,14 +72,14 @@ namespace QuanLyCuaHangBanTraiCay
         }
 
         //THÊM NHÂN VIÊN
-        public bool ThemNhanVien(string sTenNV, string sDiaChi, string sGioiTinh, string sSDT)
+        public bool ThemNhanVien(string sTenNV, int iMaTK, string sDiaChi, string sGioiTinh, string sSDT)
         {
 
             bool kq;
             kq = true;
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSql = string.Format("INSERT INTO NHANVIEN VALUES (N'{0}', N'{1}', N'{2}', N'{3}')", sTenNV, sDiaChi, sGioiTinh, sSDT);
+            string sSql = string.Format("INSERT INTO NHANVIEN VALUES (N'{0}', '{1}', N'{2}', N'{3}',N'{4}')",  sTenNV, iMaTK, sDiaChi, sGioiTinh, sSDT);
             MessageBox.Show(sSql);
 
             try
@@ -103,21 +103,34 @@ namespace QuanLyCuaHangBanTraiCay
         private void btn_ThemNV_Click(object sender, EventArgs e)
         {
             string sTenNhanVien, sDiaChi, sGioiTinh, sSDT;
-            
-            sTenNhanVien = txt_TenNV .Text;
-            sDiaChi = txt_DiaChiNV.Text;
-            sSDT = txt_SDTNV.Text;
-            sGioiTinh = rad_Nam.Checked ? "Nam" : "Nữ";
-           
+            int maTK;
 
-            bool kq = ThemNhanVien(sTenNhanVien, sDiaChi, sGioiTinh, sSDT);
-            if (kq)
+            // Attempt to parse the selected value of cbo_MaTK to an integer
+            if (cbo_MaTK.SelectedValue != null && int.TryParse(cbo_MaTK.SelectedValue.ToString(), out maTK))
             {
-                MessageBox.Show("Đã thêm nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Get other input values
+                sTenNhanVien = txt_TenNV.Text;
+                sDiaChi = txt_DiaChiNV.Text;
+                sSDT = txt_SDTNV.Text;
+                sGioiTinh = rad_Nam.Checked ? "Nam" : "Nữ";
+
+                // Call the ThemNhanVien function
+                bool kq = ThemNhanVien(sTenNhanVien, maTK, sDiaChi, sGioiTinh, sSDT);
+                if (kq)
+                {
+                    MessageBox.Show("Đã thêm nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm KHÔNG thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                // Refresh the display
+                XemDanhSach();
             }
             else
             {
-                MessageBox.Show("Thêm KHÔNG thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Display an error message if the selected value cannot be parsed to an integer
+                MessageBox.Show("Giá trị chọn không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             XemDanhSach();
         }

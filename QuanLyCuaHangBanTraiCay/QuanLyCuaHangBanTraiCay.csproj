@@ -342,5 +342,8 @@
   <ItemGroup>
     <None Include="Resources\reset.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tài khoản.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

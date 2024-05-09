@@ -88,7 +88,7 @@ namespace QuanLyCuaHangBanTraiCay
             bool kq = ThemTaiKhoan(sTenDangNhap, sMatKhau, sTrangThai, sChucVu);
             if (kq)
             {
-                MessageBox.Show("Đã thêm Nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã thêm Ntài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -115,11 +115,11 @@ namespace QuanLyCuaHangBanTraiCay
 
                 if (row > 0)
                 {
-                    MessageBox.Show("Đã xóa nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã xóa tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy nhà cung cấp có mã: " + MaTK, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không tìm thấy tài khoản có mã: " + MaTK, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 myConnection.Close();
@@ -180,11 +180,11 @@ namespace QuanLyCuaHangBanTraiCay
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Bạn đã thay đổi thành công sản phẩm có mã sản phẩm là : " + MaTK, "Thông báo");
+                            MessageBox.Show("Bạn đã thay đổi thành công tài khoản có mã sản phẩm là : " + MaTK, "Thông báo");
                         }
                         else
                         {
-                            MessageBox.Show("Không có sản phẩm nào được cập nhật.", "Thông báo");
+                            MessageBox.Show("Không có tài khoản nào được cập nhật.", "Thông báo");
                         }
                     }
                 }

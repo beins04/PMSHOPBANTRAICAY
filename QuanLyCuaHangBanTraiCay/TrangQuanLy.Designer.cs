@@ -84,7 +84,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.KhoHang;
+            this.pictureBox4.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.Tài_khoản;
             this.pictureBox4.Location = new System.Drawing.Point(55, 288);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(148, 110);
@@ -138,7 +138,7 @@
             this.btn_KhoHang.Name = "btn_KhoHang";
             this.btn_KhoHang.Size = new System.Drawing.Size(96, 43);
             this.btn_KhoHang.TabIndex = 9;
-            this.btn_KhoHang.Text = "Kho Hàng";
+            this.btn_KhoHang.Text = "Tài Khoản";
             this.btn_KhoHang.UseVisualStyleBackColor = true;
             this.btn_KhoHang.Click += new System.EventHandler(this.btn_KhoHang_Click);
             // 

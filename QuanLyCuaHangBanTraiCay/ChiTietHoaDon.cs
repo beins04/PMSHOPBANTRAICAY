@@ -20,10 +20,37 @@ namespace QuanLyCuaHangBanTraiCay
         }
         //khai báo chuoi ket noi CSDL
         string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
+
         public int MaHD;
         public int MaTK;
         public int TienKhachDua;
 
+        public void XemChiTietHoaDon(int MaHD)
+        {
+            // Khai báo chuỗi kết nối CSDL
+            string sSQL = "SELECT CHITIETHOADON.MaHD, SANPHAM.MaSP, SANPHAM.TenSP, SANPHAM.GiaBan, SANPHAM.KhuyenMai, CHITIETHOADON.SoLuong, CHITIETHOADON.ThanhTien FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE CHITIETHOADON.MaHD = @MaHD";
+            try
+            {
+                using (SqlConnection myConnection = new SqlConnection(scon))
+                {
+                    myConnection.Open();
+                    using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@MaHD", MaHD);
+
+                        SqlDataAdapter daSanPham = new SqlDataAdapter(cmd);
+                        DataSet dsSanPham = new DataSet();
+                        daSanPham.Fill(dsSanPham);
+
+                        dgv_ChiTietHoaDon.DataSource = dsSanPham.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+            }
+        }
         public bool KiemTraSoLuongSanPham()
         {
             //float Khoiluongmuahang = float.Parse(txt_KhoiLuong.Text);
@@ -118,32 +145,7 @@ namespace QuanLyCuaHangBanTraiCay
                 }
             }
         }
-        public void XemChiTietHoaDon(int MaHD)
-        {
-            // Khai báo chuỗi kết nối CSDL
-            string sSQL = "SELECT CHITIETHOADON.MaHD, SANPHAM.MaSP, SANPHAM.TenSP, SANPHAM.GiaBan, SANPHAM.KhuyenMai, SANPHAM.KhoiLuongNhap, CHITIETHOADON.ThanhTien FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE CHITIETHOADON.MaHD = @MaHD";
-            try
-            {
-                using (SqlConnection myConnection = new SqlConnection(scon))
-                {
-                    myConnection.Open();
-                    using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
-                    {
-                        cmd.Parameters.AddWithValue("@MaHD", MaHD);
-
-                        SqlDataAdapter daSanPham = new SqlDataAdapter(cmd);
-                        DataSet dsSanPham = new DataSet();
-                        daSanPham.Fill(dsSanPham);
-
-                        dgv_ChiTietHoaDon.DataSource = dsSanPham.Tables[0];
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
-            }
-        }
+        
         public void HienThi()
         {
 
@@ -418,22 +420,6 @@ namespace QuanLyCuaHangBanTraiCay
             XemChiTietHoaDon(MaHD);
         }
 
-        private void dgv_ChiTietHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-            DataGridViewRow selectedRow = dgv_ChiTietHoaDon.Rows[rowIndex];
-            if (selectedRow != null)
-            {
-                int i = dgv_ChiTietHoaDon.CurrentRow.Index;
-                cbo_MaSP.Text = dgv_ChiTietHoaDon.Rows[i].Cells[1].Value.ToString();
-                txt_TenSP.Text = dgv_ChiTietHoaDon.Rows[i].Cells[2].Value.ToString();
-                txt_Gia.Text = dgv_ChiTietHoaDon.Rows[i].Cells[3].Value.ToString();
-                txt_KhuyenMai.Text = dgv_ChiTietHoaDon.Rows[i].Cells[4].Value.ToString();
-                txt_KhoiLuong.Text = dgv_ChiTietHoaDon.Rows[i].Cells[5].Value.ToString();
-                txt_ThanhTien.Text = dgv_ChiTietHoaDon.Rows[i].Cells[6].Value.ToString();
-            }
-        }
-
         private void btn_XoaKH_Click(object sender, EventArgs e)
         {
             XoaSP(MaHD);
@@ -442,7 +428,7 @@ namespace QuanLyCuaHangBanTraiCay
 
         private void dgv_ChiTietHoaDon_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            dgv_ChiTietHoaDon.Rows[e.RowIndex].Height = 80;
+            dgv_ChiTietHoaDon.Rows[e.RowIndex].Height = 50;
         }
 
         private void btn_QuayLaiTrangKH_Click(object sender, EventArgs e)
@@ -505,6 +491,22 @@ namespace QuanLyCuaHangBanTraiCay
         private void txt_TongTien_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgv_ChiTietHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            DataGridViewRow selectedRow = dgv_ChiTietHoaDon.Rows[rowIndex];
+            if (selectedRow != null)
+            {
+                int i = dgv_ChiTietHoaDon.CurrentRow.Index;
+                cbo_MaSP.Text = dgv_ChiTietHoaDon.Rows[i].Cells[1].Value.ToString();
+                txt_TenSP.Text = dgv_ChiTietHoaDon.Rows[i].Cells[2].Value.ToString();
+                txt_Gia.Text = dgv_ChiTietHoaDon.Rows[i].Cells[3].Value.ToString();
+                txt_KhuyenMai.Text = dgv_ChiTietHoaDon.Rows[i].Cells[4].Value.ToString();
+                txt_KhoiLuong.Text = dgv_ChiTietHoaDon.Rows[i].Cells[5].Value.ToString();
+                txt_ThanhTien.Text = dgv_ChiTietHoaDon.Rows[i].Cells[6].Value.ToString();
+            }
         }
     }
 }

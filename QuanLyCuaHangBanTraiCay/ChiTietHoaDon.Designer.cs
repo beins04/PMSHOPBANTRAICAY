@@ -67,7 +67,7 @@
             this.dgv_ChiTietHoaDon.RowTemplate.Height = 24;
             this.dgv_ChiTietHoaDon.Size = new System.Drawing.Size(699, 399);
             this.dgv_ChiTietHoaDon.TabIndex = 16;
-            this.dgv_ChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ChiTietHoaDon_CellContentClick);
+            this.dgv_ChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ChiTietHoaDon_CellClick);
             this.dgv_ChiTietHoaDon.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgv_ChiTietHoaDon_RowPrePaint);
             // 
             // txt_TienKhachDua

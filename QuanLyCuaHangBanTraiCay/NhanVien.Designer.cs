@@ -33,26 +33,26 @@
             this.txt_DiaChiNV = new System.Windows.Forms.TextBox();
             this.txt_SDTNV = new System.Windows.Forms.TextBox();
             this.txt_TenNV = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_TaiLaiNV = new System.Windows.Forms.Button();
+            this.btn_TimKiemNV = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_TiemKiemNV = new System.Windows.Forms.TextBox();
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.txt_MaNV = new System.Windows.Forms.TextBox();
-            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_QuayLaiTrangNV = new System.Windows.Forms.Button();
-            this.btn_TaiLaiNV = new System.Windows.Forms.Button();
-            this.btn_TimKiemNV = new System.Windows.Forms.Button();
             this.btn_SuaNV = new System.Windows.Forms.Button();
             this.btn_XoaNV = new System.Windows.Forms.Button();
             this.btn_ThemNV = new System.Windows.Forms.Button();
+            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,16 +105,6 @@
             this.txt_TenNV.Name = "txt_TenNV";
             this.txt_TenNV.Size = new System.Drawing.Size(232, 34);
             this.txt_TenNV.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(36, 73);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 25);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Mã Tài Khoản:";
             // 
             // label5
             // 
@@ -181,6 +171,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
             // 
+            // btn_TaiLaiNV
+            // 
+            this.btn_TaiLaiNV.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.lammoiall;
+            this.btn_TaiLaiNV.Location = new System.Drawing.Point(371, 78);
+            this.btn_TaiLaiNV.Name = "btn_TaiLaiNV";
+            this.btn_TaiLaiNV.Size = new System.Drawing.Size(131, 46);
+            this.btn_TaiLaiNV.TabIndex = 19;
+            this.btn_TaiLaiNV.Text = "Tải Lại";
+            this.btn_TaiLaiNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_TaiLaiNV.UseVisualStyleBackColor = true;
+            // 
+            // btn_TimKiemNV
+            // 
+            this.btn_TimKiemNV.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.searchall;
+            this.btn_TimKiemNV.Location = new System.Drawing.Point(371, 22);
+            this.btn_TimKiemNV.Name = "btn_TimKiemNV";
+            this.btn_TimKiemNV.Size = new System.Drawing.Size(131, 44);
+            this.btn_TimKiemNV.TabIndex = 18;
+            this.btn_TimKiemNV.Text = "Tìm";
+            this.btn_TimKiemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_TimKiemNV.UseVisualStyleBackColor = true;
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -224,15 +236,6 @@
             this.txt_MaNV.Size = new System.Drawing.Size(230, 34);
             this.txt_MaNV.TabIndex = 29;
             // 
-            // cbo_MaTK
-            // 
-            this.cbo_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_MaTK.FormattingEnabled = true;
-            this.cbo_MaTK.Location = new System.Drawing.Point(209, 65);
-            this.cbo_MaTK.Name = "cbo_MaTK";
-            this.cbo_MaTK.Size = new System.Drawing.Size(232, 33);
-            this.cbo_MaTK.TabIndex = 30;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::QuanLyCuaHangBanTraiCay.Properties.Resources.tải_xuống__3__jpg;
@@ -255,28 +258,6 @@
             this.btn_QuayLaiTrangNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_QuayLaiTrangNV.UseVisualStyleBackColor = true;
             this.btn_QuayLaiTrangNV.Click += new System.EventHandler(this.btn_QuayLaiTrangNV_Click);
-            // 
-            // btn_TaiLaiNV
-            // 
-            this.btn_TaiLaiNV.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.lammoiall;
-            this.btn_TaiLaiNV.Location = new System.Drawing.Point(371, 78);
-            this.btn_TaiLaiNV.Name = "btn_TaiLaiNV";
-            this.btn_TaiLaiNV.Size = new System.Drawing.Size(131, 46);
-            this.btn_TaiLaiNV.TabIndex = 19;
-            this.btn_TaiLaiNV.Text = "Tải Lại";
-            this.btn_TaiLaiNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_TaiLaiNV.UseVisualStyleBackColor = true;
-            // 
-            // btn_TimKiemNV
-            // 
-            this.btn_TimKiemNV.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.searchall;
-            this.btn_TimKiemNV.Location = new System.Drawing.Point(371, 22);
-            this.btn_TimKiemNV.Name = "btn_TimKiemNV";
-            this.btn_TimKiemNV.Size = new System.Drawing.Size(131, 44);
-            this.btn_TimKiemNV.TabIndex = 18;
-            this.btn_TimKiemNV.Text = "Tìm";
-            this.btn_TimKiemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_TimKiemNV.UseVisualStyleBackColor = true;
             // 
             // btn_SuaNV
             // 
@@ -316,6 +297,25 @@
             this.btn_ThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_ThemNV.UseVisualStyleBackColor = true;
             this.btn_ThemNV.Click += new System.EventHandler(this.btn_ThemNV_Click);
+            // 
+            // cbo_MaTK
+            // 
+            this.cbo_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_MaTK.FormattingEnabled = true;
+            this.cbo_MaTK.Location = new System.Drawing.Point(209, 65);
+            this.cbo_MaTK.Name = "cbo_MaTK";
+            this.cbo_MaTK.Size = new System.Drawing.Size(232, 33);
+            this.cbo_MaTK.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(36, 73);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(167, 25);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Mã Tài Khoản:";
             // 
             // NhanVien
             // 
@@ -358,7 +358,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -381,7 +380,8 @@
         private System.Windows.Forms.TextBox txt_TiemKiemNV;
         private System.Windows.Forms.DataGridView dgv_NhanVien;
         private System.Windows.Forms.TextBox txt_MaNV;
-        private System.Windows.Forms.ComboBox cbo_MaTK;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbo_MaTK;
+        private System.Windows.Forms.Label label6;
     }
 }
