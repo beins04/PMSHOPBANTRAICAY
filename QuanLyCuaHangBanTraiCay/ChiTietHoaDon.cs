@@ -19,53 +19,103 @@ namespace QuanLyCuaHangBanTraiCay
             InitializeComponent();
         }
         //khai báo chuoi ket noi CSDL
-        string scon = "Data Source=LENOVO\\SQLEXPRESSXP;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
+        string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
         public int MaHD;
         public int MaTK;
         public int TienKhachDua;
 
         public bool KiemTraSoLuongSanPham()
         {
-            float Khoiluongmuahang = float.Parse(txt_KhoiLuong.Text);
-            SqlConnection myConnection = new SqlConnection(scon);
-            try
+            //float Khoiluongmuahang = float.Parse(txt_KhoiLuong.Text);
+            //SqlConnection myConnection = new SqlConnection(scon);
+            //try
+            //{
+            //    myConnection.Open();
+
+            //    // Lấy số lượng hiện tại của sản phẩm từ CSDL
+            //    string sSQL = "SELECT KhoiLuongTon FROM SANPHAM WHERE MaSP = @MaSP";
+            //    SqlCommand command = new SqlCommand(sSQL, myConnection);
+            //    command.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
+            //    float khoiluongdb = (float)command.ExecuteScalar();
+
+            //    // Tính số lượng còn lại sau khi mua
+            //    float khoiluongtravedb = khoiluongdb - Khoiluongmuahang;
+
+            //    if (khoiluongtravedb< 0)
+            //    {
+            //        MessageBox.Show("Hiện số lượng không đủ để bán, hãy thử giảm số lượng mua hoặc quay lại lần sau nhé!!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            //        return false; // Trả về false nếu số lượng không đủ
+            //    }
+            //    else
+            //    {
+            //        // Cập nhật số lượng sản phẩm
+            //        string updateSQL = "UPDATE SANPHAM SET KhoiLuongTon = @KhoiLuongTraVedb WHERE MaSP = @MaSP";
+            //        SqlCommand updateCommand = new SqlCommand(updateSQL, myConnection);
+            //        updateCommand.Parameters.AddWithValue("@KhoiLuongTraVedb", khoiluongtravedb);
+            //        updateCommand.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
+            //        updateCommand.ExecuteNonQuery();
+
+            //        return true; // Trả về true nếu cập nhật thành công
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+            //    return false; // Trả về false nếu có lỗi
+            //}
+            //finally
+            //{
+            //    myConnection.Close(); // Đảm bảo kết nối được đóng lại
+            //}
+            // Kiểm tra tính hợp lệ của dữ liệu đầu vào
+            if (!float.TryParse(txt_KhoiLuong.Text, out float Khoiluongmuahang))
+            {
+                MessageBox.Show("Vui lòng nhập một số hợp lệ cho khối lượng mua hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            using (SqlConnection myConnection = new SqlConnection(scon))
             {
                 myConnection.Open();
+                SqlTransaction transaction = myConnection.BeginTransaction();
 
-                // Lấy số lượng hiện tại của sản phẩm từ CSDL
-                string sSQL = "SELECT KhoiLuongTon FROM SANPHAM WHERE MaSP = @MaSP";
-                SqlCommand command = new SqlCommand(sSQL, myConnection);
-                command.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
-                float khoiluongdb = (float)command.ExecuteScalar();
-
-                // Tính số lượng còn lại sau khi mua
-                float khoiluongtravedb = khoiluongdb - Khoiluongmuahang;
-
-                if (khoiluongtravedb< 0)
+                try
                 {
-                    MessageBox.Show("Hiện số lượng không đủ để bán, hãy thử giảm số lượng mua hoặc quay lại lần sau nhé!!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-                    return false; // Trả về false nếu số lượng không đủ
-                }
-                else
-                {
-                    // Cập nhật số lượng sản phẩm
-                    string updateSQL = "UPDATE SANPHAM SET KhoiLuongTon = @KhoiLuongTraVedb WHERE MaSP = @MaSP";
-                    SqlCommand updateCommand = new SqlCommand(updateSQL, myConnection);
-                    updateCommand.Parameters.AddWithValue("@KhoiLuongTraVedb", khoiluongtravedb);
-                    updateCommand.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
-                    updateCommand.ExecuteNonQuery();
+                    // Lấy số lượng hiện tại của sản phẩm từ CSDL
+                    string sSQL = "SELECT KhoiLuongNhap FROM SANPHAM WHERE MaSP = @MaSP";
+                    SqlCommand command = new SqlCommand(sSQL, myConnection);
+                    command.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
+                    command.Transaction = transaction;
+                    float khoiluongdb = (float)command.ExecuteScalar();
 
-                    return true; // Trả về true nếu cập nhật thành công
+                    // Tính số lượng còn lại sau khi mua
+                    float khoiluongtravedb = khoiluongdb - Khoiluongmuahang;
+
+                    if (khoiluongtravedb < 0)
+                    {
+                        MessageBox.Show("Hiện khối lượng không đủ để bán, hãy thử giảm khối lượng mua hoặc quay lại lần sau nhé!!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                        return false; // Trả về false nếu số lượng không đủ
+                    }
+                    else
+                    {
+                        // Cập nhật số lượng sản phẩm
+                        string updateSQL = "UPDATE SANPHAM SET KhoiLuongNhap = @KhoiLuongTraVedb WHERE MaSP = @MaSP";
+                        SqlCommand updateCommand = new SqlCommand(updateSQL, myConnection);
+                        updateCommand.Parameters.AddWithValue("@KhoiLuongTraVedb", khoiluongtravedb);
+                        updateCommand.Parameters.AddWithValue("@MaSP", int.Parse(cbo_MaSP.Text));
+                        updateCommand.Transaction = transaction;
+                        updateCommand.ExecuteNonQuery();
+
+                        transaction.Commit(); // Commit transaction khi không có lỗi
+                        return true; // Trả về true nếu cập nhật thành công
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
-                return false; // Trả về false nếu có lỗi
-            }
-            finally
-            {
-                myConnection.Close(); // Đảm bảo kết nối được đóng lại
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+                    transaction.Rollback(); // Rollback transaction nếu có lỗi
+                    return false; // Trả về false nếu có lỗi
+                }
             }
         }
         public void XemChiTietHoaDon(int MaHD)
@@ -186,7 +236,7 @@ namespace QuanLyCuaHangBanTraiCay
             float KhoiLuong = float.Parse(txt_KhoiLuong.Text);
             int DonGia = int.Parse(txt_Gia.Text);
             int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
-            double ThanhTien = (KhoiLuong * DonGia) * ((100.0 - KhuyenMai) / 100.0);
+            decimal ThanhTien = (decimal)((double)KhoiLuong * (double)DonGia) * ((100.0m - KhuyenMai) / 100.0m);
             txt_ThanhTien.Text = ThanhTien.ToString();
             string sSQL = "INSERT INTO CHITIETHOADON (MaHD,MaSP,SoLuong,ThanhTien) VALUES (@MaHD,@MaSP,@SoLuong,@ThanhTien)";
             try
@@ -304,32 +354,28 @@ namespace QuanLyCuaHangBanTraiCay
             XuatThongTinSP();
         }
 
-        private void num_SL_ValueChanged(object sender, EventArgs e)
-        {
-            int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
-            int Gia = int.Parse(txt_Gia.Text);
-            float Khoiluong = float.Parse(txt_KhoiLuong.Text);
-            double ThanhTien = (Khoiluong * Gia) * ((100.0 - KhuyenMai) / 100);
-            txt_ThanhTien.Text = ThanhTien.ToString();
-
-            TongHD();
-        }
-
         private void btn_XuatHoaDon_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem giá trị nhập vào có rỗng hoặc trống không
             string tienKhachDuaText = txt_TienKhachDua.Text.Trim();
-            if (string.IsNullOrEmpty(tienKhachDuaText))
+            decimal tienKhachDua;
+
+            if (string.IsNullOrWhiteSpace(tienKhachDuaText))
             {
                 MessageBox.Show("Hãy nhập số tiền mà khách đã đưa cho bạn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            else if (!decimal.TryParse(tienKhachDuaText, out tienKhachDua))
+            {
+                MessageBox.Show("Số tiền mà khách đã đưa không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            double tienKhachDua;
+            // Sau đây, bạn có thể sử dụng giá trị của tienKhachDua trong các xử lý tiếp theo
             try
             {
                 // Chuyển đổi giá trị sang kiểu số
-                tienKhachDua = double.Parse(tienKhachDuaText);
+                tienKhachDua = decimal.Parse(tienKhachDuaText);
             }
             catch (FormatException ex)
             {
@@ -343,10 +389,10 @@ namespace QuanLyCuaHangBanTraiCay
                 return;
             }
 
-            double TongTien;
+            decimal ThanhTien;
             try
             {
-                TongTien = double.Parse(txt_TongTien.Text); // Giả sử giá trị này luôn hợp lệ
+                ThanhTien = decimal.Parse(txt_ThanhTien.Text); // Giả sử giá trị này luôn hợp lệ
             }
             catch (FormatException ex)
             {
@@ -354,7 +400,7 @@ namespace QuanLyCuaHangBanTraiCay
                 return;
             }
 
-            double tienGuiKhach = tienKhachDua - TongTien;
+            decimal tienGuiKhach = tienKhachDua - ThanhTien;
 
             txt_TienGuiLai.Text = tienGuiKhach.ToString();
 
@@ -443,6 +489,22 @@ namespace QuanLyCuaHangBanTraiCay
                 XemChiTietHoaDon(MaHD);
                 TongHD();
             }
+        }
+
+        private void txt_KhoiLuong_TextChanged(object sender, EventArgs e)
+        {
+            int KhuyenMai = int.Parse(txt_KhuyenMai.Text);
+            int Gia = int.Parse(txt_Gia.Text);
+            float Khoiluong = float.Parse(txt_KhoiLuong.Text);
+            double ThanhTien = (Khoiluong * Gia) * ((100.0 - KhuyenMai) / 100);
+            txt_ThanhTien.Text = ThanhTien.ToString();
+
+            TongHD();
+        }
+
+        private void txt_TongTien_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

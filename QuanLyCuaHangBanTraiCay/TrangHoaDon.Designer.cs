@@ -33,12 +33,9 @@
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txt_MaKH = new System.Windows.Forms.TextBox();
-            this.txt_MaHD = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.grb_ThanhToan = new System.Windows.Forms.GroupBox();
             this.dt_Ngay = new System.Windows.Forms.DateTimePicker();
             this.cbo_MaNV = new System.Windows.Forms.ComboBox();
@@ -53,6 +50,9 @@
             this.cbo_Tim = new System.Windows.Forms.ComboBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_MaHD = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbo_MaKH = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).BeginInit();
             this.grb_ThanhToan.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -87,21 +87,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tìm Kiếm:";
             // 
-            // txt_MaKH
-            // 
-            this.txt_MaKH.Location = new System.Drawing.Point(177, 179);
-            this.txt_MaKH.Name = "txt_MaKH";
-            this.txt_MaKH.Size = new System.Drawing.Size(304, 30);
-            this.txt_MaKH.TabIndex = 11;
-            // 
-            // txt_MaHD
-            // 
-            this.txt_MaHD.Location = new System.Drawing.Point(177, 43);
-            this.txt_MaHD.Name = "txt_MaHD";
-            this.txt_MaHD.ReadOnly = true;
-            this.txt_MaHD.Size = new System.Drawing.Size(304, 30);
-            this.txt_MaHD.TabIndex = 10;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -129,22 +114,13 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Mã Nhân Viên:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã Hóa Đơn:";
-            // 
             // grb_ThanhToan
             // 
+            this.grb_ThanhToan.Controls.Add(this.cbo_MaKH);
             this.grb_ThanhToan.Controls.Add(this.dt_Ngay);
             this.grb_ThanhToan.Controls.Add(this.cbo_MaNV);
             this.grb_ThanhToan.Controls.Add(this.btn_QuayLai);
             this.grb_ThanhToan.Controls.Add(this.btn_XemChiTiet);
-            this.grb_ThanhToan.Controls.Add(this.txt_MaKH);
             this.grb_ThanhToan.Controls.Add(this.txt_MaHD);
             this.grb_ThanhToan.Controls.Add(this.label6);
             this.grb_ThanhToan.Controls.Add(this.btn_TaoHoaDon);
@@ -312,6 +288,31 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // txt_MaHD
+            // 
+            this.txt_MaHD.Location = new System.Drawing.Point(177, 43);
+            this.txt_MaHD.Name = "txt_MaHD";
+            this.txt_MaHD.ReadOnly = true;
+            this.txt_MaHD.Size = new System.Drawing.Size(304, 30);
+            this.txt_MaHD.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mã Hóa Đơn:";
+            // 
+            // cbo_MaKH
+            // 
+            this.cbo_MaKH.FormattingEnabled = true;
+            this.cbo_MaKH.Location = new System.Drawing.Point(177, 183);
+            this.cbo_MaKH.Name = "cbo_MaKH";
+            this.cbo_MaKH.Size = new System.Drawing.Size(304, 31);
+            this.cbo_MaKH.TabIndex = 34;
+            // 
             // TrangHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -341,14 +342,11 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TextBox txt_TimKiem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_MaKH;
-        private System.Windows.Forms.TextBox txt_MaHD;
         private System.Windows.Forms.Button btn_TaoHoaDon;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgv_HoaDon;
         private System.Windows.Forms.Button btn_XemChiTiet;
         private System.Windows.Forms.GroupBox grb_ThanhToan;
@@ -362,5 +360,8 @@
         private System.Windows.Forms.Button btn_QuayLai;
         private System.Windows.Forms.ComboBox cbo_MaNV;
         private System.Windows.Forms.DateTimePicker dt_Ngay;
+        private System.Windows.Forms.ComboBox cbo_MaKH;
+        private System.Windows.Forms.TextBox txt_MaHD;
+        private System.Windows.Forms.Label label3;
     }
 }

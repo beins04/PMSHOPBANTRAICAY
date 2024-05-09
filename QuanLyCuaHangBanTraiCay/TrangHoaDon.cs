@@ -18,7 +18,7 @@ namespace QuanLyCuaHangBanTraiCay
             InitializeComponent();
         }
         //khai báo chuoi ket noi CSDL
-        private string scon = "Data Source=LENOVO\\SQLEXPRESSXP;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
+        private string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
 
         int TienKhachDua;
         public int MaTK;
@@ -74,7 +74,7 @@ namespace QuanLyCuaHangBanTraiCay
                     myConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {
-                        cmd.Parameters.AddWithValue("@MaKH", txt_MaKH.Text);
+                        cmd.Parameters.AddWithValue("@MaKH", cbo_MaKH .Text);
                         cmd.Parameters.AddWithValue("@MaNV", cbo_MaNV.Text);
                         cmd.Parameters.AddWithValue("@NgayLap", dt_Ngay.Value.ToString("yyyy/MM/dd"));
                         cmd.Parameters.AddWithValue("@TienKhachDua", DBNull.Value);
@@ -107,7 +107,7 @@ namespace QuanLyCuaHangBanTraiCay
                     {
                         cmd.Parameters.AddWithValue("@MaHD", int.Parse(txt_MaHD.Text));
                         cmd.Parameters.AddWithValue("@MaNV", int.Parse(cbo_MaNV.Text));
-                        cmd.Parameters.AddWithValue("@MaKH", int.Parse(txt_MaKH.Text));
+                        cmd.Parameters.AddWithValue("@MaKH", int.Parse(cbo_MaKH.Text));
                         cmd.Parameters.AddWithValue("@NgayLap", DateTime.Parse(dt_Ngay.Text));
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -143,61 +143,85 @@ namespace QuanLyCuaHangBanTraiCay
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
                     myConnection.Open();
+                    SqlTransaction transaction = myConnection.BeginTransaction();
 
-                    // Xóa chi tiết hóa đơn
-                    string sSQLChiTietHoaDon = "DELETE FROM CHITIETHOADON WHERE MaHD = @MaHD";
-                    using (SqlCommand cmdChiTietHoaDon = new SqlCommand(sSQLChiTietHoaDon, myConnection))
+                    try
                     {
-                        cmdChiTietHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
-                        int rowsAffected = cmdChiTietHoaDon.ExecuteNonQuery();
-
-                        // Kiểm tra nếu không có hàng nào bị xóa
-                        if (rowsAffected == 0)
+                        // Xóa chi tiết hóa đơn
+                        string sSQLChiTietHoaDon = "DELETE FROM CHITIETHOADON WHERE MaHD = @MaHD";
+                        using (SqlCommand cmdChiTietHoaDon = new SqlCommand(sSQLChiTietHoaDon, myConnection))
                         {
-                            success = false;
-                            MessageBox.Show("Không tìm thấy hóa đơn để xóa.", "Thông báo");
+                            cmdChiTietHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
+                            cmdChiTietHoaDon.Transaction = transaction;
+                            int rowsAffected = cmdChiTietHoaDon.ExecuteNonQuery();
+
+                            // Kiểm tra nếu không có hàng nào bị xóa
+                            if (rowsAffected == 0)
+                            {
+                                success = false;
+                                MessageBox.Show("Không tìm thấy hóa đơn để xóa.", "Thông báo");
+                            }
                         }
+
+                        if (success)
+                        {
+                            // Xóa hóa đơn
+                            string sSQLHoaDon = "DELETE FROM HOADON WHERE MaHD = @MaHD";
+                            using (SqlCommand cmdHoaDon = new SqlCommand(sSQLHoaDon, myConnection))
+                            {
+                                cmdHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
+                                cmdHoaDon.Transaction = transaction;
+                                cmdHoaDon.ExecuteNonQuery();
+
+                                MessageBox.Show("Xóa hóa đơn thành công!", "Thông báo");
+                            }
+                        }
+
+                        transaction.Commit(); // Commit transaction khi không có lỗi
                     }
-
-                    if (success)
+                    catch (Exception ex)
                     {
-                        // Xóa hóa đơn
-                        string sSQLHoaDon = "DELETE FROM HOADON WHERE MaHD = @MaHD";
-                        using (SqlCommand cmdHoaDon = new SqlCommand(sSQLHoaDon, myConnection))
-                        {
-                            cmdHoaDon.Parameters.AddWithValue("@MaHD", maHoaDon);
-                            cmdHoaDon.ExecuteNonQuery();
-
-                            MessageBox.Show("Xóa hóa đơn thành công!", "Thông báo");
-                        }
+                        success = false;
+                        transaction.Rollback(); // Rollback transaction nếu có lỗi
+                        MessageBox.Show("Lỗi khi xóa hóa đơn. Chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             catch (Exception ex)
             {
                 success = false;
-                MessageBox.Show("Lỗi khi xóa hóa đơn. Chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi kết nối cơ sở dữ liệu. Chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         //HIỂN THỊ MÃ NHÂN VIÊN
-        public void HienThiMaNhanVien()
+        public void HienThi()
         {
             //Doi tuong ket noi CSDL
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSql;
-            sSql = "SELECT MaNV, TenNV FROM NHANVIEN";
+            string sSql = "SELECT MaNV, TenNV FROM NHANVIEN";
+            string ssSql = "SELECT MaKH, TenKH FROM KHACHHANG";
             try
             {
                 myConnection.Open();
+
                 SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
-                //DataSet: du lieu tren bo nho RAM
                 DataSet ds = new DataSet();
                 da.Fill(ds);
+
+                SqlDataAdapter daKhachHang = new SqlDataAdapter(ssSql, myConnection);
+                DataSet dsKhachHang = new DataSet();
+                daKhachHang.Fill(dsKhachHang);
+
                 myConnection.Close();
+
                 cbo_MaNV.DataSource = ds.Tables[0];
                 cbo_MaNV.DisplayMember = "MaNV";
                 cbo_MaNV.ValueMember = "TenNV";
+
+                cbo_MaKH.DataSource = dsKhachHang.Tables[0];
+                cbo_MaKH.DisplayMember = "MaKH";
+                cbo_MaKH.ValueMember = "TenKH";
             }
             catch (Exception ex)
             {
@@ -236,7 +260,7 @@ namespace QuanLyCuaHangBanTraiCay
             int i = dgv_HoaDon.CurrentRow.Index;
             txt_MaHD.Text = dgv_HoaDon.Rows[i].Cells[0].Value.ToString();
             cbo_MaNV.Text = dgv_HoaDon.Rows[i].Cells[1].Value.ToString();
-            txt_MaKH.Text = dgv_HoaDon.Rows[i].Cells[2].Value.ToString();
+            cbo_MaKH.Text = dgv_HoaDon.Rows[i].Cells[2].Value.ToString();
             dt_Ngay.Value = DateTime.Parse(dgv_HoaDon.Rows[i].Cells[3].Value.ToString());
         }
 
@@ -247,7 +271,6 @@ namespace QuanLyCuaHangBanTraiCay
                 XoaHoaDon();
                 XemHoaDon();
                 txt_MaHD.Clear();
-                txt_MaKH.Clear();
             }
             else
             {
@@ -263,9 +286,8 @@ namespace QuanLyCuaHangBanTraiCay
         private void TrangHoaDon_Load(object sender, EventArgs e)
         {
             XemHoaDon();
-            HienThiMaNhanVien();
+            HienThi();
             cbo_Tim.Text = "Tìm kiếm theo:";
-            dt_Ngay.Visible = false;
         }
         //TÌM KIẾM
         public void TimKiem()
@@ -308,7 +330,7 @@ namespace QuanLyCuaHangBanTraiCay
         private void btn_Reset_Click(object sender, EventArgs e)
         {
             XemHoaDon();
-            HienThiMaNhanVien();
+            HienThi();
             txt_TimKiem.Clear();
             cbo_Tim.Text = "Tìm kiếm theo :";
             dt_Ngay.Visible = false;

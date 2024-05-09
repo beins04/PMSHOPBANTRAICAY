@@ -75,12 +75,17 @@ namespace QuanLyCuaHangBanTraiCay
                 }
                 else
                 {
+                    
                     //Truyền role qua form để xác định role khi sử dụng chức năng khác.
                     TrangQuanLyChoNhanVien staff = new TrangQuanLyChoNhanVien(role);
                     staff.Show();
                     this.Hide();
                 }
             }
+            //else
+            //{
+            //    MessageBox.Show("Đăng Nhập không thành công, hãy kiểm tra lại tên đăng nhập và mật khẩu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            //}
         }
 
         private void btn_eyeclose_Click(object sender, EventArgs e)

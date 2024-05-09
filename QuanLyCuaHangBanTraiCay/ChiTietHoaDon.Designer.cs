@@ -93,6 +93,7 @@
             this.txt_TenSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TenSP.Location = new System.Drawing.Point(887, 127);
             this.txt_TenSP.Name = "txt_TenSP";
+            this.txt_TenSP.ReadOnly = true;
             this.txt_TenSP.Size = new System.Drawing.Size(282, 30);
             this.txt_TenSP.TabIndex = 12;
             // 
@@ -176,6 +177,7 @@
             this.txt_Gia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Gia.Location = new System.Drawing.Point(789, 188);
             this.txt_Gia.Name = "txt_Gia";
+            this.txt_Gia.ReadOnly = true;
             this.txt_Gia.Size = new System.Drawing.Size(168, 30);
             this.txt_Gia.TabIndex = 19;
             // 
@@ -204,6 +206,7 @@
             this.txt_KhuyenMai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_KhuyenMai.Location = new System.Drawing.Point(862, 248);
             this.txt_KhuyenMai.Name = "txt_KhuyenMai";
+            this.txt_KhuyenMai.ReadOnly = true;
             this.txt_KhuyenMai.Size = new System.Drawing.Size(220, 30);
             this.txt_KhuyenMai.TabIndex = 23;
             // 
@@ -212,6 +215,7 @@
             this.txt_ThanhTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ThanhTien.Location = new System.Drawing.Point(862, 317);
             this.txt_ThanhTien.Name = "txt_ThanhTien";
+            this.txt_ThanhTien.ReadOnly = true;
             this.txt_ThanhTien.Size = new System.Drawing.Size(220, 30);
             this.txt_ThanhTien.TabIndex = 25;
             // 
@@ -282,6 +286,7 @@
             this.txt_TienGuiLai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TienGuiLai.Location = new System.Drawing.Point(220, 482);
             this.txt_TienGuiLai.Name = "txt_TienGuiLai";
+            this.txt_TienGuiLai.ReadOnly = true;
             this.txt_TienGuiLai.Size = new System.Drawing.Size(151, 30);
             this.txt_TienGuiLai.TabIndex = 31;
             // 
@@ -300,8 +305,10 @@
             this.txt_TongTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TongTien.Location = new System.Drawing.Point(424, 482);
             this.txt_TongTien.Name = "txt_TongTien";
+            this.txt_TongTien.ReadOnly = true;
             this.txt_TongTien.Size = new System.Drawing.Size(151, 30);
             this.txt_TongTien.TabIndex = 33;
+            this.txt_TongTien.TextChanged += new System.EventHandler(this.txt_TongTien_TextChanged);
             // 
             // label5
             // 
@@ -320,6 +327,7 @@
             this.txt_KhoiLuong.Name = "txt_KhoiLuong";
             this.txt_KhoiLuong.Size = new System.Drawing.Size(104, 30);
             this.txt_KhoiLuong.TabIndex = 34;
+            this.txt_KhoiLuong.TextChanged += new System.EventHandler(this.txt_KhoiLuong_TextChanged);
             // 
             // ChiTietHoaDon
             // 
