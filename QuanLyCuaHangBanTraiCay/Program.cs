@@ -16,9 +16,9 @@ namespace QuanLyCuaHangBanTraiCay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            //Application.Run(new DangNhap());
             //Application.Run(new SanPham());
-            //Application.Run(new NhanVien());
+            Application.Run(new NhanVien());
             //Application.Run(new DoiMK());
             //Application.Run(new KhachHang());
             //Application.Run(new QuanLyKhoHang());

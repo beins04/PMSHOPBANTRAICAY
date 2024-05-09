@@ -22,7 +22,7 @@ namespace QuanLyCuaHangBanTraiCay
             InitializeComponent();
         }
         //khai báo chuoi ket noi CSDL
-        private string scon = "Data Source=DESKTOP-HL6447C\\SQLEXPRESS;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
+        private string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
 
         private void hienThi()
         {

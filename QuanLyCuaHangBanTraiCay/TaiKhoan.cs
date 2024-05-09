@@ -82,7 +82,7 @@ namespace QuanLyCuaHangBanTraiCay
 
             sTenDangNhap = txt_TenDN.Text;
             sMatKhau = txt_MK.Text;
-            sChucVu = rad_Admin.Checked ? "Quản lý" : "Nhân Viên";
+            sChucVu = rad_Admin.Checked ? "Quản Lý" : "Nhân Viên";
             sTrangThai = chk_TrangThai.Checked ? "1" : "0";
 
             bool kq = ThemTaiKhoan(sTenDangNhap, sMatKhau, sTrangThai, sChucVu);

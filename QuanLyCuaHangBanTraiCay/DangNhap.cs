@@ -65,9 +65,10 @@ namespace QuanLyCuaHangBanTraiCay
 
             if (role != "")
             {
-                if (role == "Admin")
+                if (role == "Quản Lý")
                 {
-                    //Truyền role qua form để xác định role khi sử dụng chức năng khác.
+                    MessageBox.Show("Đăng nhập thành công");
+;                    //Truyền role qua form để xác định role khi sử dụng chức năng khác.
                     TrangQuanLy admin = new TrangQuanLy(role);
                     admin.Show();
                     this.Hide();
