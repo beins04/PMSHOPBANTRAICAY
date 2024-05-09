@@ -37,7 +37,6 @@ namespace QuanLyCuaHangBanTraiCay
             this.Hide();
             chiTietHoaDon.Show();
             chiTietHoaDon.MaHD = LayMaHD();
-           
         }
 
         //XEM HÓA ĐƠN

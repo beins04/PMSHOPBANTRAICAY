@@ -71,7 +71,7 @@ namespace QuanLyCuaHangBanTraiCay
         public void XemChiTietHoaDon(int MaHD)
         {
             // Khai báo chuỗi kết nối CSDL
-            string sSQL = "SELECT CHITIETHOADON.MaHD, SANPHAM.MaSP, SANPHAM.TenSP, SANPHAM.GiaBan, SANPHAM.KhuyenMai, CHITIETHOADON.KhoiLuongNhap, CHITIETHOADON.ThanhTien FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE CHITIETHOADON.MaHD = @MaHD";
+            string sSQL = "SELECT CHITIETHOADON.MaHD, SANPHAM.MaSP, SANPHAM.TenSP, SANPHAM.GiaBan, SANPHAM.KhuyenMai, SANPHAM.KhoiLuongNhap, CHITIETHOADON.ThanhTien FROM SANPHAM INNER JOIN CHITIETHOADON ON SANPHAM.MaSP = CHITIETHOADON.MaSP WHERE CHITIETHOADON.MaHD = @MaHD";
             try
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
@@ -296,9 +296,7 @@ namespace QuanLyCuaHangBanTraiCay
             XemChiTietHoaDon(MaHD);
             HienThi();
             TongHD();
-            DataGridViewImageColumn avatar_column = (DataGridViewImageColumn)dgv_ChiTietHoaDon.Columns[7];
-            avatar_column.Width = 60;
-            avatar_column.ImageLayout = DataGridViewImageCellLayout.Zoom;
+           
         }
 
         private void cbo_MaSP_SelectedIndexChanged(object sender, EventArgs e)
