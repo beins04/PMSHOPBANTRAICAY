@@ -18,7 +18,7 @@ namespace QuanLyCuaHangBanTraiCay
             InitializeComponent();
         }
         //khai báo chuoi ket noi CSDL
-        private string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
+        private string scon = "Data Source=LENOVO\\SQLEXPRESSXP;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
 
         int TienKhachDua;
         public int MaTK;
@@ -272,10 +272,10 @@ namespace QuanLyCuaHangBanTraiCay
         public void TimKiem()
         {
             string TimKiemTheo = "", TimKiemThongKe = "";
-            if (cbo_Tim.Text == "Ngày")
+            if (cbo_Tim.Text == "Mã Nhân Viên")
             {
-                TimKiemTheo = "NgayLap";
-                TimKiemThongKe = dt_Ngay.Value.ToString("yyyy/MM/dd");
+                TimKiemTheo = "MaNV";
+                
             }
             else
             {
@@ -286,7 +286,7 @@ namespace QuanLyCuaHangBanTraiCay
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
                 {
-                    string sSQL = "SELECT * FROM HOADON WHERE " + TimKiemTheo + " = @TimKiemThongKe";
+                    string sSQL = "SELECT * FROM NHANVIEN WHERE " + TimKiemTheo + " = @TimKiemThongKe";
                     myConnection.Open();
                     using (SqlCommand cmd = new SqlCommand(sSQL, myConnection))
                     {

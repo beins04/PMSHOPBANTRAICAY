@@ -266,3 +266,5 @@ C:\Users\ADMIN\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\System.Data.Sq
 C:\Users\ADMIN\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\System.Data.SqlClient.xml
 C:\Users\Admin\Source\Repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\System.Data.SqlClient.dll
 C:\Users\Admin\Source\Repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\System.Data.SqlClient.xml
+C:\Users\phu27\Source\Repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\System.Data.SqlClient.dll
+C:\Users\phu27\Source\Repos\PMSHOPBANTRAICAY\QuanLyCuaHangBanTraiCay\bin\Debug\System.Data.SqlClient.xml

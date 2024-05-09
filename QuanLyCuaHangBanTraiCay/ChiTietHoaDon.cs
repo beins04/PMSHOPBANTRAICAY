@@ -19,7 +19,7 @@ namespace QuanLyCuaHangBanTraiCay
             InitializeComponent();
         }
         //khai báo chuoi ket noi CSDL
-        string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
+        string scon = "Data Source=LENOVO\\SQLEXPRESSXP;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
         public int MaHD;
         public int MaTK;
         public int TienKhachDua;

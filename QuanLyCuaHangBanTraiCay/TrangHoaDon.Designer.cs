@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grb_ThanhToan = new System.Windows.Forms.GroupBox();
+            this.dt_Ngay = new System.Windows.Forms.DateTimePicker();
             this.cbo_MaNV = new System.Windows.Forms.ComboBox();
             this.btn_QuayLai = new System.Windows.Forms.Button();
             this.btn_XemChiTiet = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.cbo_Tim = new System.Windows.Forms.ComboBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dt_Ngay = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).BeginInit();
             this.grb_ThanhToan.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,29 +114,29 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 179);
+            this.label5.Location = new System.Drawing.Point(-4, 186);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 23);
+            this.label5.Size = new System.Drawing.Size(153, 23);
             this.label5.TabIndex = 6;
-            this.label5.Text = "Mã Khách Hàng";
+            this.label5.Text = "Mã Khách Hàng:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 115);
+            this.label4.Location = new System.Drawing.Point(9, 111);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 23);
+            this.label4.Size = new System.Drawing.Size(136, 23);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Mã Nhân Viên";
+            this.label4.Text = "Mã Nhân Viên:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 46);
+            this.label3.Location = new System.Drawing.Point(16, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 23);
+            this.label3.Size = new System.Drawing.Size(125, 23);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Mã Hóa Đơn";
+            this.label3.Text = "Mã Hóa Đơn:";
             // 
             // grb_ThanhToan
             // 
@@ -157,6 +157,13 @@
             this.grb_ThanhToan.Size = new System.Drawing.Size(560, 444);
             this.grb_ThanhToan.TabIndex = 2;
             this.grb_ThanhToan.TabStop = false;
+            // 
+            // dt_Ngay
+            // 
+            this.dt_Ngay.Location = new System.Drawing.Point(177, 245);
+            this.dt_Ngay.Name = "dt_Ngay";
+            this.dt_Ngay.Size = new System.Drawing.Size(304, 30);
+            this.dt_Ngay.TabIndex = 33;
             // 
             // cbo_MaNV
             // 
@@ -273,6 +280,9 @@
             // cbo_Tim
             // 
             this.cbo_Tim.FormattingEnabled = true;
+            this.cbo_Tim.Items.AddRange(new object[] {
+            "MaNV",
+            "TenNV"});
             this.cbo_Tim.Location = new System.Drawing.Point(385, 21);
             this.cbo_Tim.Name = "cbo_Tim";
             this.cbo_Tim.Size = new System.Drawing.Size(128, 23);
@@ -301,13 +311,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(77, 78);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // dt_Ngay
-            // 
-            this.dt_Ngay.Location = new System.Drawing.Point(177, 245);
-            this.dt_Ngay.Name = "dt_Ngay";
-            this.dt_Ngay.Size = new System.Drawing.Size(304, 30);
-            this.dt_Ngay.TabIndex = 33;
             // 
             // TrangHoaDon
             // 
