@@ -59,7 +59,6 @@ namespace QuanLyCuaHangBanTraiCay
         }
         private void SanPham_Load(object sender, EventArgs e)
         {
-            txt_MaSP.ReadOnly = true;
             chk_TrangThai.Checked = true;
             hienThi();
             XemDanhSachSanPham();

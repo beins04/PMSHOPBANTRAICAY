@@ -37,11 +37,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.grb_ThanhToan = new System.Windows.Forms.GroupBox();
+            this.cbo_MaKH = new System.Windows.Forms.ComboBox();
             this.dt_Ngay = new System.Windows.Forms.DateTimePicker();
             this.cbo_MaNV = new System.Windows.Forms.ComboBox();
             this.btn_QuayLai = new System.Windows.Forms.Button();
             this.btn_XemChiTiet = new System.Windows.Forms.Button();
+            this.txt_MaHD = new System.Windows.Forms.TextBox();
             this.btn_TaoHoaDon = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Reset = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
@@ -50,9 +53,6 @@
             this.cbo_Tim = new System.Windows.Forms.ComboBox();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_MaHD = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbo_MaKH = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_HoaDon)).BeginInit();
             this.grb_ThanhToan.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -134,6 +134,14 @@
             this.grb_ThanhToan.TabIndex = 2;
             this.grb_ThanhToan.TabStop = false;
             // 
+            // cbo_MaKH
+            // 
+            this.cbo_MaKH.FormattingEnabled = true;
+            this.cbo_MaKH.Location = new System.Drawing.Point(177, 183);
+            this.cbo_MaKH.Name = "cbo_MaKH";
+            this.cbo_MaKH.Size = new System.Drawing.Size(304, 31);
+            this.cbo_MaKH.TabIndex = 34;
+            // 
             // dt_Ngay
             // 
             this.dt_Ngay.Location = new System.Drawing.Point(177, 245);
@@ -160,6 +168,7 @@
             this.btn_QuayLai.Text = "Quay Lại";
             this.btn_QuayLai.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_QuayLai.UseVisualStyleBackColor = true;
+            this.btn_QuayLai.Click += new System.EventHandler(this.btn_QuayLai_Click);
             // 
             // btn_XemChiTiet
             // 
@@ -173,6 +182,14 @@
             this.btn_XemChiTiet.UseVisualStyleBackColor = true;
             this.btn_XemChiTiet.Click += new System.EventHandler(this.btn_XemChiTiet_Click);
             // 
+            // txt_MaHD
+            // 
+            this.txt_MaHD.Location = new System.Drawing.Point(177, 43);
+            this.txt_MaHD.Name = "txt_MaHD";
+            this.txt_MaHD.ReadOnly = true;
+            this.txt_MaHD.Size = new System.Drawing.Size(304, 30);
+            this.txt_MaHD.TabIndex = 10;
+            // 
             // btn_TaoHoaDon
             // 
             this.btn_TaoHoaDon.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.counting;
@@ -184,6 +201,15 @@
             this.btn_TaoHoaDon.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_TaoHoaDon.UseVisualStyleBackColor = true;
             this.btn_TaoHoaDon.Click += new System.EventHandler(this.btn_TaoHoaDon_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 23);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mã Hóa Đơn:";
             // 
             // groupBox1
             // 
@@ -239,6 +265,7 @@
             this.btn_XemKhachHang.Text = "Khách Hàng";
             this.btn_XemKhachHang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_XemKhachHang.UseVisualStyleBackColor = true;
+            this.btn_XemKhachHang.Click += new System.EventHandler(this.btn_XemKhachHang_Click);
             // 
             // btn_Tim
             // 
@@ -263,7 +290,6 @@
             this.cbo_Tim.Name = "cbo_Tim";
             this.cbo_Tim.Size = new System.Drawing.Size(128, 23);
             this.cbo_Tim.TabIndex = 11;
-            this.cbo_Tim.SelectedIndexChanged += new System.EventHandler(this.cbo_Tim_SelectedIndexChanged);
             // 
             // btn_Xoa
             // 
@@ -287,31 +313,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(77, 78);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // txt_MaHD
-            // 
-            this.txt_MaHD.Location = new System.Drawing.Point(177, 43);
-            this.txt_MaHD.Name = "txt_MaHD";
-            this.txt_MaHD.ReadOnly = true;
-            this.txt_MaHD.Size = new System.Drawing.Size(304, 30);
-            this.txt_MaHD.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 23);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã Hóa Đơn:";
-            // 
-            // cbo_MaKH
-            // 
-            this.cbo_MaKH.FormattingEnabled = true;
-            this.cbo_MaKH.Location = new System.Drawing.Point(177, 183);
-            this.cbo_MaKH.Name = "cbo_MaKH";
-            this.cbo_MaKH.Size = new System.Drawing.Size(304, 31);
-            this.cbo_MaKH.TabIndex = 34;
             // 
             // TrangHoaDon
             // 

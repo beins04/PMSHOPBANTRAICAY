@@ -41,7 +41,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_TaiLaiNV = new System.Windows.Forms.Button();
             this.btn_TimKiemNV = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo_TimKiem = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_TiemKiemNV = new System.Windows.Forms.TextBox();
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
@@ -51,8 +51,8 @@
             this.btn_SuaNV = new System.Windows.Forms.Button();
             this.btn_XoaNV = new System.Windows.Forms.Button();
             this.btn_ThemNV = new System.Windows.Forms.Button();
-            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.cbo_MaTK = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -160,7 +160,7 @@
             // 
             this.groupBox2.Controls.Add(this.btn_TaiLaiNV);
             this.groupBox2.Controls.Add(this.btn_TimKiemNV);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbo_TimKiem);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txt_TiemKiemNV);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,14 +192,18 @@
             this.btn_TimKiemNV.Text = "Tìm";
             this.btn_TimKiemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_TimKiemNV.UseVisualStyleBackColor = true;
+            this.btn_TimKiemNV.Click += new System.EventHandler(this.btn_TimKiemNV_Click);
             // 
-            // comboBox1
+            // cbo_TimKiem
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(223, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(116, 33);
-            this.comboBox1.TabIndex = 17;
+            this.cbo_TimKiem.FormattingEnabled = true;
+            this.cbo_TimKiem.Items.AddRange(new object[] {
+            "MaNV",
+            "TenNV"});
+            this.cbo_TimKiem.Location = new System.Drawing.Point(223, 68);
+            this.cbo_TimKiem.Name = "cbo_TimKiem";
+            this.cbo_TimKiem.Size = new System.Drawing.Size(116, 33);
+            this.cbo_TimKiem.TabIndex = 17;
             // 
             // label7
             // 
@@ -233,6 +237,7 @@
             this.txt_MaNV.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MaNV.Location = new System.Drawing.Point(211, 18);
             this.txt_MaNV.Name = "txt_MaNV";
+            this.txt_MaNV.ReadOnly = true;
             this.txt_MaNV.Size = new System.Drawing.Size(230, 34);
             this.txt_MaNV.TabIndex = 29;
             // 
@@ -298,15 +303,6 @@
             this.btn_ThemNV.UseVisualStyleBackColor = true;
             this.btn_ThemNV.Click += new System.EventHandler(this.btn_ThemNV_Click);
             // 
-            // cbo_MaTK
-            // 
-            this.cbo_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_MaTK.FormattingEnabled = true;
-            this.cbo_MaTK.Location = new System.Drawing.Point(209, 65);
-            this.cbo_MaTK.Name = "cbo_MaTK";
-            this.cbo_MaTK.Size = new System.Drawing.Size(232, 33);
-            this.cbo_MaTK.TabIndex = 30;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -316,6 +312,15 @@
             this.label6.Size = new System.Drawing.Size(167, 25);
             this.label6.TabIndex = 12;
             this.label6.Text = "Mã Tài Khoản:";
+            // 
+            // cbo_MaTK
+            // 
+            this.cbo_MaTK.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_MaTK.FormattingEnabled = true;
+            this.cbo_MaTK.Location = new System.Drawing.Point(209, 65);
+            this.cbo_MaTK.Name = "cbo_MaTK";
+            this.cbo_MaTK.Size = new System.Drawing.Size(232, 33);
+            this.cbo_MaTK.TabIndex = 30;
             // 
             // NhanVien
             // 
@@ -375,13 +380,13 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_TaiLaiNV;
         private System.Windows.Forms.Button btn_TimKiemNV;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_TimKiem;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_TiemKiemNV;
         private System.Windows.Forms.DataGridView dgv_NhanVien;
         private System.Windows.Forms.TextBox txt_MaNV;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cbo_MaTK;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbo_MaTK;
     }
 }

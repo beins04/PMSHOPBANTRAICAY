@@ -18,35 +18,36 @@ namespace QuanLyCuaHangBanTraiCay
             InitializeComponent();
         }
         string scon = "Data Source=DESKTOP-Q95BECJ;Initial Catalog=QL_BanTraiCayYPShopp;Integrated Security=True";
-        public void HienThiMaTaiKhoan()
+
+        private void hienThi()
         {
-            //Doi tuong ket noi CSDL
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSql;
-            sSql = "  SELECT MaTK, TenDangNhap FROM TAIKHOAN" /*Where ChucVu like N'Nhân viên'*/;
+
+            string sSQL = "SELECT MaTK FROM TAIKHOAN";
+
             try
             {
                 myConnection.Open();
-                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
-                //DataSet: du lieu tren bo nho RAM
+
+                SqlDataAdapter myDataAdapter = new SqlDataAdapter(sSQL, myConnection);
                 DataSet ds = new DataSet();
-                da.Fill(ds);
+                myDataAdapter.Fill(ds);
+
                 myConnection.Close();
 
                 cbo_MaTK.DataSource = ds.Tables[0];
                 cbo_MaTK.DisplayMember = "MaTK";
-                cbo_MaTK.ValueMember = "TenDangNhap";
+                cbo_MaTK.ValueMember = "MaTK";
             }
             catch (Exception ex)
             {
-                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+                MessageBox.Show("Loi. Chi tiet: " + ex.Message);
             }
         }
         public void XemDanhSach()
         {
-
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSQL = "SELECT MaNV, TenNV, DiaChi, GioiTinh, SDT FROM NHANVIEN;";
+            string sSQL = "SELECT MaNV, MaTK, TenNV, DiaChi, GioiTinh, SDT FROM NHANVIEN;";
             try
             {
                 myConnection.Open();
@@ -66,20 +67,19 @@ namespace QuanLyCuaHangBanTraiCay
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            txt_MaNV.ReadOnly = true;
             XemDanhSach();
-            HienThiMaTaiKhoan();
+            hienThi();
         }
 
         //THÊM NHÂN VIÊN
-        public bool ThemNhanVien(string sTenNV, int iMaTK, string sDiaChi, string sGioiTinh, string sSDT)
+        public bool ThemNhanVien(int iMaTK, string sTenNV, string sDiaChi, string sGioiTinh, string sSDT)
         {
 
             bool kq;
             kq = true;
 
             SqlConnection myConnection = new SqlConnection(scon);
-            string sSql = string.Format("INSERT INTO NHANVIEN VALUES (N'{0}', '{1}', N'{2}', N'{3}',N'{4}')",  sTenNV, iMaTK, sDiaChi, sGioiTinh, sSDT);
+            string sSql = string.Format("INSERT INTO NHANVIEN VALUES ('{0}', N'{1}', N'{2}', N'{3}',N'{4}')", iMaTK, sTenNV, sDiaChi, sGioiTinh, sSDT);
             MessageBox.Show(sSql);
 
             try
@@ -103,34 +103,22 @@ namespace QuanLyCuaHangBanTraiCay
         private void btn_ThemNV_Click(object sender, EventArgs e)
         {
             string sTenNhanVien, sDiaChi, sGioiTinh, sSDT;
-            int maTK;
+            int iMaTK;
 
-            // Attempt to parse the selected value of cbo_MaTK to an integer
-            if (cbo_MaTK.SelectedValue != null && int.TryParse(cbo_MaTK.SelectedValue.ToString(), out maTK))
+            sTenNhanVien = txt_TenNV.Text;
+            sDiaChi = txt_DiaChiNV.Text;
+            sSDT = txt_SDTNV.Text;
+            sGioiTinh = rad_Nam.Checked ? "Nam" : "Nữ";
+            iMaTK = (int)cbo_MaTK.SelectedValue;
+
+            bool kq = ThemNhanVien(iMaTK, sTenNhanVien, sDiaChi, sGioiTinh, sSDT);
+            if (kq)
             {
-                // Get other input values
-                sTenNhanVien = txt_TenNV.Text;
-                sDiaChi = txt_DiaChiNV.Text;
-                sSDT = txt_SDTNV.Text;
-                sGioiTinh = rad_Nam.Checked ? "Nam" : "Nữ";
-
-                // Call the ThemNhanVien function
-                bool kq = ThemNhanVien(sTenNhanVien, maTK, sDiaChi, sGioiTinh, sSDT);
-                if (kq)
-                {
-                    MessageBox.Show("Đã thêm nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Thêm KHÔNG thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                // Refresh the display
-                XemDanhSach();
+                MessageBox.Show("Đã thêm nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                // Display an error message if the selected value cannot be parsed to an integer
-                MessageBox.Show("Giá trị chọn không hợp lệ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thêm KHÔNG thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             XemDanhSach();
         }
@@ -253,6 +241,49 @@ namespace QuanLyCuaHangBanTraiCay
             else
             {
                 rad_Nu.Checked = true;
+            }
+        }
+
+        //TÌM KIẾM
+        public void TimKiem()
+        {
+            string TimKiemTheo = "", TimKiemThongKe = "";
+
+            TimKiemTheo = cbo_TimKiem.Text;
+            TimKiemThongKe = txt_TiemKiemNV.Text;
+            try
+            {
+                using (SqlConnection myConnection = new SqlConnection(scon))
+                {
+                    string sSQLs = "SELECT * FROM NHANVIEN WHERE " + TimKiemTheo + " = @TimKiemThongKe";
+                    myConnection.Open();
+                    using (SqlCommand cmd = new SqlCommand(sSQLs, myConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@TimKiemThongKe", TimKiemThongKe);
+
+                        SqlDataAdapter daSP = new SqlDataAdapter(cmd);
+                        DataSet dsSP = new DataSet();
+                        daSP.Fill(dsSP);
+
+                        dgv_NhanVien.DataSource = dsSP.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+            }
+        }
+
+        private void btn_TimKiemNV_Click(object sender, EventArgs e)
+        {
+            if (cbo_TimKiem.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TiemKiemNV.Text))
+            {
+                MessageBox.Show("Bạn chưa điền vào ô tìm kiếm hoặc bạn chọn chức năng tìm kiếm chưa phù hợp.", "Thông Báo", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
+                TimKiem();
             }
         }
     }

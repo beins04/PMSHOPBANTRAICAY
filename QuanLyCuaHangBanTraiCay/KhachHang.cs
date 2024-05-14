@@ -42,8 +42,7 @@ namespace QuanLyCuaHangBanTraiCay
         }
 
         private void KhachHang_Load(object sender, EventArgs e)
-        {       
-            txt_MaKH.ReadOnly = true;
+        {      
             XemDanhSach();
         }
 
@@ -217,6 +216,48 @@ namespace QuanLyCuaHangBanTraiCay
             this.Close();
             //TrangQuanLy ql = new TrangQuanLy();
             //ql.Show();
+        }
+        //TÌM KIẾM
+        public void TimKiem()
+        {
+            string TimKiemTheo = "", TimKiemThongKe = "";
+
+            TimKiemTheo = cbo_TimKiem.Text;
+            TimKiemThongKe = txt_TimKiemKH.Text;
+            try
+            {
+                using (SqlConnection myConnection = new SqlConnection(scon))
+                {
+                    string sSQLs = "SELECT * FROM KHACHHANG WHERE " + TimKiemTheo + " = @TimKiemThongKe";
+                    myConnection.Open();
+                    using (SqlCommand cmd = new SqlCommand(sSQLs, myConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@TimKiemThongKe", TimKiemThongKe);
+
+                        SqlDataAdapter daSP = new SqlDataAdapter(cmd);
+                        DataSet dsSP = new DataSet();
+                        daSP.Fill(dsSP);
+
+                        dgv_KhachHang.DataSource = dsSP.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+            }
+        }
+
+        private void btn_TimKiemKH_Click(object sender, EventArgs e)
+        {
+            if (cbo_TimKiem.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemKH.Text))
+            {
+                MessageBox.Show("Bạn chưa điền vào ô tìm kiếm hoặc bạn chọn chức năng tìm kiếm chưa phù hợp.", "Thông Báo", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
+                TimKiem();
+            }
         }
     }
 }

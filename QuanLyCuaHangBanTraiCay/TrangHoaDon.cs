@@ -22,21 +22,40 @@ namespace QuanLyCuaHangBanTraiCay
 
         int TienKhachDua;
         public int MaTK;
-        private void btn_XemChiTiet_Click(object sender, EventArgs e)
-        {
-            ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
-            chiTietHoaDon.MaHD = int.Parse(txt_MaHD.Text);
-            this.Hide();
-            chiTietHoaDon.Show();
-        }
 
-        private void btn_TaoHoaDon_Click(object sender, EventArgs e)
+        //HIỂN THỊ
+        public void HienThi()
         {
-            ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
-            ThemHoaDon();
-            this.Hide();
-            chiTietHoaDon.Show();
-            chiTietHoaDon.MaHD = LayMaHD();
+            //Doi tuong ket noi CSDL
+            SqlConnection myConnection = new SqlConnection(scon);
+            string sSql = "SELECT MaNV, TenNV FROM NHANVIEN";
+            string ssSql = "SELECT MaKH, TenKH FROM KHACHHANG";
+            try
+            {
+                myConnection.Open();
+
+                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                SqlDataAdapter daKhachHang = new SqlDataAdapter(ssSql, myConnection);
+                DataSet dsKhachHang = new DataSet();
+                daKhachHang.Fill(dsKhachHang);
+
+                myConnection.Close();
+
+                cbo_MaNV.DataSource = ds.Tables[0];
+                cbo_MaNV.DisplayMember = "MaNV";
+                cbo_MaNV.ValueMember = "TenNV";
+
+                cbo_MaKH.DataSource = dsKhachHang.Tables[0];
+                cbo_MaKH.DisplayMember = "MaKH";
+                cbo_MaKH.ValueMember = "TenKH";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+            }
         }
 
         //XEM HÓA ĐƠN
@@ -60,6 +79,29 @@ namespace QuanLyCuaHangBanTraiCay
             {
                 MessageBox.Show("Loi. Chi tiet: " + ex.Message);
             }
+        }
+
+        private void TrangHoaDon_Load(object sender, EventArgs e)
+        {
+            XemHoaDon();
+            HienThi();
+        }
+
+        //CHUYỂN SANG TRANG CHI TIẾT HÓA ĐƠN
+        private void btn_XemChiTiet_Click(object sender, EventArgs e)
+        {
+            ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
+            chiTietHoaDon.MaHD = int.Parse(txt_MaHD.Text);
+            this.Hide();
+            chiTietHoaDon.Show();
+        }
+        private void btn_TaoHoaDon_Click(object sender, EventArgs e)
+        {
+            ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
+            ThemHoaDon();
+            this.Hide();
+            chiTietHoaDon.Show();
+            chiTietHoaDon.MaHD = LayMaHD();
         }
 
         //THÊM HÓA ĐƠN
@@ -131,7 +173,11 @@ namespace QuanLyCuaHangBanTraiCay
                 }
             }
         }
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            SuaHoaDon();
 
+        }
         //XÓA HÓA ĐƠN
         public void XoaHoaDon()
         {
@@ -193,39 +239,17 @@ namespace QuanLyCuaHangBanTraiCay
                 MessageBox.Show("Lỗi khi kết nối cơ sở dữ liệu. Chi tiết: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        //HIỂN THỊ MÃ NHÂN VIÊN
-        public void HienThi()
+        private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            //Doi tuong ket noi CSDL
-            SqlConnection myConnection = new SqlConnection(scon);
-            string sSql = "SELECT MaNV, TenNV FROM NHANVIEN";
-            string ssSql = "SELECT MaKH, TenKH FROM KHACHHANG";
-            try
+            if (txt_MaHD.Text != "")
             {
-                myConnection.Open();
-
-                SqlDataAdapter da = new SqlDataAdapter(sSql, myConnection);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-
-                SqlDataAdapter daKhachHang = new SqlDataAdapter(ssSql, myConnection);
-                DataSet dsKhachHang = new DataSet();
-                daKhachHang.Fill(dsKhachHang);
-
-                myConnection.Close();
-
-                cbo_MaNV.DataSource = ds.Tables[0];
-                cbo_MaNV.DisplayMember = "MaNV";
-                cbo_MaNV.ValueMember = "TenNV";
-
-                cbo_MaKH.DataSource = dsKhachHang.Tables[0];
-                cbo_MaKH.DisplayMember = "MaKH";
-                cbo_MaKH.ValueMember = "TenKH";
+                XoaHoaDon();
+                XemHoaDon();
+                txt_MaHD.Clear();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("LOI. Chi tiet: " + ex.Message);
+                MessageBox.Show("Bạn chưa chọn sản phẩm nào !!!");
             }
         }
 
@@ -264,45 +288,15 @@ namespace QuanLyCuaHangBanTraiCay
             dt_Ngay.Value = DateTime.Parse(dgv_HoaDon.Rows[i].Cells[3].Value.ToString());
         }
 
-        private void btn_Xoa_Click(object sender, EventArgs e)
-        {
-            if (txt_MaHD.Text != "")
-            {
-                XoaHoaDon();
-                XemHoaDon();
-                txt_MaHD.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Bạn chưa chọn sản phẩm nào !!!");
-            }
-        }
-
-        private void btn_Sua_Click(object sender, EventArgs e)
-        {
-            SuaHoaDon();
-        }
-
-        private void TrangHoaDon_Load(object sender, EventArgs e)
-        {
-            XemHoaDon();
-            HienThi();
-            cbo_Tim.Text = "Tìm kiếm theo:";
-        }
+        
         //TÌM KIẾM
         public void TimKiem()
         {
             string TimKiemTheo = "", TimKiemThongKe = "";
-            if (cbo_Tim.Text == "Mã Nhân Viên")
-            {
-                TimKiemTheo = "MaNV";
-                
-            }
-            else
-            {
-                TimKiemTheo = cbo_Tim.Text;
-                TimKiemThongKe = txt_TimKiem.Text;
-            }
+
+            TimKiemTheo = cbo_Tim.Text;
+            TimKiemThongKe = txt_TimKiem.Text;
+
             try
             {
                 using (SqlConnection myConnection = new SqlConnection(scon))
@@ -326,19 +320,9 @@ namespace QuanLyCuaHangBanTraiCay
                 MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
             }
         }
-
-        private void btn_Reset_Click(object sender, EventArgs e)
-        {
-            XemHoaDon();
-            HienThi();
-            txt_TimKiem.Clear();
-            cbo_Tim.Text = "Tìm kiếm theo :";
-            dt_Ngay.Visible = false;
-        }
-
         private void btn_Tim_Click(object sender, EventArgs e)
         {
-            if (cbo_Tim .SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiem .Text))
+            if (cbo_Tim.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiem.Text))
             {
                 MessageBox.Show("Bạn chưa điền vào ô tìm kiếm hoặc bạn chọn chức năng tìm kiếm chưa phù hợp.", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
@@ -348,16 +332,11 @@ namespace QuanLyCuaHangBanTraiCay
             }
         }
 
-        private void cbo_Tim_SelectedIndexChanged(object sender, EventArgs e)
+        private void btn_Reset_Click(object sender, EventArgs e)
         {
-            if (cbo_Tim.Text == "Ngày")
-            {
-                dt_Ngay.Visible = true;
-            }
-            else
-            {
-                dt_Ngay.Visible = false;
-            }
+            XemHoaDon();
+            HienThi();
+            txt_TimKiem.Clear();
         }
 
         private void TrangHoaDon_FormClosing(object sender, FormClosingEventArgs e)
@@ -369,6 +348,21 @@ namespace QuanLyCuaHangBanTraiCay
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btn_XemKhachHang_Click(object sender, EventArgs e)
+        {
+            KhachHang kh = new KhachHang();
+            kh.Show();
+            this.Hide();
+        }
+
+        private void btn_QuayLai_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            //TrangQuanLy ql = new TrangQuanLy();
+            //ql.MaTK = MaTK;
+            //ql.Show();
         }
     }
  }
