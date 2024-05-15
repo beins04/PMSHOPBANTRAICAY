@@ -30,29 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhap));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_MaSPN = new System.Windows.Forms.TextBox();
+            this.chk_TrangThai = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbo_TimKiem = new System.Windows.Forms.ComboBox();
+            this.txt_ThanhTien = new System.Windows.Forms.TextBox();
+            this.btn_TimSP = new System.Windows.Forms.Button();
+            this.txt_TimKiemSP = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btn_XemChiTietPhieuNhap = new System.Windows.Forms.Button();
             this.cbo_TenNCC = new System.Windows.Forms.ComboBox();
+            this.dt_NgayNhap = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.txt_SLN = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dgv_PhieuNhap = new System.Windows.Forms.DataGridView();
-            this.dt_NgayNhap = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_ThanhTien = new System.Windows.Forms.TextBox();
-            this.cbo_TimKiem = new System.Windows.Forms.ComboBox();
-            this.txt_TimKiemSP = new System.Windows.Forms.TextBox();
             this.btn_Reset = new System.Windows.Forms.Button();
             this.btn_ThemPN = new System.Windows.Forms.Button();
             this.btn_SuaPN = new System.Windows.Forms.Button();
             this.btn_XoaPN = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_TimSP = new System.Windows.Forms.Button();
-            this.btn_XemChiTietPhieuNhap = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chk_TrangThai = new System.Windows.Forms.CheckBox();
-            this.txt_MaSPN = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -85,6 +85,105 @@
             this.groupBox1.Text = "Nhập Sản Phẩm";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(54, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(182, 23);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Mã Sản Phẩm Nhập:";
+            // 
+            // txt_MaSPN
+            // 
+            this.txt_MaSPN.Location = new System.Drawing.Point(254, 39);
+            this.txt_MaSPN.Name = "txt_MaSPN";
+            this.txt_MaSPN.ReadOnly = true;
+            this.txt_MaSPN.Size = new System.Drawing.Size(317, 30);
+            this.txt_MaSPN.TabIndex = 31;
+            // 
+            // chk_TrangThai
+            // 
+            this.chk_TrangThai.AutoSize = true;
+            this.chk_TrangThai.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_TrangThai.Location = new System.Drawing.Point(793, 135);
+            this.chk_TrangThai.Name = "chk_TrangThai";
+            this.chk_TrangThai.Size = new System.Drawing.Size(18, 17);
+            this.chk_TrangThai.TabIndex = 29;
+            this.chk_TrangThai.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(677, 132);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 23);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Trạng Thái:";
+            // 
+            // cbo_TimKiem
+            // 
+            this.cbo_TimKiem.FormattingEnabled = true;
+            this.cbo_TimKiem.Items.AddRange(new object[] {
+            "MaSP",
+            "TenSP",
+            "MaNCC",
+            "MaLSP",
+            "XuatXu",
+            ""});
+            this.cbo_TimKiem.Location = new System.Drawing.Point(427, 244);
+            this.cbo_TimKiem.Name = "cbo_TimKiem";
+            this.cbo_TimKiem.Size = new System.Drawing.Size(169, 31);
+            this.cbo_TimKiem.TabIndex = 23;
+            // 
+            // txt_ThanhTien
+            // 
+            this.txt_ThanhTien.Location = new System.Drawing.Point(793, 84);
+            this.txt_ThanhTien.Name = "txt_ThanhTien";
+            this.txt_ThanhTien.Size = new System.Drawing.Size(313, 30);
+            this.txt_ThanhTien.TabIndex = 23;
+            // 
+            // btn_TimSP
+            // 
+            this.btn_TimSP.Image = ((System.Drawing.Image)(resources.GetObject("btn_TimSP.Image")));
+            this.btn_TimSP.Location = new System.Drawing.Point(659, 231);
+            this.btn_TimSP.Name = "btn_TimSP";
+            this.btn_TimSP.Size = new System.Drawing.Size(149, 49);
+            this.btn_TimSP.TabIndex = 22;
+            this.btn_TimSP.Text = "Tìm Kiếm";
+            this.btn_TimSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_TimSP.UseVisualStyleBackColor = true;
+            // 
+            // txt_TimKiemSP
+            // 
+            this.txt_TimKiemSP.Location = new System.Drawing.Point(79, 245);
+            this.txt_TimKiemSP.Name = "txt_TimKiemSP";
+            this.txt_TimKiemSP.Size = new System.Drawing.Size(326, 30);
+            this.txt_TimKiemSP.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(626, 91);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(161, 23);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Tổng Thành Tiền:";
+            // 
+            // btn_XemChiTietPhieuNhap
+            // 
+            this.btn_XemChiTietPhieuNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XemChiTietPhieuNhap.Image = ((System.Drawing.Image)(resources.GetObject("btn_XemChiTietPhieuNhap.Image")));
+            this.btn_XemChiTietPhieuNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_XemChiTietPhieuNhap.Location = new System.Drawing.Point(871, 231);
+            this.btn_XemChiTietPhieuNhap.Name = "btn_XemChiTietPhieuNhap";
+            this.btn_XemChiTietPhieuNhap.Size = new System.Drawing.Size(219, 48);
+            this.btn_XemChiTietPhieuNhap.TabIndex = 8;
+            this.btn_XemChiTietPhieuNhap.Text = "Xem Chi Tiết";
+            this.btn_XemChiTietPhieuNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_XemChiTietPhieuNhap.UseVisualStyleBackColor = true;
+            this.btn_XemChiTietPhieuNhap.Click += new System.EventHandler(this.btn_XemChiTietPhieuNhap_Click);
+            // 
             // cbo_TenNCC
             // 
             this.cbo_TenNCC.FormattingEnabled = true;
@@ -92,6 +191,22 @@
             this.cbo_TenNCC.Name = "cbo_TenNCC";
             this.cbo_TenNCC.Size = new System.Drawing.Size(317, 31);
             this.cbo_TenNCC.TabIndex = 21;
+            // 
+            // dt_NgayNhap
+            // 
+            this.dt_NgayNhap.Location = new System.Drawing.Point(254, 135);
+            this.dt_NgayNhap.Name = "dt_NgayNhap";
+            this.dt_NgayNhap.Size = new System.Drawing.Size(317, 30);
+            this.dt_NgayNhap.TabIndex = 20;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(126, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 23);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Ngày Nhập:";
             // 
             // txt_SLN
             // 
@@ -127,60 +242,6 @@
             this.dgv_PhieuNhap.RowTemplate.Height = 24;
             this.dgv_PhieuNhap.Size = new System.Drawing.Size(990, 317);
             this.dgv_PhieuNhap.TabIndex = 19;
-            // 
-            // dt_NgayNhap
-            // 
-            this.dt_NgayNhap.Location = new System.Drawing.Point(254, 135);
-            this.dt_NgayNhap.Name = "dt_NgayNhap";
-            this.dt_NgayNhap.Size = new System.Drawing.Size(317, 30);
-            this.dt_NgayNhap.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(126, 142);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 23);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Ngày Nhập:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(626, 91);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 23);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Tổng Thành Tiền:";
-            // 
-            // txt_ThanhTien
-            // 
-            this.txt_ThanhTien.Location = new System.Drawing.Point(793, 84);
-            this.txt_ThanhTien.Name = "txt_ThanhTien";
-            this.txt_ThanhTien.Size = new System.Drawing.Size(313, 30);
-            this.txt_ThanhTien.TabIndex = 23;
-            // 
-            // cbo_TimKiem
-            // 
-            this.cbo_TimKiem.FormattingEnabled = true;
-            this.cbo_TimKiem.Items.AddRange(new object[] {
-            "MaSP",
-            "TenSP",
-            "MaNCC",
-            "MaLSP",
-            "XuatXu",
-            ""});
-            this.cbo_TimKiem.Location = new System.Drawing.Point(427, 244);
-            this.cbo_TimKiem.Name = "cbo_TimKiem";
-            this.cbo_TimKiem.Size = new System.Drawing.Size(169, 31);
-            this.cbo_TimKiem.TabIndex = 23;
-            // 
-            // txt_TimKiemSP
-            // 
-            this.txt_TimKiemSP.Location = new System.Drawing.Point(79, 245);
-            this.txt_TimKiemSP.Name = "txt_TimKiemSP";
-            this.txt_TimKiemSP.Size = new System.Drawing.Size(326, 30);
-            this.txt_TimKiemSP.TabIndex = 21;
             // 
             // btn_Reset
             // 
@@ -242,66 +303,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(77, 78);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // btn_TimSP
-            // 
-            this.btn_TimSP.Image = ((System.Drawing.Image)(resources.GetObject("btn_TimSP.Image")));
-            this.btn_TimSP.Location = new System.Drawing.Point(659, 231);
-            this.btn_TimSP.Name = "btn_TimSP";
-            this.btn_TimSP.Size = new System.Drawing.Size(149, 49);
-            this.btn_TimSP.TabIndex = 22;
-            this.btn_TimSP.Text = "Tìm Kiếm";
-            this.btn_TimSP.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_TimSP.UseVisualStyleBackColor = true;
-            // 
-            // btn_XemChiTietPhieuNhap
-            // 
-            this.btn_XemChiTietPhieuNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XemChiTietPhieuNhap.Image = ((System.Drawing.Image)(resources.GetObject("btn_XemChiTietPhieuNhap.Image")));
-            this.btn_XemChiTietPhieuNhap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_XemChiTietPhieuNhap.Location = new System.Drawing.Point(871, 231);
-            this.btn_XemChiTietPhieuNhap.Name = "btn_XemChiTietPhieuNhap";
-            this.btn_XemChiTietPhieuNhap.Size = new System.Drawing.Size(219, 48);
-            this.btn_XemChiTietPhieuNhap.TabIndex = 8;
-            this.btn_XemChiTietPhieuNhap.Text = "Xem Chi Tiết";
-            this.btn_XemChiTietPhieuNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btn_XemChiTietPhieuNhap.UseVisualStyleBackColor = true;
-            this.btn_XemChiTietPhieuNhap.Click += new System.EventHandler(this.btn_XemChiTietPhieuNhap_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(677, 132);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 23);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Trạng Thái:";
-            // 
-            // chk_TrangThai
-            // 
-            this.chk_TrangThai.AutoSize = true;
-            this.chk_TrangThai.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_TrangThai.Location = new System.Drawing.Point(793, 135);
-            this.chk_TrangThai.Name = "chk_TrangThai";
-            this.chk_TrangThai.Size = new System.Drawing.Size(18, 17);
-            this.chk_TrangThai.TabIndex = 29;
-            this.chk_TrangThai.UseVisualStyleBackColor = true;
-            // 
-            // txt_MaSPN
-            // 
-            this.txt_MaSPN.Location = new System.Drawing.Point(254, 39);
-            this.txt_MaSPN.Name = "txt_MaSPN";
-            this.txt_MaSPN.Size = new System.Drawing.Size(317, 30);
-            this.txt_MaSPN.TabIndex = 31;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(54, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(182, 23);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Mã Sản Phẩm Nhập:";
             // 
             // PhieuNhap
             // 

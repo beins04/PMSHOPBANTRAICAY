@@ -13,14 +13,24 @@ namespace QuanLyCuaHangBanTraiCay
     public partial class TrangQuanLy : Form
     {
         public int MaTK;
-        public bool isAdmin { get; set; }
-
+        
         private string role;
         public TrangQuanLy(string role)
         {
             InitializeComponent();
 
             this.role = role;
+
+            if(role == "Quản Lý")
+            {
+                ptbStaff.Enabled = false;
+                ptbProvider.Enabled = false;
+                ptbStatistical.Enabled = false;
+
+                btn_NhanVien.Enabled = false;
+                btn_NhaCungCap.Enabled = false;
+                btn_DoanhThu.Enabled = false;   
+            }
         }
 
         private void btn_DangXuat_Click(object sender, EventArgs e)
@@ -35,18 +45,6 @@ namespace QuanLyCuaHangBanTraiCay
             //this.Close();
         }
 
-        private void btn_DoiMatKhau_Click(object sender, EventArgs e)
-        {
-            // Tạo một thể hiện mới của form đổi mật khẩu
-            DoiMK ChangePassword = new DoiMK();
-
-            // Hiển thị form đổi mật khẩu
-            ChangePassword.Show();
-
-            // Đóng form trang chủ
-            //this.Close();
-        }
-
         private void btn_KhoHang_Click(object sender, EventArgs e)
         {
             // Tạo một thể hiện mới của form quản lý kho hàng
@@ -54,18 +52,6 @@ namespace QuanLyCuaHangBanTraiCay
 
             // Hiển thị form quản lý kho hàng
             Management.Show();
-
-            // Đóng form trang chủ
-            //this.Close();
-        }
-
-        private void btn_DoanhThu_Click(object sender, EventArgs e)
-        {
-            // Tạo một thể hiện mới của form thống kê
-            ThongKe Statistical = new ThongKe();
-
-            // Hiển thị form thống kê
-            Statistical.Show();
 
             // Đóng form trang chủ
             //this.Close();

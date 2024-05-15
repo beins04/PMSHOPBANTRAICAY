@@ -42,7 +42,6 @@ namespace QuanLyCuaHangBanTraiCay
         }
         private void LoaiSP_Load(object sender, EventArgs e)
         {
-            txt_MaLSP.ReadOnly = true;
             XemDanhSach();
         }
         //THÊM LOẠI SẢN PHẨM

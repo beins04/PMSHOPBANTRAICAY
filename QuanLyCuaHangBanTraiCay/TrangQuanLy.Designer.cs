@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangQuanLy));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbStaff = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ptbProvider = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.ptbStatistical = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btn_NhanVien = new System.Windows.Forms.Button();
             this.btn_KhachHang = new System.Windows.Forms.Button();
@@ -47,26 +47,26 @@
             this.btn_SanPham = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.btn_HoaDon = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatistical)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // ptbStaff
             // 
-            this.pictureBox1.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.NhanVien;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 41);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 112);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.ptbStaff.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.NhanVien;
+            this.ptbStaff.Location = new System.Drawing.Point(50, 41);
+            this.ptbStaff.Name = "ptbStaff";
+            this.ptbStaff.Size = new System.Drawing.Size(148, 112);
+            this.ptbStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbStaff.TabIndex = 0;
+            this.ptbStaff.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -78,15 +78,15 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
+            // ptbProvider
             // 
-            this.pictureBox3.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.NhaCungCap;
-            this.pictureBox3.Location = new System.Drawing.Point(50, 449);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(148, 112);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.ptbProvider.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.NhaCungCap;
+            this.ptbProvider.Location = new System.Drawing.Point(50, 449);
+            this.ptbProvider.Name = "ptbProvider";
+            this.ptbProvider.Size = new System.Drawing.Size(148, 112);
+            this.ptbProvider.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbProvider.TabIndex = 2;
+            this.ptbProvider.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -98,15 +98,15 @@
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox5
+            // ptbStatistical
             // 
-            this.pictureBox5.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.ThongKeDoanhThu;
-            this.pictureBox5.Location = new System.Drawing.Point(263, 251);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(138, 110);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
+            this.ptbStatistical.Image = global::QuanLyCuaHangBanTraiCay.Properties.Resources.ThongKeDoanhThu;
+            this.ptbStatistical.Location = new System.Drawing.Point(263, 251);
+            this.ptbStatistical.Name = "ptbStatistical";
+            this.ptbStatistical.Size = new System.Drawing.Size(138, 110);
+            this.ptbStatistical.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbStatistical.TabIndex = 4;
+            this.ptbStatistical.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -166,7 +166,6 @@
             this.btn_DoanhThu.TabIndex = 10;
             this.btn_DoanhThu.Text = "Doanh Thu";
             this.btn_DoanhThu.UseVisualStyleBackColor = true;
-            this.btn_DoanhThu.Click += new System.EventHandler(this.btn_DoanhThu_Click);
             // 
             // btn_DangXuat
             // 
@@ -196,7 +195,6 @@
             this.btn_DoiMatKhau.TabIndex = 13;
             this.btn_DoiMatKhau.Text = "Đổi mật khẩu";
             this.btn_DoiMatKhau.UseVisualStyleBackColor = true;
-            this.btn_DoiMatKhau.Click += new System.EventHandler(this.btn_DoiMatKhau_Click);
             // 
             // pictureBox8
             // 
@@ -260,22 +258,22 @@
             this.Controls.Add(this.btn_KhachHang);
             this.Controls.Add(this.btn_NhanVien);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.ptbStatistical);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.ptbProvider);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ptbStaff);
             this.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "TrangQuanLy";
             this.Text = "Manager";
             this.Load += new System.EventHandler(this.Trang_Quản_lý_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStaff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatistical)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -286,11 +284,11 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptbStaff;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox ptbProvider;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox ptbStatistical;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btn_NhanVien;
         private System.Windows.Forms.Button btn_KhachHang;

@@ -44,7 +44,6 @@ namespace QuanLyCuaHangBanTraiCay
 
         private void TaiKhoan_Load(object sender, EventArgs e)
         {
-            txt_MaTK.ReadOnly = true;
             XemDanhSach();
         }
         //THÊM TÀI KHOẢN
@@ -82,13 +81,13 @@ namespace QuanLyCuaHangBanTraiCay
 
             sTenDangNhap = txt_TenDN.Text;
             sMatKhau = txt_MK.Text;
-            sChucVu = rad_Admin.Checked ? "Quản lý" : "Nhân Viên";
+            sChucVu = rad_Admin.Checked ? "Quản Lý" : "Nhân Viên";
             sTrangThai = chk_TrangThai.Checked ? "1" : "0";
 
             bool kq = ThemTaiKhoan(sTenDangNhap, sMatKhau, sTrangThai, sChucVu);
             if (kq)
             {
-                MessageBox.Show("Đã thêm Nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đã thêm Ntài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -115,11 +114,11 @@ namespace QuanLyCuaHangBanTraiCay
 
                 if (row > 0)
                 {
-                    MessageBox.Show("Đã xóa nhà cung cấp thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã xóa tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy nhà cung cấp có mã: " + MaTK, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không tìm thấy tài khoản có mã: " + MaTK, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 myConnection.Close();
@@ -180,11 +179,11 @@ namespace QuanLyCuaHangBanTraiCay
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Bạn đã thay đổi thành công sản phẩm có mã sản phẩm là : " + MaTK, "Thông báo");
+                            MessageBox.Show("Bạn đã thay đổi thành công tài khoản có mã sản phẩm là : " + MaTK, "Thông báo");
                         }
                         else
                         {
-                            MessageBox.Show("Không có sản phẩm nào được cập nhật.", "Thông báo");
+                            MessageBox.Show("Không có tài khoản nào được cập nhật.", "Thông báo");
                         }
                     }
                 }
@@ -231,6 +230,48 @@ namespace QuanLyCuaHangBanTraiCay
             else
             {
                 chk_TrangThai.Checked = true;
+            }
+        }
+        //TÌM KIẾM
+        public void TimKiem()
+        {
+            string TimKiemTheo = "", TimKiemThongKe = "";
+
+            TimKiemTheo = cbo_TimKiem.Text;
+            TimKiemThongKe = txt_TimKiemTK.Text;
+            try
+            {
+                using (SqlConnection myConnection = new SqlConnection(scon))
+                {
+                    string sSQLs = "SELECT * FROM TAIKHOAN WHERE " + TimKiemTheo + " = @TimKiemThongKe";
+                    myConnection.Open();
+                    using (SqlCommand cmd = new SqlCommand(sSQLs, myConnection))
+                    {
+                        cmd.Parameters.AddWithValue("@TimKiemThongKe", TimKiemThongKe);
+
+                        SqlDataAdapter daSP = new SqlDataAdapter(cmd);
+                        DataSet dsSP = new DataSet();
+                        daSP.Fill(dsSP);
+
+                        dgv_TaiKhoan.DataSource = dsSP.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi. Chi tiết: " + ex.Message);
+            }
+        }
+
+        private void btn_TimKiemTK_Click(object sender, EventArgs e)
+        {
+            if (cbo_TimKiem.SelectedIndex == -1 || string.IsNullOrWhiteSpace(txt_TimKiemTK.Text))
+            {
+                MessageBox.Show("Bạn chưa điền vào ô tìm kiếm hoặc bạn chọn chức năng tìm kiếm chưa phù hợp.", "Thông Báo", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
+                TimKiem();
             }
         }
     }

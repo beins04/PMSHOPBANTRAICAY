@@ -97,7 +97,7 @@
             this.dgv_LoaiSanPham.Name = "dgv_LoaiSanPham";
             this.dgv_LoaiSanPham.RowHeadersWidth = 51;
             this.dgv_LoaiSanPham.RowTemplate.Height = 24;
-            this.dgv_LoaiSanPham.Size = new System.Drawing.Size(1014, 236);
+            this.dgv_LoaiSanPham.Size = new System.Drawing.Size(1014, 307);
             this.dgv_LoaiSanPham.TabIndex = 2;
             this.dgv_LoaiSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LoaiSanPham_CellContentClick);
             // 
@@ -106,6 +106,7 @@
             this.txt_MaLSP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MaLSP.Location = new System.Drawing.Point(204, 22);
             this.txt_MaLSP.Name = "txt_MaLSP";
+            this.txt_MaLSP.ReadOnly = true;
             this.txt_MaLSP.Size = new System.Drawing.Size(196, 30);
             this.txt_MaLSP.TabIndex = 31;
             // 

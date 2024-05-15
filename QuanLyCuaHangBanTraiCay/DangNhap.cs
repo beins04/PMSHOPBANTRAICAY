@@ -65,20 +65,15 @@ namespace QuanLyCuaHangBanTraiCay
 
             if (role != "")
             {
-                if (role == "Admin")
-                {
-                    //Truyền role qua form để xác định role khi sử dụng chức năng khác.
-                    TrangQuanLy admin = new TrangQuanLy(role);
-                    admin.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    //Truyền role qua form để xác định role khi sử dụng chức năng khác.
-                    TrangQuanLyChoNhanVien staff = new TrangQuanLyChoNhanVien(role);
-                    staff.Show();
-                    this.Hide();
-                }
+                MessageBox.Show("Đăng nhập thành công");                 
+                //Truyền role qua form để xác định role khi sử dụng chức năng khác.
+                TrangQuanLy admin = new TrangQuanLy(role);
+                admin.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Đăng Nhập không thành công, hãy kiểm tra lại tên đăng nhập và mật khẩu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
